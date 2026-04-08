@@ -144,7 +144,7 @@
   // Usamos esto para limpiar comprobantes al cambiar de método y evitar que se mezclen.
   let __lastPaymentDetailsMethod = null;
   // Protege el acceso (carrito + paso correcto)
-  if (window.guardCheckoutStep && !window.guardCheckoutStep('payment', '/cart.html')) return;
+  if (window.guardCheckoutStep && !window.guardCheckoutStep('payment', '../carrito.html')) return;
 
   const money = (value) => {
     try {
