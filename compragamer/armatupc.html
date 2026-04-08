@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Armá tu PC - COMPRA GAMER</title>
+    <meta name="description" content="Configurá tu nueva PC sin errores de compatibilidad, seleccionando todos los componentes que deseás.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/armatupc.css">
+    <link rel="icon" href="https://ext.same-assets.com/4025281442/4260243455.svg" type="image/svg+xml">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <img src="https://ext.same-assets.com/4025281442/1301851404.svg" alt="Compra Gamer" class="logo-full">
+                <img src="https://ext.same-assets.com/4025281442/4260243455.svg" alt="Compra Gamer" class="logo-icon">
+            </a>
+
+            <div class="search-box">
+                <input type="text" placeholder="Buscar productos" id="searchInput">
+                <button class="search-btn" id="searchBtn">
+                    <span class="material-icons">search</span>
+                </button>
+            </div>
+
+            <div class="header-actions">
+                <a href="#" class="login-btn" id="loginBtn">
+                    <span class="material-icons">person_outline</span>
+                    <span class="login-text">Ingresá</span>
+                </a>
+                <button class="cart-btn" id="cartBtn">
+                    <span class="material-icons">shopping_cart</span>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="productos.html" class="nav-link">Productos</a>
+            <a href="productos.html?cate=notebooks" class="nav-link">Notebooks</a>
+            <a href="armatupc.html" class="nav-link active">Armá tu PC</a>
+            <a href="ayuda.html" class="nav-link">Ayuda</a>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="page-header-container">
+            <a href="index.html" class="back-link">
+                <span class="material-icons">chevron_left</span>
+            </a>
+            <h1>Elegí tu Procesador</h1>
+        </div>
+    </section>
+
+    <!-- Builder Info -->
+    <section class="builder-info">
+        <div class="info-container">
+            <p>Tu procesador es la pieza central del rendimiento de los programas. Para saber si un procesador es potente lo que tenés que medir es la frecuencia, el ancho de bus, la memoria caché y los núcleos e hilos de procesamiento.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="builder-page">
+        <!-- Component Navigator -->
+        <aside class="builder-sidebar">
+            <div class="component-nav">
+                <button class="component-btn active" data-component="procesadores">
+                    <img src="https://imagenes.compragamer.com/assets/iconos/atpc/cpu.png" alt="CPU">
+                </button>
+                <button class="component-btn" data-component="mothers">
+                    <img src="https://imagenes.compragamer.com/assets/iconos/atpc/mother.png" alt="Mother">
+                </button>
+                <button class="component-btn" data-component="coolers">
+                    <img src="https://imagenes.compragamer.com/assets/iconos/atpc/cooler.png" alt="Cooler">
+                </button>
+                <button class="component-btn" data-component="memorias">
+                    <img src="https://imagenes.compragamer.com/assets/iconos/atpc/ram.png" alt="RAM">
+                </button>
+                <button class="component-btn" data-component="placas">
+                    <img src="https://imagenes.compragamer.com/assets/iconos/atpc/gpu.png" alt="GPU">
+                </button>
+                <button class="component-btn" data-component="almacenamiento">
+                    <img src="https://imagenes.compragamer.com/assets/iconos/atpc/hdd.png" alt="Storage">
+                </button>
+                <button class="component-btn" data-component="fuentes">
+                    <img src="https://imagenes.compragamer.com/assets/iconos/atpc/power.png" alt="PSU">
+                </button>
+                <button class="component-btn" data-component="gabinetes">
+                    <img src="https://imagenes.compragamer.com/assets/iconos/atpc/case.png" alt="Case">
+                </button>
+            </div>
+
+            <div class="build-summary">
+                <div class="summary-watts">
+                    (<span id="totalWatts">0</span> watts)
+                </div>
+                <div class="summary-total">
+                    Total: <strong id="buildTotal">$0</strong>
+                </div>
+                <div class="summary-actions">
+                    <select id="navPrev">
+                        <option value="">VOLVER ATRÁS</option>
+                    </select>
+                    <select id="navNext">
+                        <option value="">SALTEAR PASO</option>
+                    </select>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Components Grid -->
+        <section class="components-content">
+            <!-- Brand Filter -->
+            <div class="brand-filter">
+                <button class="brand-btn active" data-brand="all">Todos</button>
+                <button class="brand-btn" data-brand="AMD">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 30'%3E%3Ctext x='10' y='22' font-family='Arial' font-size='20' font-weight='bold'%3EAMD%3C/text%3E%3C/svg%3E" alt="AMD">
+                </button>
+                <button class="brand-btn" data-brand="Intel">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 30'%3E%3Ctext x='10' y='22' font-family='Arial' font-size='16' fill='%230071c5'%3Eintel%3C/text%3E%3C/svg%3E" alt="Intel">
+                </button>
+            </div>
+
+            <!-- Components List -->
+            <div class="components-grid" id="componentsGrid">
+                <!-- Components loaded dynamically -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <a href="https://serviciosweb.afip.gob.ar/clavefiscal/qr/response.aspx?qr=2yBvcpJW9wS27AwRBCPy9A,," target="_blank" rel="noopener">
+                    <img src="https://ext.same-assets.com/4025281442/235471053.jpeg" alt="Data Fiscal" class="data-fiscal">
+                </a>
+            </div>
+
+            <div class="footer-col">
+                <a href="ayuda.html" class="footer-link btn-outline-dark">Ayuda</a>
+                <a href="#" class="footer-link btn-outline-dark">Botón de arrepentimiento</a>
+                <a href="#" class="footer-link">Términos y condiciones</a>
+            </div>
+
+            <div class="footer-col social-col">
+                <h4>Seguinos en</h4>
+                <div class="social-links">
+                    <a href="https://x.com/CompraGamerOK" target="_blank" rel="noopener">
+                        <img src="https://ext.same-assets.com/4025281442/3256107104.svg" alt="X">
+                    </a>
+                    <a href="https://www.instagram.com/compragamer_oficial/" target="_blank" rel="noopener">
+                        <img src="https://ext.same-assets.com/4025281442/1763622162.svg" alt="Instagram">
+                    </a>
+                    <a href="https://www.facebook.com/compragamer" target="_blank" rel="noopener">
+                        <img src="https://ext.same-assets.com/4025281442/2743748307.svg" alt="Facebook">
+                    </a>
+                    <a href="https://www.youtube.com/c/CompraGamer" target="_blank" rel="noopener">
+                        <img src="https://ext.same-assets.com/4025281442/632895441.svg" alt="YouTube">
+                    </a>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/company/newton-station-srl/mycompany/" target="_blank" rel="noopener">
+                        <img src="https://ext.same-assets.com/4025281442/3506379393.svg" alt="LinkedIn">
+                    </a>
+                    <a href="https://www.tiktok.com/@compragamer.com?lang=es" target="_blank" rel="noopener">
+                        <img src="https://ext.same-assets.com/4025281442/2688196856.svg" alt="TikTok">
+                    </a>
+                    <a href="https://www.twitch.tv/compragamerok" target="_blank" rel="noopener">
+                        <img src="https://ext.same-assets.com/4025281442/1826512588.svg" alt="Twitch">
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <img src="https://ext.same-assets.com/4025281442/2548098512.svg" alt="Great Place to Work" class="gptw-logo">
+                <a href="https://compragamer.hiringroom.com/jobs" target="_blank" rel="noopener" class="footer-link">¡Trabajá con nosotros!</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>Las marcas y logos de compragamer.com compragamer.com/tv compragamer.com/reviews son Propiedad de Newton Station SRL.<br>Todos los derechos reservados 2017. Icons by <a href="https://icons8.com/" target="_blank">Icons8</a>.</p>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Tu carrito</h3>
+            <button class="close-cart" id="closeCart">
+                <span class="material-icons">close</span>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <p class="empty-cart">Tu carrito está vacío</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">$0</span>
+            </div>
+            <button class="btn-primary checkout-btn">Finalizar compra</button>
+        </div>
+    </div>
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/armatupc.js"></script>
+</body>
+</html>

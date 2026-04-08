@@ -1,0 +1,354 @@
+/* =====================================================
+   PC BUILDER PAGE STYLES
+   ===================================================== */
+
+/* Page Header */
+.page-header {
+    background: var(--bg-white);
+    border-bottom: 1px solid var(--border-color);
+    padding: 16px 0;
+}
+
+.page-header-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.back-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius);
+    color: var(--primary-color);
+    transition: var(--transition);
+}
+
+.back-link:hover {
+    background: rgba(230, 51, 35, 0.1);
+}
+
+.page-header h1 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+/* Builder Info */
+.builder-info {
+    background: var(--bg-white);
+    border-bottom: 1px solid var(--border-color);
+    padding: 16px 0;
+}
+
+.info-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.info-container p {
+    font-size: 14px;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Builder Page Layout */
+.builder-page {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    gap: 24px;
+}
+
+/* Builder Sidebar */
+.builder-sidebar {
+    width: 280px;
+    flex-shrink: 0;
+}
+
+.component-nav {
+    background: var(--bg-white);
+    border-radius: var(--radius);
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.component-btn {
+    aspect-ratio: 1;
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    background: var(--bg-white);
+}
+
+.component-btn:hover {
+    border-color: var(--text-muted);
+}
+
+.component-btn.active {
+    border-color: var(--primary-color);
+    background: rgba(230, 51, 35, 0.05);
+}
+
+.component-btn.selected {
+    border-color: var(--success-color);
+    background: rgba(22, 199, 80, 0.05);
+}
+
+.component-btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0.5;
+    filter: grayscale(100%);
+    transition: var(--transition);
+}
+
+.component-btn.active img,
+.component-btn.selected img {
+    opacity: 1;
+    filter: none;
+}
+
+/* Build Summary */
+.build-summary {
+    background: var(--bg-white);
+    border-radius: var(--radius);
+    padding: 20px;
+}
+
+.summary-watts {
+    text-align: center;
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+}
+
+.summary-total {
+    text-align: center;
+    font-size: 18px;
+    color: var(--text-color);
+    margin-bottom: 16px;
+}
+
+.summary-total strong {
+    font-weight: 700;
+}
+
+.summary-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.summary-actions select {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    background: var(--bg-white);
+    text-transform: uppercase;
+}
+
+/* Components Content */
+.components-content {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Brand Filter */
+.brand-filter {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.brand-filter .brand-btn {
+    padding: 8px 20px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    font-size: 14px;
+    font-weight: 600;
+    background: var(--bg-white);
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brand-filter .brand-btn img {
+    height: 20px;
+    width: auto;
+}
+
+.brand-filter .brand-btn.active,
+.brand-filter .brand-btn:hover {
+    border-color: var(--text-color);
+}
+
+/* Components Grid */
+.components-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+/* Component Card */
+.component-card {
+    background: var(--bg-white);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 16px;
+    display: flex;
+    gap: 16px;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.component-card:hover {
+    box-shadow: var(--shadow);
+}
+
+.component-card.selected {
+    border-color: var(--success-color);
+    background: rgba(22, 199, 80, 0.02);
+}
+
+.component-image {
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.component-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.component-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.component-title {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-color);
+    line-height: 1.4;
+    margin-bottom: 8px;
+}
+
+.component-price {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-top: auto;
+}
+
+.component-status {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    color: var(--success-color);
+}
+
+.component-status .material-icons {
+    font-size: 16px;
+}
+
+.component-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+}
+
+.info-btn {
+    width: 24px;
+    height: 24px;
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-size: 14px;
+    transition: var(--transition);
+}
+
+.info-btn:hover {
+    border-color: var(--text-color);
+    color: var(--text-color);
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .components-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 992px) {
+    .builder-page {
+        flex-direction: column;
+    }
+
+    .builder-sidebar {
+        width: 100%;
+    }
+
+    .component-nav {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .component-nav {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+        padding: 12px;
+    }
+
+    .component-btn {
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .component-card {
+        flex-direction: column;
+    }
+
+    .component-image {
+        width: 100%;
+        height: 120px;
+    }
+
+    .component-actions {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 12px;
+    }
+}

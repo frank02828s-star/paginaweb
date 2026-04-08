@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCBuilder - Tu Tienda de Componentes de PC</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body>
+    <div id="site-header"></div>
+<!-- Slider a pantalla completa -->
+    <section class="fullscreen-slider">
+        <div class="slider-container">
+            <!-- Slide 1 -->
+            <div class="slide active">
+                <img src="https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="PC Gaming" class="slide-img">
+                <div class="slide-content">
+                    <h2>Construye la PC de tus Sueños</h2>
+                    <p>Selecciona componentes compatibles, compara precios y crea la PC perfecta para gaming, trabajo o creatividad.</p>
+                    <a href="/builder/" class="slide-btn">Comenzar a Construir</a>
+                </div>
+            </div>
+            
+            <!-- Slide 2 -->
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Componentes de PC" class="slide-img">
+                <div class="slide-content">
+                    <h2>Los Mejores Componentes</h2>
+                    <p>Tenemos las mejores marcas y los precios más competitivos del mercado. Calidad garantizada.</p>
+                    <a href="/products/" class="slide-btn">Explorar Catálogo</a>
+                </div>
+            </div>
+            
+            <!-- Slide 3 -->
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Soporte Técnico" class="slide-img">
+                <div class="slide-content">
+                    <h2>Soporte Especializado</h2>
+                    <p>Nuestro equipo de expertos te ayudará a elegir los componentes adecuados y resolverá todas tus dudas.</p>
+                    <a href="#" class="slide-btn">Contactar Soporte</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Controles del slider -->
+        <div class="slider-nav">
+            <button class="slider-nav-btn prev-slide"><i class="fas fa-chevron-left"></i></button>
+            <button class="slider-nav-btn next-slide"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        
+        <!-- Indicadores del slider -->
+        <div class="slider-controls">
+            <div class="slider-dots">
+                <div class="slider-dot active" data-slide="0"></div>
+                <div class="slider-dot" data-slide="1"></div>
+                <div class="slider-dot" data-slide="2"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de imágenes -->
+    <section class="image-section">
+        <div class="container">
+            <div class="image-grid">
+                <div class="image-large">
+                    <img src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2042&q=80" alt="Setup Gaming">
+                    <div class="image-overlay">
+                        <h3>Setup Gaming Profesional</h3>
+                        <p>Equipos optimizados para los juegos más demandantes del mercado</p>
+                    </div>
+                </div>
+                
+                <div class="image-small">
+                    <img src="https://images.unsplash.com/photo-1587202372634-32705e3bf49c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Workstation">
+                    <div class="image-overlay">
+                        <h3>Workstation para Creativos</h3>
+                        <p>Potencia para diseño, edición de video y renderizado 3D</p>
+                    </div>
+                </div>
+                
+                <div class="image-small">
+                    <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Componentes RGB">
+                    <div class="image-overlay">
+                        <h3>Iluminación RGB Personalizable</h3>
+                        <p>Personaliza la estética de tu PC con iluminación sincronizada</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de servicios -->
+    <section class="services-section">
+        <div class="container">
+            <div class="section-title animate-on-scroll">
+                <h2>Ventajas de Comprar con Nosotros</h2>
+            </div>
+            
+            <div class="services-container animate-on-scroll">
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Garantía Extendida</h3>
+                    <p>Todos nuestros productos cuentan con garantía de 2 a 5 años según el componente.</p>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>Pagos Seguros</h3>
+                    <p>Procesamos pagos con los más altos estándares de seguridad. Aceptamos múltiples métodos.</p>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Soporte 24/7</h3>
+                    <p>Nuestro equipo de soporte está disponible las 24 horas para resolver tus dudas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de transportistas -->
+    <section class="carriers-section">
+        <div class="container">
+            <div class="section-title animate-on-scroll">
+                <h2>Enviamos con las Mejores Transportistas</h2>
+                <p>Colaboramos con las empresas de envío más confiables del país</p>
+            </div>
+            
+            <div class="carriers-grid animate-on-scroll">
+                <div class="carrier-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/MRW_logo.svg/2560px-MRW_logo.svg.png" alt="MRW">
+                </div>
+                
+                <div class="carrier-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Zoom_logo.svg/2560px-Zoom_logo.svg.png" alt="ZOOM">
+                </div>
+                
+                <div class="carrier-logo">
+                    <img src="https://tealca.com/web/image/website/1/logo/Tealca?unique=0a7a5b2" alt="TEALCA">
+                </div>
+                
+                <div class="carrier-logo">
+                    <img src="https://domex.com.ve/wp-content/uploads/2020/09/logo-domex.png" alt="DOMESA">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de aliados -->
+    <section class="partners-section">
+        <div class="container">
+            <div class="section-title animate-on-scroll">
+                <h2>Nuestras Marcas Aliadas</h2>
+                <p>Trabajamos con las mejores marcas del mundo de la tecnología</p>
+            </div>
+            
+            <div class="partners-grid animate-on-scroll">
+                <div class="partner-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/MSI_logo.svg/2560px-MSI_logo.svg.png" alt="MSI">
+                </div>
+                
+                <div class="partner-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Nvidia_logo.svg/2560px-Nvidia_logo.svg.png" alt="NVIDIA">
+                </div>
+                
+                <div class="partner-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/ASRock_Logo.svg/2560px-ASRock_Logo.svg.png" alt="ASRock">
+                </div>
+                
+                <div class="partner-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/AMD_Logo.svg/2560px-AMD_Logo.svg.png" alt="AMD">
+                </div>
+                
+                <div class="partner-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Gigabyte_logo_2016.svg/2560px-Gigabyte_logo_2016.svg.png" alt="Gigabyte">
+                </div>
+                
+                <div class="partner-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Corsair_logo_logotype.png/2560px-Corsair_logo_logotype.png" alt="Corsair">
+                </div>
+                
+                <div class="partner-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/ASUS_Logo.svg/2560px-ASUS_Logo.svg.png" alt="ASUS">
+                </div>
+                
+                <div class="partner-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Intel_logo_%282006-2020%29.svg/2560px-Intel_logo_%282006-2020%29.svg.png" alt="Intel">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="site-footer"></div>
+    <script src="/assets/js/shared/storageKeys.js"></script>
+<script src="/assets/js/shared/storage.js"></script>
+    <script src="/assets/js/shared/cart.js"></script>
+    <script src="/assets/js/shared/layout.js"></script>
+    <script src="/assets/js/pages/home.js"></script>
+</body>
+</html>

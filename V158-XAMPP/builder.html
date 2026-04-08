@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Custom PC Builder - PCBuilder</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="/assets/css/styles.css" rel="stylesheet"/>
+</head>
+<body>
+<div id="site-header"></div>
+<main class="container">
+<div class="page-title">
+<h1>Custom PC Builder</h1>
+<p>Selecciona componentes compatibles para armar tu PC personalizada</p>
+</div>
+<div class="pcpp-wrap">
+<div class="pcpp-toolbar">
+<div class="pcpp-total">
+<span>Total:</span>
+<strong>$<span id="total-price">0</span></strong>
+</div>
+<div class="pcpp-actions">
+<button class="btn btn-primary" id="save-build"><i class="fas fa-save"></i> Guardar</button>
+<button class="btn btn-secondary" id="clear-build"><i class="fas fa-trash-alt"></i> Limpiar</button>
+<button class="btn btn-success" id="add-all-to-cart"><i class="fas fa-cart-plus"></i> Añadir todo al carrito</button>
+</div>
+</div>
+<!-- Enlace del build + Compatibilidad (estilo PCPartPicker) -->
+<div aria-label="Enlace del build y compatibilidad" class="pcpp-pretable-panel">
+<div class="pcpp-pretable-row pcpp-pretable-row-link">
+<div class="pcpp-pretable-title">Enlace del build</div>
+<div class="pcpp-pretable-content">
+<input class="pcpp-permalink-input" id="build-link" readonly="" type="text" value=""/>
+<button class="btn btn-secondary btn-sm" id="copy-build-link">Copiar enlace</button>
+</div>
+</div>
+<div class="pcpp-pretable-row pcpp-pretable-row-compat">
+<div class="pcpp-pretable-title">Compatibilidad</div>
+<div class="pcpp-pretable-content pcpp-compat-content">
+<span class="compatibility-summary" id="compatibility-summary">Añade componentes para verificar.</span>
+</div>
+</div>
+</div>
+<ul class="alert-list" id="compatibility-alerts">
+<li class="alert-item alert-success">
+<span>Compatibilidad: Tu construcción está vacía. Añade componentes para verificar compatibilidad.</span>
+</li>
+</ul>
+</div>
+<div class="pcpp-table-card">
+<table aria-label="Tabla de componentes (estilo PCPartPicker)" class="pcpp-table">
+<thead>
+<tr>
+<th class="pcpp-col-component">Componente</th>
+<th class="pcpp-col-selection">Selección</th>
+<th class="pcpp-col-base">Base</th>
+<th class="pcpp-col-promo">Promoción</th>
+<th class="pcpp-col-availability">Disponibilidad</th>
+<th class="pcpp-col-price">Precio</th>
+<th class="pcpp-col-buy">Acciones</th>
+<th class="pcpp-col-remove"></th>
+</tr>
+</thead>
+<tbody id="pcpp-build-body">
+<!-- Filas generadas por JS -->
+</tbody>
+</table>
+</div>
+</main>
+<!-- Modal selector de piezas -->
+<div id="site-footer"></div>
+<script src="/assets/js/data/inventory.js"></script>
+<script src="/assets/js/shared/storageKeys.js"></script>
+<script src="/assets/js/shared/storage.js"></script>
+<script src="/assets/js/shared/cart.js"></script>
+<script src="/assets/js/shared/layout.js"></script>
+<script src="/assets/js/pages/builder-modal-lazy.js"></script><script src="/assets/js/pages/builder.js"></script>
+</body>
+</html>
