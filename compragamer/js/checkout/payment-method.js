@@ -783,7 +783,7 @@ const montoDisplay = isBinanceBolivaresMethod(methodId) ? montoBs : monto;
 
     const templates = {
       efectivo_divisas: {
-        img: '/images/efectivo_divisas.png',
+        img: '../images/efectivo_divisas.png',
         note: '',
         rows: [
           ['Monto a pagar', monto],
@@ -791,7 +791,7 @@ const montoDisplay = isBinanceBolivaresMethod(methodId) ? montoBs : monto;
       },
 
       pago_movil: {
-        img: '/images/pago_movil_qr.png',
+        img: '../images/pago_movil_qr.png',
         note: 'Escanea el codigo QR para realizar el pago movil.',
         rows: [
           ['Banco', 'Banesco Banco Universal (0134)'],
@@ -802,7 +802,7 @@ const montoDisplay = isBinanceBolivaresMethod(methodId) ? montoBs : monto;
         ],
       },
       transferencia: {
-        img: '/images/transferencia_qr.png',
+        img: '../images/transferencia_qr.png',
         note: '',
         rows: [
           ['Banco', 'Banesco Banco Universal'],
@@ -813,7 +813,7 @@ const montoDisplay = isBinanceBolivaresMethod(methodId) ? montoBs : monto;
         ],
       },
       binance_pay: {
-        img: '/images/binance_pay_qr.png',
+        img: '../images/binance_pay_qr.png',
         note: 'Escanea el codigo QR para realizar el pago.',
         rows: [
           ['Correo electronico', 'goddezzeus@gmail.com'],
@@ -821,7 +821,7 @@ const montoDisplay = isBinanceBolivaresMethod(methodId) ? montoBs : monto;
         ],
       },
       zinli: {
-        img: '/images/zinli_qr.png',
+        img: '../images/zinli_qr.png',
         note: 'Escanea el codigo QR para realizar el pago.',
         rows: [
           ['Correo electronico primario', 'dakspaces@gmail.com'],
@@ -830,7 +830,7 @@ const montoDisplay = isBinanceBolivaresMethod(methodId) ? montoBs : monto;
         ],
       },
       airtm: {
-        img: '/images/airtm_qr.png',
+        img: '../images/airtm_qr.png',
         note: 'Escanea el codigo QR para realizar el pago.',
         rows: [
           ['Nombre de usuario', 'cpustorevzla'],
@@ -1353,7 +1353,7 @@ function computeTax(amount, paymentMethodId) {
     const rawItem = (item && (item.image || item.img)) || '';
     const rawInv = (inv && (inv.image || inv.img)) || '';
 
-    const fallback = '/assets/images/placeholder-product.png';
+    const fallback = '../assets/images/placeholder-product.png';
 
     const norm = (raw) => String(raw || '').trim();
 
@@ -1578,7 +1578,7 @@ const deliveryUseVES = isBinanceBolivaresMethod(deliveryPaymentMethodId);
         // permitir volver y mantener el step en shipping
         try { sessionStorage.setItem('pcbuilder_checkout_step', 'shipping'); } catch (_) {}
         try { localStorage.setItem('pcbuilder_checkout_step', 'shipping'); } catch (_) {}
-        window.location.href = '/checkout/shipping-method.html';
+        window.location.href = 'metodo-envio.html';
       });
     }
 
@@ -2417,10 +2417,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function carrierLogoPath(key){
       var k = String(key||'').toLowerCase();
-      if (k === 'mrw') return '/assets/images/mrw.png';
-      if (k === 'zoom') return '/assets/images/zoom.png';
-      if (k === 'domesa') return '/assets/images/domesa.png';
-      if (k === 'tealca') return '/assets/images/tealca.png';
+      if (k === 'mrw') return '../assets/images/mrw.png';
+      if (k === 'zoom') return '../assets/images/zoom.png';
+      if (k === 'domesa') return '../assets/images/domesa.png';
+      if (k === 'tealca') return '../assets/images/tealca.png';
       return '';
     }
 

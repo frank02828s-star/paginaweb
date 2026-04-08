@@ -96,7 +96,7 @@
 	<div class="alert alert-info" id="deliveryCashInfoDeliveryNote" role="alert" style="margin:0 0 12px; font-weight:normal;">
 	        Indicanos la cantidad exacta que cancelaras en el momento de tu entrega.
 	      </div>
-<img alt="Efectivo" height="256" src="../../V158-XAMPP/assets/images/payment-methods/cash.png" style="display:block; margin: 10px auto 14px; max-width:100%; height:auto;" width="256"/>
+<img alt="Efectivo" height="256" src="../assets/images/payment-methods/cash.png" style="display:block; margin: 10px auto 14px; max-width:100%; height:auto;" width="256"/>
 <div style="text-align:center; margin: 0 0 10px;">
 <div style="font-weight:700;">Monto total a pagar:</div>
 <div id="deliveryCashTotalToPay" style="font-size:16px; margin-top:4px; color:#16a34a; font-weight: bold;">—</div>
@@ -139,7 +139,7 @@
 <div class="alert alert-info" id="productCashInfoDynamicAlert2" role="alert" style="margin:0 0 12px; font-weight:normal;">
   Por favor Indicanos la cantidad exacta que cancelaras en tu pedido en <b id="productCashProductMethodLabel">—</b> en el momento de tu entrega.
 </div>
-<img alt="Efectivo" height="256" src="../../V158-XAMPP/assets/images/payment-methods/cash.png" style="display:block; margin: 10px auto 14px; max-width:100%; height:auto;" width="256"/>
+<img alt="Efectivo" height="256" src="../assets/images/payment-methods/cash.png" style="display:block; margin: 10px auto 14px; max-width:100%; height:auto;" width="256"/>
 <div style="text-align:center; margin: 0 0 10px;">
 <div style="font-weight:700;">Monto total a pagar:</div>
 <div id="productCashTotalToPay" style="font-size:16px; margin-top:4px; color:#16a34a; font-weight: bold;">—</div>

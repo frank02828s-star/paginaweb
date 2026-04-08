@@ -231,7 +231,7 @@ if (confirmed) {
 
   // Normaliza rutas de imagen para que funcionen en /checkout/*
   function normalizeImageSrc(src) {
-    const fallback = '/assets/images/placeholder-product.png';
+    const fallback = 'https://via.placeholder.com/44x44?text=+';
     const v = String(src || '').trim();
     if (!v) return fallback;
 
@@ -552,7 +552,7 @@ async function uploadToImgbb(blob) {
   const form = new FormData();
   form.append('image', blob);
 
-  const res = await fetch('/api/imgbb-upload.php', { method: 'POST', body: form });
+  const res = await fetch('../api/imgbb-upload.php', { method: 'POST', body: form });
   let data = null;
   try { data = await res.json(); } catch (_) {}
 
@@ -926,19 +926,19 @@ async function autoProvisionCheckoutAccount(){
     }
 
     if (!ctx.clientName || !ctx.doc || !ctx.phone || !ctx.email) {
-      return __goBackForFix('/checkout/order-verification.html', 'Faltan datos personales del cliente. Verifica el formulario y continúa nuevamente.');
+      return __goBackForFix('verificacion-orden.html', 'Faltan datos personales del cliente. Verifica el formulario y continúa nuevamente.');
     }
 
     if (!['pickup','delivery','national'].includes(shippingMethod)) {
-      return __goBackForFix('/checkout/shipping-method.html', 'Debes seleccionar un método de envío válido antes de finalizar tu pedido.');
+      return __goBackForFix('metodo-envio.html', 'Debes seleccionar un método de envío válido antes de finalizar tu pedido.');
     }
 
     if (!payId) {
-      return __goBackForFix('/checkout/order-verification.html', 'Debes seleccionar un método de pago para el producto antes de finalizar.');
+      return __goBackForFix('verificacion-orden.html', 'Debes seleccionar un método de pago para el producto antes de finalizar.');
     }
 
     if (__isBolivaresMethod(payId) && !(Number(ctx.rateUsed || 0) > 0) && !(Number(ctx.payableBsStored || 0) > 0)) {
-      return __goBackForFix('/checkout/order-verification.html', 'No se encontró la tasa del pago del producto. Vuelve a seleccionar el método de pago y confirma nuevamente.');
+      return __goBackForFix('verificacion-orden.html', 'No se encontró la tasa del pago del producto. Vuelve a seleccionar el método de pago y confirma nuevamente.');
     }
 
     if (__isCashDivisasMethod(payId) && shippingMethod !== 'pickup') {
@@ -951,23 +951,23 @@ async function autoProvisionCheckoutAccount(){
         'pcbuilder_product_cash_confirmed'
       ]);
       if (!(productCashConfirmed === '1' || productCashAmount > 0)) {
-        return __goBackForFix('/checkout/order-verification.html', 'Debes confirmar con cuánto pagarás el producto en efectivo antes de finalizar.');
+        return __goBackForFix('verificacion-orden.html', 'Debes confirmar con cuánto pagarás el producto en efectivo antes de finalizar.');
       }
     }
 
     if (__needsProofForMethod(payId) && !ctx.proofLink) {
-      return __goBackForFix('/checkout/order-verification.html', 'Falta el comprobante del pago del producto. Sube la imagen y confirma nuevamente.');
+      return __goBackForFix('verificacion-orden.html', 'Falta el comprobante del pago del producto. Sube la imagen y confirma nuevamente.');
     }
 
     if (shippingMethod === 'pickup') {
       if (!ctx.pickupMapUrl && !ctx.pickupAddressText) {
-        return __goBackForFix('/checkout/shipping-method.html', 'No se encontró la información del pickup. Vuelve a seleccionar Pickup y continúa nuevamente.');
+        return __goBackForFix('metodo-envio.html', 'No se encontró la información del pickup. Vuelve a seleccionar Pickup y continúa nuevamente.');
       }
     }
 
     if (shippingMethod === 'national') {
       if (!ctx.nationalCarrierName || !ctx.nationalAgencyName || !ctx.nationalAgencyAddress) {
-        return __goBackForFix('/checkout/shipping-method.html', 'Debes seleccionar y confirmar la agencia del envío nacional antes de finalizar.');
+        return __goBackForFix('metodo-envio.html', 'Debes seleccionar y confirmar la agencia del envío nacional antes de finalizar.');
       }
     }
 
@@ -976,19 +976,19 @@ async function autoProvisionCheckoutAccount(){
         Number.isFinite(Number(ctx.deliveryLat)) && Number.isFinite(Number(ctx.deliveryLng))
       );
       if (!hasLocation) {
-        return __goBackForFix('/checkout/shipping-method.html', 'Debes confirmar la ubicación del delivery antes de finalizar tu pedido.');
+        return __goBackForFix('metodo-envio.html', 'Debes confirmar la ubicación del delivery antes de finalizar tu pedido.');
       }
 
       const deliveryCostUsd = Number(ctx.deliveryCostUsd || 0);
       if (deliveryCostUsd > 0 && !deliveryPayId) {
-        return __goBackForFix('/checkout/order-verification.html', 'Debes seleccionar el método de pago del delivery antes de finalizar.');
+        return __goBackForFix('verificacion-orden.html', 'Debes seleccionar el método de pago del delivery antes de finalizar.');
       }
 
       if (deliveryCostUsd > 0 && __isBolivaresMethod(deliveryPayId)) {
         const dRate = Number(ctx.deliveryRateUsed || 0);
         const dBs = Number(ctx.deliveryPayableBs || 0);
         if (!(dRate > 0) || !(dBs > 0)) {
-          return __goBackForFix('/checkout/order-verification.html', 'Falta la tasa o el monto en bolívares del delivery. Vuelve a confirmar el pago del delivery.');
+          return __goBackForFix('verificacion-orden.html', 'Falta la tasa o el monto en bolívares del delivery. Vuelve a confirmar el pago del delivery.');
         }
       }
 
@@ -1002,12 +1002,12 @@ async function autoProvisionCheckoutAccount(){
           'pcbuilder_delivery_cash_confirmed'
         ]);
         if (!(deliveryCashConfirmed === '1' || deliveryCashAmount > 0)) {
-          return __goBackForFix('/checkout/order-verification.html', 'Debes confirmar con cuánto pagarás el delivery en efectivo antes de finalizar.');
+          return __goBackForFix('verificacion-orden.html', 'Debes confirmar con cuánto pagarás el delivery en efectivo antes de finalizar.');
         }
       }
 
       if (deliveryCostUsd > 0 && __needsProofForMethod(deliveryPayId) && !ctx.deliveryProofLink) {
-        return __goBackForFix('/checkout/order-verification.html', 'Falta el comprobante del pago del delivery. Sube la imagen y confirma nuevamente.');
+        return __goBackForFix('verificacion-orden.html', 'Falta el comprobante del pago del delivery. Sube la imagen y confirma nuevamente.');
       }
     }
 
@@ -1308,7 +1308,7 @@ try {
     });
 
     if (!msg || !String(msg).trim()) {
-      return __goBackForFix('/checkout/order-verification.html', 'No se pudo generar el mensaje final de WhatsApp. Revisa el checkout y vuelve a intentarlo.');
+      return __goBackForFix('verificacion-orden.html', 'No se pudo generar el mensaje final de WhatsApp. Revisa el checkout y vuelve a intentarlo.');
     }
 
     redirectToWhatsapp(msg);
