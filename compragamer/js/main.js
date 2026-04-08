@@ -495,3 +495,13 @@ function debounce(func, wait) {
 // Make functions globally available for onclick handlers
 window.removeFromCart = removeFromCart;
 window.updateQuantity = updateQuantity;
+
+// Redirect checkout buttons to carrito.html
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.checkout-btn').forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.location.href = 'carrito.html';
+        });
+    });
+});
