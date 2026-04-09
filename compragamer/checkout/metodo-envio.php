@@ -9,8 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/checkout.css">
+    <link rel="stylesheet" href="/compragamer/css/styles.css">
+    <link rel="stylesheet" href="/compragamer/css/checkout.css">
     <link rel="icon" href="https://ext.same-assets.com/4025281442/4260243455.svg" type="image/svg+xml">
 </head>
 <body>
@@ -61,10 +61,10 @@
     </main>
 <?php include __DIR__ . '/../partials/footer.php'; ?>
     <!-- Shared checkout scripts -->
-    <script src="../js/checkout/storageKeys.js"></script>
-    <script src="../js/checkout/storage.js"></script>
-    <script src="../js/checkout/cart-shared.js"></script>
-    <script src="../js/checkout/checkoutGuard.js"></script>
+    <script src="/compragamer/js/checkout/storageKeys.js"></script>
+    <script src="/compragamer/js/checkout/storage.js"></script>
+    <script src="/compragamer/js/checkout/cart-shared.js"></script>
+    <script src="/compragamer/js/checkout/checkoutGuard.js"></script>
 
     <!-- Guard: bloquea acceso si no hay carrito -->
     <script>
@@ -72,9 +72,9 @@
     </script>
 
     <!-- Pickup modal + shipping method logic -->
-    <script src="../js/checkout/shipping-pickup.js"></script>
-    <script src="../js/checkout/shipping-method.js"></script>
-    <script src="../js/checkout/checkout-modal-effects.js"></script>
+    <script src="/compragamer/js/checkout/shipping-pickup.js"></script>
+    <script src="/compragamer/js/checkout/shipping-method.js"></script>
+    <script src="/compragamer/js/checkout/checkout-modal-effects.js"></script>
 
     <!-- Cart count in header -->
     <script>

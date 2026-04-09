@@ -9,8 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/home-v2.css">
+    <link rel="stylesheet" href="/compragamer/css/styles.css">
+    <link rel="stylesheet" href="/compragamer/css/home-v2.css">
     <link rel="icon" href="https://ext.same-assets.com/4025281442/4260243455.svg" type="image/svg+xml">
 </head>
 <body>
@@ -331,8 +331,8 @@
     </div>
     <div class="modal-overlay" id="modalOverlay"></div>
 
-    <script src="js/data.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/home-v2.js"></script>
+    <script src="/compragamer/js/data.js"></script>
+    <script src="/compragamer/js/main.js"></script>
+    <script src="/compragamer/js/home-v2.js"></script>
 </body>
 </html>

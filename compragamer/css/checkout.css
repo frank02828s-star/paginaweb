@@ -360,10 +360,12 @@ a.btn, a.btn:hover, a.btn:focus {
 .checkout-method-card {
   width: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 14px;
-  padding: 20px 18px;
-  text-align: left;
+  justify-content: center;
+  gap: 18px;
+  padding: 40px 24px;
+  text-align: center;
   border: 2px solid var(--border-color);
   border-radius: var(--radius-lg);
   background: #fff;
@@ -372,6 +374,7 @@ a.btn, a.btn:hover, a.btn:focus {
   font-family: var(--font-family);
   font-size: 14px;
   box-shadow: var(--shadow);
+  min-height: 240px;
 }
 
 .checkout-method-card:hover {
@@ -381,14 +384,14 @@ a.btn, a.btn:hover, a.btn:focus {
 }
 
 .checkout-method-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: var(--radius);
+  width: 90px;
+  height: 90px;
+  border-radius: var(--radius-lg);
   border: 1px solid var(--border-color);
   background: var(--bg-color);
   color: var(--secondary-color);
   flex: 0 0 auto;
-  font-size: 22px;
+  font-size: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -403,12 +406,12 @@ a.btn, a.btn:hover, a.btn:focus {
 .checkout-method-title {
   font-weight: 800;
   color: var(--secondary-color);
-  font-size: 15px;
+  font-size: 18px;
 }
 
 .checkout-method-subtitle {
   margin-top: 4px;
-  font-size: 12px;
+  font-size: 13px;
   color: var(--text-light);
 }
 
@@ -785,9 +788,9 @@ a.btn, a.btn:hover, a.btn:focus {
 .dn-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 12px;
+  gap: 16px;
   align-items: end;
-  margin: 10px 0;
+  margin: 14px 0;
 }
 
 .dn-row.dn-row-single { grid-template-columns: 1fr; }
@@ -801,10 +804,30 @@ a.btn, a.btn:hover, a.btn:focus {
   margin: 0 0 6px;
 }
 
-.dn-field .cart-input { width: 100%; }
+.dn-field .cart-input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+
+.dn-field .cart-input:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(230, 51, 35, 0.10);
+}
+
+.dn-field-select { max-width: 120px; }
+
+.dn-field-select .cart-input {
+  padding: 10px 8px;
+}
 
 @media (max-width: 680px) {
-  .dn-row { grid-template-columns: 1fr; gap: 10px; }
+  .dn-row { grid-template-columns: 1fr; gap: 12px; }
+  .dn-field-select { max-width: 100%; }
 }
 
 @media (max-width: 980px) {
@@ -1388,3 +1411,300 @@ a.btn, a.btn:hover, a.btn:focus {
   transition: opacity 0.24s ease;
 }
 .modal-backdrop.show { opacity: 1; }
+
+/* ---- National Shipping Carriers ---- */
+.national-carriers-section {
+  margin-top: 20px;
+  padding: 16px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  background: #fafafa;
+}
+
+.national-carriers-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--secondary-color);
+  margin-bottom: 14px;
+}
+
+.national-carriers-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.national-carriers-grid .carrier-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px 10px;
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  background: #fff;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+  font-family: var(--font-family);
+}
+
+.national-carriers-grid .carrier-card:hover {
+  border-color: var(--primary-color);
+  background: #fff5f5;
+}
+
+.national-carriers-grid .carrier-card.is-selected {
+  border-color: var(--primary-color);
+  background: #fff5f5;
+  box-shadow: 0 0 0 2px var(--primary-color);
+}
+
+.national-carriers-grid .carrier-card.is-locked {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.national-carriers-grid .carrier-card img {
+  max-width: 80px;
+  max-height: 40px;
+  object-fit: contain;
+}
+
+.national-carriers-grid .carrier-card span {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--secondary-color);
+}
+
+.national-carriers-statewrap,
+.national-carriers-agencywrap {
+  margin-top: 12px;
+}
+
+.national-carriers-statewrap.is-locked,
+.national-carriers-agencywrap.is-locked {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.national-carriers-state-label {
+  display: block;
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--secondary-color);
+  margin-bottom: 6px;
+}
+
+.national-carriers-statewrap select {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  font-size: 14px;
+  font-family: var(--font-family);
+  background: #fff;
+}
+
+.national-agency-alert {
+  padding: 12px 14px;
+  border-radius: var(--radius);
+  background: #fffaf0;
+  border-left: 4px solid #dd6b20;
+  color: #7b341e;
+  font-size: 14px;
+  line-height: 1.4;
+  margin-top: 10px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.national-agency-summary {
+  margin-top: 12px;
+  padding: 12px 14px;
+  border-radius: var(--radius);
+  background: #f0fff4;
+  border-left: 4px solid #38a169;
+  color: #22543d;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.national-agency-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius);
+  background: #fff;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-bottom: 8px;
+  font-family: var(--font-family);
+}
+
+.national-agency-card:hover {
+  border-color: var(--primary-color);
+  background: #fff5f5;
+}
+
+.national-agency-card.is-selected {
+  border-color: var(--primary-color);
+  background: #fff5f5;
+}
+
+.national-agency-card.is-confirmed {
+  border-color: #38a169;
+  background: #f0fff4;
+}
+
+.national-agency-card.is-locked {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* National agency modal */
+.national-agency-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(40, 34, 38, 0.55);
+  z-index: 9995;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.national-agency-modal {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  width: min(720px, calc(100vw - 32px));
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+  overflow: visible;
+}
+
+.national-agency-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.national-agency-modal-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--secondary-color);
+}
+
+.national-agency-modal-close {
+  background: none;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 18px;
+  color: var(--text-light);
+}
+
+.national-agency-modal-close:hover {
+  color: var(--secondary-color);
+  border-color: #cbd5e1;
+}
+
+.national-agency-modal-body {
+  padding: 16px 18px;
+  overflow-y: auto;
+  max-height: calc(85vh - 60px);
+}
+
+.national-agency-modal-tablewrap {
+  overflow-x: auto;
+}
+
+.national-agency-modal-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-family);
+  font-size: 13px;
+}
+
+.national-agency-modal-table th,
+.national-agency-modal-table td {
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.national-agency-modal-table th {
+  font-weight: 700;
+  color: var(--secondary-color);
+  background: #fafafa;
+  position: sticky;
+  top: 0;
+}
+
+.national-agency-modal-table tr {
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.national-agency-modal-table tr:hover {
+  background: #fff5f5;
+}
+
+.national-agency-modal-table tr.is-selected {
+  background: #fff5f5;
+  font-weight: 700;
+}
+
+.national-form-incomplete .national-carriers-grid,
+.national-form-incomplete .national-carriers-statewrap,
+.national-form-incomplete .national-carriers-agencywrap {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+@media (max-width: 680px) {
+  .national-carriers-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ---- Fix alert clipping inside modals ---- */
+.alert,
+.checkout-alert,
+.national-agency-alert,
+.national-agency-summary {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  overflow: visible;
+}
+
+.pc-modal-dialog .alert,
+.pc-modal-dialog .checkout-alert,
+.national-agency-modal .alert,
+.national-agency-modal .checkout-alert {
+  overflow: visible;
+  text-overflow: unset;
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+/* ---- Ensure Montserrat everywhere in checkout ---- */
+.checkout-page,
+.checkout-page *,
+.order-completion-page,
+.order-completion-page *,
+.cart-page,
+.cart-page * {
+  font-family: var(--font-family);
+}
