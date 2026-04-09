@@ -152,7 +152,7 @@
                                         <!-- Botón elegir ubicación (solo DELIVERY) -->
                                         <div id="deliveryLocationWrapper" style="display:none;">
                                             <button class="btn btn-secondary cart-purchase-btn" id="btnDeliveryLocation" type="button">
-                                                <i class="fas fa-map-marker-alt"></i> Elegir la ubicacion del delivery
+                                                <i class="fas fa-map-marker-alt"></i> Elegir la ubicación del delivery
                                             </button>
                                         </div>
                                     </div>
