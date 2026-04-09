@@ -144,7 +144,7 @@
   // Usamos esto para limpiar comprobantes al cambiar de método y evitar que se mezclen.
   let __lastPaymentDetailsMethod = null;
   // Protege el acceso (carrito + paso correcto)
-  if (window.guardCheckoutStep && !window.guardCheckoutStep('payment', '/compragamer/carrito/')) return;
+  if (window.guardCheckoutStep && !window.guardCheckoutStep('payment', '/carrito/')) return;
 
   const money = (value) => {
     try {
@@ -1578,7 +1578,7 @@ const deliveryUseVES = isBinanceBolivaresMethod(deliveryPaymentMethodId);
         // permitir volver y mantener el step en shipping
         try { sessionStorage.setItem('pcbuilder_checkout_step', 'shipping'); } catch (_) {}
         try { localStorage.setItem('pcbuilder_checkout_step', 'shipping'); } catch (_) {}
-        window.location.href = '/compragamer/checkout/metodo-envio/';
+        window.location.href = '/checkout/metodo-envio/';
       });
     }
 

@@ -9,8 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="/compragamer/css/styles.css">
-    <link rel="stylesheet" href="/compragamer/css/checkout.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/checkout.css">
     <link rel="icon" href="https://ext.same-assets.com/4025281442/4260243455.svg" type="image/svg+xml">
     <style>
         /* Inline spacing override for order-completion */
@@ -106,7 +106,7 @@
                         <button id="oc-whatsapp-btn" class="btn btn-success">
                             <i class="fab fa-whatsapp"></i> Enviar por WhatsApp
                         </button>
-                        <a class="btn btn-secondary" href="/compragamer/">
+                        <a class="btn btn-secondary" href="/">
                             <i class="fas fa-home"></i> Volver al inicio
                         </a>
                     </div>
@@ -116,12 +116,12 @@
     </main>
 <?php include __DIR__ . '/../partials/footer.php'; ?>
     <!-- Shared checkout scripts -->
-    <script src="/compragamer/js/checkout/storageKeys.js"></script>
-    <script src="/compragamer/js/checkout/storage.js"></script>
-    <script src="/compragamer/js/checkout/cart-shared.js"></script>
-    <script src="/compragamer/js/checkout/checkoutGuard.js"></script>
-    <script src="/compragamer/js/checkout/whatsapp-template.js"></script>
-    <script src="/compragamer/js/checkout/order-completion.js"></script>
+    <script src="/js/checkout/storageKeys.js"></script>
+    <script src="/js/checkout/storage.js"></script>
+    <script src="/js/checkout/cart-shared.js"></script>
+    <script src="/js/checkout/checkoutGuard.js"></script>
+    <script src="/js/checkout/whatsapp-template.js"></script>
+    <script src="/js/checkout/order-completion.js"></script>
 
     <!-- WhatsApp Redirect Overlay -->
     <div id="wa-redirect-overlay" class="wa-redirect-overlay" style="display:none;">
@@ -136,7 +136,7 @@
         </div>
     </div>
 
-    <script src="/compragamer/js/checkout/checkout-modal-effects.js"></script>
+    <script src="/js/checkout/checkout-modal-effects.js"></script>
 
     <!-- Cart count + search -->
     <script>
@@ -151,7 +151,7 @@
       if (searchInput && searchBtn) {
         const go = () => {
           const q = searchInput.value.trim();
-          if (q) window.location.href = '/compragamer/productos/?search=' + encodeURIComponent(q);
+          if (q) window.location.href = '/productos/?search=' + encodeURIComponent(q);
         };
         searchBtn.addEventListener('click', go);
         searchInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') go(); });

@@ -9,8 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="/compragamer/css/styles.css">
-    <link rel="stylesheet" href="/compragamer/css/checkout.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/checkout.css">
     <link rel="icon" href="https://ext.same-assets.com/4025281442/4260243455.svg" type="image/svg+xml">
 </head>
 <body>
@@ -30,7 +30,7 @@
 
                     <div id="cart-empty" class="cart-empty is-hidden">
                         <p>Tu carrito está vacío. Agrega productos desde el catálogo para verlos aquí.</p>
-                        <a class="btn btn-primary" href="/compragamer/productos/">
+                        <a class="btn btn-primary" href="/productos/">
                             <i class="fas fa-store"></i> Ir a productos
                         </a>
                     </div>
@@ -85,10 +85,10 @@
                             <strong id="cart-total">$0</strong>
                         </div>
 
-                        <a class="btn btn-success cart-purchase-btn" id="cart-checkout-btn" href="/compragamer/checkout/metodo-envio/">
+                        <a class="btn btn-success cart-purchase-btn" id="cart-checkout-btn" href="/checkout/metodo-envio/">
                             Proceder y continuar
                         </a>
-                        <a class="btn btn-secondary cart-back-btn" href="/compragamer/productos/">
+                        <a class="btn btn-secondary cart-back-btn" href="/productos/">
                             Volver a la tienda
                         </a>
                     </div>
@@ -98,10 +98,10 @@
     </main>
 <?php include __DIR__ . '/partials/footer.php'; ?>
     <!-- Shared checkout scripts -->
-    <script src="/compragamer/js/checkout/storageKeys.js"></script>
-    <script src="/compragamer/js/checkout/storage.js"></script>
-    <script src="/compragamer/js/checkout/cart-shared.js"></script>
-    <script src="/compragamer/js/checkout/checkoutGuard.js"></script>
+    <script src="/js/checkout/storageKeys.js"></script>
+    <script src="/js/checkout/storage.js"></script>
+    <script src="/js/checkout/cart-shared.js"></script>
+    <script src="/js/checkout/checkoutGuard.js"></script>
 
     <!-- Cart page script -->
     <script>
@@ -336,7 +336,7 @@
       if (searchInput && searchBtn) {
         const go = () => {
           const q = searchInput.value.trim();
-          if (q) window.location.href = '/compragamer/productos/?search=' + encodeURIComponent(q);
+          if (q) window.location.href = '/productos/?search=' + encodeURIComponent(q);
         };
         searchBtn.addEventListener('click', go);
         searchInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') go(); });

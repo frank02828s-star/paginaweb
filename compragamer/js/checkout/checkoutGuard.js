@@ -60,13 +60,13 @@
 
     if (isOrderCompleted() && (!items || items <= 0)) {
       clearStep();
-      window.location.replace('/compragamer/carrito/');
+      window.location.replace('/carrito/');
       return false;
     }
 
     if (!items || items <= 0) {
       clearStep();
-      window.location.replace(redirectTo || '/compragamer/carrito/');
+      window.location.replace(redirectTo || '/carrito/');
       return false;
     }
 
@@ -74,11 +74,11 @@
     const expected = normalize(expectedStep);
     if (step && !validSteps.includes(step)) {
       clearStep();
-      window.location.replace(redirectTo || '/compragamer/carrito/');
+      window.location.replace(redirectTo || '/carrito/');
       return false;
     }
     if (expected && step !== expected) {
-      window.location.replace(redirectTo || '/compragamer/carrito/');
+      window.location.replace(redirectTo || '/carrito/');
       return false;
     }
 

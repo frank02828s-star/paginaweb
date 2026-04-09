@@ -9,8 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="/compragamer/css/styles.css">
-    <link rel="stylesheet" href="/compragamer/css/home-v2.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/home-v2.css">
     <link rel="icon" href="https://ext.same-assets.com/4025281442/4260243455.svg" type="image/svg+xml">
 </head>
 <body>
@@ -51,7 +51,7 @@
 
             <!-- Side Banners -->
             <div class="side-banners">
-                <a href="/compragamer/productos/" class="side-banner">
+                <a href="/productos/" class="side-banner">
                     <img src="https://imagenes.compragamer.com/espacioWeb/DC_20260406161521_svzvf1OB.jpg" alt="Lista de Precios">
                     <div class="banner-content">
                         <span class="banner-small">¿Tienes una idea de los componentes que quieres en tu nueva PC?</span>
@@ -59,13 +59,13 @@
                         <p>AHORRA usando nuestros precios más bajos.</p>
                     </div>
                 </a>
-                <a href="/compragamer/productos/?cate=pc" class="side-banner">
+                <a href="/productos/?cate=pc" class="side-banner">
                     <img src="https://imagenes.compragamer.com/bannerPrincipal/DC_20260401111814_3wR0YRKX.jpg" alt="Edition Gamer Limited">
                     <div class="banner-content">
                         <h3>EDITION<br>GAMER LIMITED</h3>
                     </div>
                 </a>
-                <a href="/compragamer/productos/" class="side-banner addi-banner">
+                <a href="/productos/" class="side-banner addi-banner">
                     <div class="banner-content">
                         <span class="banner-small">Compra ahora,<br>y paga después con</span>
                         <h3 class="addi-logo">Addi</h3>
@@ -84,73 +84,73 @@
             <h2 class="section-title">CATEGORÍAS DESTACADAS</h2>
 
             <div class="categories-grid">
-                <a href="/compragamer/productos/?cate=pc" class="category-item">
+                <a href="/productos/?cate=pc" class="category-item">
                     <div class="category-icon">
                         <img src="https://ext.same-assets.com/2607188538/1125559298.webp" alt="PC">
                     </div>
                     <span>PC</span>
                 </a>
-                <a href="/compragamer/productos/?cate=notebooks" class="category-item">
+                <a href="/productos/?cate=notebooks" class="category-item">
                     <div class="category-icon">
                         <img src="https://ext.same-assets.com/2607188538/1531796865.webp" alt="Portátiles">
                     </div>
                     <span>PORTATILES</span>
                 </a>
-                <a href="/compragamer/productos/?cate=placas" class="category-item">
+                <a href="/productos/?cate=placas" class="category-item">
                     <div class="category-icon">
                         <img src="https://ext.same-assets.com/2607188538/3438154732.webp" alt="GPU">
                     </div>
                     <span>GPU</span>
                 </a>
-                <a href="/compragamer/productos/?cate=monitores" class="category-item">
+                <a href="/productos/?cate=monitores" class="category-item">
                     <div class="category-icon">
                         <img src="https://ext.same-assets.com/2607188538/2258092406.webp" alt="Monitores">
                     </div>
                     <span>MONITORES</span>
                 </a>
-                <a href="/compragamer/productos/?cate=gabinetes" class="category-item">
+                <a href="/productos/?cate=gabinetes" class="category-item">
                     <div class="category-icon">
                         <img src="https://ext.same-assets.com/2607188538/4013758804.webp" alt="Chasis">
                     </div>
                     <span>CHASIS</span>
                 </a>
-                <a href="/compragamer/productos/?cate=sillas" class="category-item">
+                <a href="/productos/?cate=sillas" class="category-item">
                     <div class="category-icon">
                         <img src="https://ext.same-assets.com/2607188538/4257531422.webp" alt="Sillas">
                     </div>
                     <span>SILLAS</span>
                 </a>
-                <a href="/compragamer/productos/?cate=refrigeracion" class="category-item">
+                <a href="/productos/?cate=refrigeracion" class="category-item">
                     <div class="category-icon">
                         <img src="https://ext.same-assets.com/2607188538/2388835604.webp" alt="Cooling">
                     </div>
                     <span>COOLING</span>
                 </a>
-                <a href="/compragamer/productos/?cate=procesadores" class="category-item">
+                <a href="/productos/?cate=procesadores" class="category-item">
                     <div class="category-icon">
                         <img src="https://ext.same-assets.com/2607188538/1535875518.webp" alt="CPU">
                     </div>
                     <span>CPU</span>
                 </a>
-                <a href="/compragamer/productos/" class="category-item">
+                <a href="/productos/" class="category-item">
                     <div class="category-icon">
                         <img src="https://ext.same-assets.com/2607188538/1761895700.webp" alt="SimRacing">
                     </div>
                     <span>SIMRACING</span>
                 </a>
-                <a href="/compragamer/productos/?cate=mothers" class="category-item">
+                <a href="/productos/?cate=mothers" class="category-item">
                     <div class="category-icon">
                         <img src="https://ext.same-assets.com/2607188538/562476740.webp" alt="Board">
                     </div>
                     <span>BOARD</span>
                 </a>
-                <a href="/compragamer/productos/?cate=ram" class="category-item">
+                <a href="/productos/?cate=ram" class="category-item">
                     <div class="category-icon">
                         <img src="https://ext.same-assets.com/2607188538/896279546.webp" alt="RAM">
                     </div>
                     <span>RAM</span>
                 </a>
-                <a href="/compragamer/productos/?cate=fuentes" class="category-item">
+                <a href="/productos/?cate=fuentes" class="category-item">
                     <div class="category-icon">
                         <img src="https://ext.same-assets.com/2607188538/1524861650.webp" alt="Fuente">
                     </div>
@@ -165,7 +165,7 @@
         <div class="section-container">
             <div class="section-header">
                 <h2 class="section-title">OFERTAS EN PRODUCTOS</h2>
-                <a href="/compragamer/productos/" class="btn-ver-mas">Ver más</a>
+                <a href="/productos/" class="btn-ver-mas">Ver más</a>
             </div>
 
             <div class="products-grid" id="offersGrid">
@@ -179,7 +179,7 @@
         <div class="section-container">
             <div class="section-header">
                 <h2 class="section-title">MARCAS DESTACADAS</h2>
-                <a href="/compragamer/productos/" class="btn-ver-mas">Ver más</a>
+                <a href="/productos/" class="btn-ver-mas">Ver más</a>
             </div>
         </div>
     </section>
@@ -217,7 +217,7 @@
                 <div class="pc-banner-content">
                     <h2>SLIDER DE PC ENSAMBLADAS</h2>
                     <p>Equipos listos para jugar, crear y streamear</p>
-                    <a href="/compragamer/armatupc/" class="btn-primary">Ver configuraciones</a>
+                    <a href="/armatupc/" class="btn-primary">Ver configuraciones</a>
                 </div>
                 <div class="pc-banner-image">
                     <img src="https://imagenes.compragamer.com/bannerPrincipal/DC_20260401111814_3wR0YRKX.jpg" alt="PC Gaming">
@@ -237,7 +237,7 @@
         <div class="section-container">
             <div class="section-header">
                 <h2 class="section-title">LAPTOPS GAMER</h2>
-                <a href="/compragamer/productos/?cate=notebooks" class="btn-ver-mas">Ver más</a>
+                <a href="/productos/?cate=notebooks" class="btn-ver-mas">Ver más</a>
             </div>
 
             <div class="products-grid" id="laptopsGrid">
@@ -251,32 +251,32 @@
         <div class="section-container">
             <div class="section-header">
                 <h2 class="section-title">ARMA TU SETUP</h2>
-                <a href="/compragamer/productos/" class="btn-ver-mas">Ver más</a>
+                <a href="/productos/" class="btn-ver-mas">Ver más</a>
             </div>
 
             <div class="setup-grid">
-                <a href="/compragamer/armatupc/" class="setup-card">
+                <a href="/armatupc/" class="setup-card">
                     <img src="https://imagenes.compragamer.com/bannerPrincipal/DC_20260401111814_3wR0YRKX.jpg" alt="Arma tu Setup">
                     <div class="setup-overlay">
                         <h3>ARMA TU SETUP</h3>
                         <p>Configura Rápido Desde $15M / Build Gamer</p>
                     </div>
                 </a>
-                <a href="/compragamer/productos/?cate=refrigeracion" class="setup-card">
+                <a href="/productos/?cate=refrigeracion" class="setup-card">
                     <img src="https://imagenes.compragamer.com/bannerPrincipal/DC_20260331180627_MDGyNnty.jpg" alt="Refrigeración Líquida">
                     <div class="setup-overlay">
                         <h3>REFRIGERACIÓN LIQUIDA</h3>
                         <p>Corsair | NZXT | De Gabinete Gamer</p>
                     </div>
                 </a>
-                <a href="/compragamer/productos/?cate=gabinetes" class="setup-card">
+                <a href="/productos/?cate=gabinetes" class="setup-card">
                     <img src="https://imagenes.compragamer.com/bannerPrincipal/DC_20260406173831_fnCVhoKY.jpg" alt="RGB & Modding">
                     <div class="setup-overlay">
                         <h3>RGB & MODDING</h3>
                         <p>Controladores | RGB | Teclados | USB</p>
                     </div>
                 </a>
-                <a href="/compragamer/productos/" class="setup-card">
+                <a href="/productos/" class="setup-card">
                     <img src="https://imagenes.compragamer.com/bannerPrincipal/DC_20260406091339_TtGSabc9.jpg" alt="Streaming Pro">
                     <div class="setup-overlay">
                         <h3>STREAMING PRO</h3>
@@ -303,7 +303,7 @@
                 <span>Total:</span>
                 <span id="cartTotal">$0</span>
             </div>
-            <button class="btn-primary checkout-btn" onclick="window.location.href='/compragamer/carrito/'">Finalizar compra</button>
+            <button class="btn-primary checkout-btn" onclick="window.location.href='/carrito/'">Finalizar compra</button>
         </div>
     </div>
     <div class="cart-overlay" id="cartOverlay"></div>
@@ -331,8 +331,8 @@
     </div>
     <div class="modal-overlay" id="modalOverlay"></div>
 
-    <script src="/compragamer/js/data.js"></script>
-    <script src="/compragamer/js/main.js"></script>
-    <script src="/compragamer/js/home-v2.js"></script>
+    <script src="/js/data.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/home-v2.js"></script>
 </body>
 </html>

@@ -6,7 +6,7 @@
   'use strict';
 
   function init(){
-    if (window.guardCheckoutStep && !window.guardCheckoutStep('shipping', '/compragamer/carrito/')) return;
+    if (window.guardCheckoutStep && !window.guardCheckoutStep('shipping', '/carrito/')) return;
     const cards = document.querySelectorAll('.checkout-method-card[data-shipping]');
     if (!cards || !cards.length) return;
 
@@ -27,7 +27,7 @@
           try { sessionStorage.setItem('pcbuilder_checkout_step', 'payment'); } catch (_) {}
           try { localStorage.setItem('pcbuilder_checkout_step', 'payment'); } catch (_) {}
         }
-        window.location.href = '/compragamer/checkout/verificacion-orden/';
+        window.location.href = '/checkout/verificacion-orden/';
       });
     });
   }

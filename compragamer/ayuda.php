@@ -9,15 +9,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="/compragamer/css/styles.css">
-    <link rel="stylesheet" href="/compragamer/css/ayuda.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/ayuda.css">
     <link rel="icon" href="https://ext.same-assets.com/4025281442/4260243455.svg" type="image/svg+xml">
 </head>
 <body>
 <?php include __DIR__ . '/partials/header.php'; ?>
     <section class="page-header">
         <div class="page-header-container">
-            <a href="/compragamer/" class="back-link"><span class="material-icons">chevron_left</span></a>
+            <a href="/" class="back-link"><span class="material-icons">chevron_left</span></a>
             <h1>Preguntas Frecuentes</h1>
         </div>
     </section>
@@ -76,8 +76,8 @@
     </div>
     <div class="modal-overlay" id="modalOverlay"></div>
 
-    <script src="/compragamer/js/data.js"></script>
-    <script src="/compragamer/js/main.js"></script>
-    <script src="/compragamer/js/ayuda.js"></script>
+    <script src="/js/data.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/ayuda.js"></script>
 </body>
 </html>

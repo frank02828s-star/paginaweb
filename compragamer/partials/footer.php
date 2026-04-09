@@ -7,7 +7,7 @@
                 </a>
             </div>
             <div class="footer-col">
-                <a href="/compragamer/ayuda/" class="footer-link btn-outline-dark">Ayuda</a>
+                <a href="/ayuda/" class="footer-link btn-outline-dark">Ayuda</a>
                 <a href="#" class="footer-link btn-outline-dark">Botón de arrepentimiento</a>
                 <a href="#" class="footer-link">Términos y condiciones</a>
             </div>
