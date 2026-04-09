@@ -190,19 +190,40 @@
             </div>
             <div class="brands-static-grid">
                 <div class="brand-static-item">
-                    <img src="https://ext.same-assets.com/2607188538/174554472.webp" alt="MSI">
+                    <img src="https://ext.same-assets.com/2607188538/3500028319.webp" alt="GIGABYTE">
                 </div>
                 <div class="brand-static-item">
                     <img src="https://ext.same-assets.com/2607188538/2413374335.webp" alt="ASUS">
                 </div>
                 <div class="brand-static-item">
-                    <img src="https://ext.same-assets.com/2607188538/2949603871.webp" alt="Corsair">
+                    <img src="https://ext.same-assets.com/2607188538/2949603871.webp" alt="CORSAIR">
                 </div>
                 <div class="brand-static-item">
-                    <img src="https://ext.same-assets.com/2607188538/3500028319.webp" alt="GIGABYTE">
+                    <img src="https://ext.same-assets.com/2607188538/174554472.webp" alt="MSI">
                 </div>
                 <div class="brand-static-item">
                     <img src="https://ext.same-assets.com/2607188538/3699102926.webp" alt="ASROCK">
+                </div>
+                <div class="brand-static-item">
+                    <img src="https://ext.same-assets.com/2607188538/2832023656.webp" alt="LIAN LI">
+                </div>
+                <div class="brand-static-item">
+                    <img src="https://ext.same-assets.com/2607188538/328983973.webp" alt="GAMEMAX">
+                </div>
+                <div class="brand-static-item">
+                    <img src="https://ext.same-assets.com/2607188538/3699102926.webp" alt="JEMIP">
+                </div>
+                <div class="brand-static-item">
+                    <img src="https://ext.same-assets.com/2607188538/1606536654.webp" alt="HIKSEMI">
+                </div>
+                <div class="brand-static-item">
+                    <img src="https://ext.same-assets.com/2607188538/3500028319.webp" alt="DEEPCOOL">
+                </div>
+                <div class="brand-static-item">
+                    <img src="https://ext.same-assets.com/2607188538/174554472.webp" alt="REDRAGON">
+                </div>
+                <div class="brand-static-item">
+                    <img src="https://ext.same-assets.com/2607188538/2413374335.webp" alt="XPG">
                 </div>
             </div>
         </div>

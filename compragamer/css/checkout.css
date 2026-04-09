@@ -857,7 +857,7 @@ a.btn, a.btn:hover, a.btn:focus {
   grid-template-columns: auto 1fr !important;
   width: 100% !important;
   justify-content: flex-start !important;
-  gap: 8px !important;
+  gap: 12px !important;
 }
 /* Nombre/Apellido row: equal columns */
 .payment-details-inner .dn-form .dn-row:first-child {
@@ -866,19 +866,18 @@ a.btn, a.btn:hover, a.btn:focus {
 .payment-details-inner .dn-form .dn-field {
   flex: 0 0 auto !important;
 }
+/* Email row: keep same grid as Nombre/Apellido so email ends at Apellido edge */
 .payment-details-inner .dn-form .dn-row.dn-row-single {
-  display: block !important;
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
   width: 100% !important;
 }
 .payment-details-inner .dn-form .dn-row.dn-row-single .dn-field {
-  width: 100%;
+  grid-column: 1 / -1;
 }
 .payment-details-inner .dn-form .dn-row.dn-row-single .cart-input {
   width: 100% !important;
   max-width: 100% !important;
-}
-.payment-details-inner .dn-form .dn-row-single {
-  width: 100% !important;
 }
 .payment-details-inner .dn-form #dn-email {
   width: 100% !important;

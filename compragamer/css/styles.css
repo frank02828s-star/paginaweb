@@ -914,6 +914,11 @@ ul, ol {
     margin-top: 8px;
 }
 
+.modal .btn-primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
 .register-link {
     text-align: center;
     font-size: 13px;

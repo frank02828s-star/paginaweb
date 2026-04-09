@@ -57,7 +57,7 @@
                                                 inputmode="text"
                                                 maxlength="20"
                                                 pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{1,20}"
-                                                placeholder="Ej: Carlos"
+                                                placeholder="Tu nombre"
                                                 required
                                                 title="Solo letras (máx. 20 caracteres)"
                                                 type="text"
@@ -72,7 +72,7 @@
                                                 inputmode="text"
                                                 maxlength="20"
                                                 pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{1,20}"
-                                                placeholder="Ej: Pérez"
+                                                placeholder="Tu apellido"
                                                 required
                                                 title="Solo letras (máx. 20 caracteres)"
                                                 type="text"
@@ -100,7 +100,7 @@
                                                 maxlength="8"
                                                 minlength="8"
                                                 pattern="\d{8}"
-                                                placeholder="Ej: 12345678"
+                                                placeholder="Nro. de documento"
                                                 required
                                                 title="Solo números (8 dígitos)"
                                                 type="text"
@@ -127,7 +127,7 @@
                                                 inputmode="numeric"
                                                 maxlength="7"
                                                 pattern="\d{7}"
-                                                placeholder="Ej: 1234567"
+                                                placeholder="Nro. de teléfono"
                                                 required
                                                 title="Solo números (7 dígitos)"
                                                 type="tel"
@@ -143,7 +143,7 @@
                                                 id="dn-email"
                                                 inputmode="email"
                                                 maxlength="50"
-                                                placeholder="Ej: correo@dominio.com"
+                                                placeholder="tucorreo@ejemplo.com"
                                                 required
                                                 title="Ingresa un correo válido (máx. 50 caracteres)"
                                                 type="email"

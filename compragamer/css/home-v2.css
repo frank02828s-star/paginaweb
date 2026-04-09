@@ -481,8 +481,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 50px;
+    gap: 40px;
     flex-wrap: wrap;
+    padding: 10px 20px;
 }
 
 .brand-static-item {
@@ -492,8 +493,8 @@
 }
 
 .brand-static-item img {
-    height: 30px;
-    opacity: 0.6;
+    height: 55px;
+    opacity: 0.5;
     filter: grayscale(100%);
     transition: all 0.3s ease;
 }
@@ -738,11 +739,11 @@
     }
 
     .brands-static-grid {
-        gap: 30px;
+        gap: 25px;
     }
 
     .brand-static-item img {
-        height: 24px;
+        height: 40px;
     }
 }
 
