@@ -801,6 +801,32 @@ ul, ol {
     font-weight: 500;
 }
 
+.form-row-inline {
+    display: flex;
+    gap: 8px;
+}
+
+.form-row-inline input {
+    flex: 1;
+}
+
+.form-select-sm {
+    width: 70px;
+    padding: 12px 8px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    outline: none;
+    font-family: inherit;
+    font-size: inherit;
+    background: var(--bg-white);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.form-select-sm:focus {
+    border-color: var(--primary-color);
+}
+
 .modal-overlay {
     position: fixed;
     top: 0;

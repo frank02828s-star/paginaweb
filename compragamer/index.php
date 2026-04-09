@@ -165,7 +165,6 @@
         <div class="section-container">
             <div class="section-header">
                 <h2 class="section-title">OFERTAS EN PRODUCTOS</h2>
-                <a href="/productos/" class="btn-ver-mas">Ver más</a>
             </div>
 
             <div class="products-grid" id="offersGrid">
@@ -179,7 +178,6 @@
         <div class="section-container">
             <div class="section-header">
                 <h2 class="section-title">MARCAS DESTACADAS</h2>
-                <a href="/productos/" class="btn-ver-mas">Ver más</a>
             </div>
         </div>
     </section>
@@ -237,7 +235,6 @@
         <div class="section-container">
             <div class="section-header">
                 <h2 class="section-title">LAPTOPS GAMER</h2>
-                <a href="/productos/?cate=notebooks" class="btn-ver-mas">Ver más</a>
             </div>
 
             <div class="products-grid" id="laptopsGrid">
@@ -251,7 +248,6 @@
         <div class="section-container">
             <div class="section-header">
                 <h2 class="section-title">ARMA TU SETUP</h2>
-                <a href="/productos/" class="btn-ver-mas">Ver más</a>
             </div>
 
             <div class="setup-grid">
@@ -308,28 +304,7 @@
     </div>
     <div class="cart-overlay" id="cartOverlay"></div>
 
-    <!-- Login Modal -->
-    <div class="modal" id="loginModal">
-        <div class="modal-content">
-            <button class="modal-close" id="closeLogin">
-                <span class="material-icons">close</span>
-            </button>
-            <h2>Iniciá sesión</h2>
-            <form id="loginForm">
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="password">Contraseña</label>
-                    <input type="password" id="password" required>
-                </div>
-                <button type="submit" class="btn-primary">Ingresar</button>
-            </form>
-            <p class="register-link">¿No tenés cuenta? <a href="#">Registrate</a></p>
-        </div>
-    </div>
-    <div class="modal-overlay" id="modalOverlay"></div>
+<?php include __DIR__ . '/partials/login-modal.php'; ?>
 
     <script src="/js/data.js"></script>
     <script src="/js/main.js"></script>

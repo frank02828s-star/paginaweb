@@ -99,6 +99,8 @@
     </div>
     <div class="cart-overlay" id="cartOverlay"></div>
 
+<?php include __DIR__ . '/partials/login-modal.php'; ?>
+
     <script src="/js/data.js"></script>
     <script src="/js/main.js"></script>
     <script src="/js/productos.js"></script>

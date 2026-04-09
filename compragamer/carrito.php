@@ -97,6 +97,7 @@
         </div>
     </main>
 <?php include __DIR__ . '/partials/footer.php'; ?>
+<?php include __DIR__ . '/partials/login-modal.php'; ?>
     <!-- Shared checkout scripts -->
     <script src="/js/checkout/storageKeys.js"></script>
     <script src="/js/checkout/storage.js"></script>

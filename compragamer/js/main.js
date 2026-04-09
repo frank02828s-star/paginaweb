@@ -349,41 +349,8 @@ function updateCartCount() {
 // MODAL
 // =====================================================
 function initModal() {
-    const loginBtn = document.getElementById('loginBtn');
-    const loginModal = document.getElementById('loginModal');
-    const modalOverlay = document.getElementById('modalOverlay');
-    const closeLogin = document.getElementById('closeLogin');
-    const loginForm = document.getElementById('loginForm');
-
-    if (!loginBtn || !loginModal) return;
-
-    function openModal() {
-        loginModal.classList.add('open');
-        modalOverlay.classList.add('open');
-        document.body.style.overflow = 'hidden';
-    }
-
-    function closeModal() {
-        loginModal.classList.remove('open');
-        modalOverlay.classList.remove('open');
-        document.body.style.overflow = '';
-    }
-
-    loginBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        openModal();
-    });
-
-    closeLogin.addEventListener('click', closeModal);
-    modalOverlay.addEventListener('click', closeModal);
-
-    if (loginForm) {
-        loginForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            showNotification('Funcionalidad de login simulada');
-            closeModal();
-        });
-    }
+    // Login modal is now handled by partials/login-modal.php
+    // This function is kept as a no-op for backward compatibility
 }
 
 // =====================================================

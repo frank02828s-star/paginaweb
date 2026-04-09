@@ -1845,8 +1845,6 @@ a.btn, a.btn:hover, a.btn:focus {
 }
 
 .national-agency-modal-gmapsbtn {
-  margin-top: 10px;
-  width: 100%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1860,9 +1858,39 @@ a.btn, a.btn:hover, a.btn:focus {
   font-weight: 900;
   cursor: pointer;
   box-shadow: var(--shadow);
+  flex: 1;
 }
 
 .national-agency-modal-gmapsbtn:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-1px);
+}
+
+.national-agency-modal-btnrow {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.national-agency-modal-usebtn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 0;
+  background: #16a34a;
+  color: #fff;
+  border-radius: var(--radius-lg);
+  padding: 12px 14px;
+  font-weight: 900;
+  cursor: pointer;
+  font-family: var(--font-family);
+  box-shadow: var(--shadow);
+}
+
+.national-agency-modal-usebtn:hover {
+  background: #15803d;
   box-shadow: var(--shadow-lg);
   transform: translateY(-1px);
 }
@@ -1887,9 +1915,13 @@ a.btn, a.btn:hover, a.btn:focus {
   inset: 0;
   background: rgba(40, 34, 38, 0.55);
   z-index: 9995;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
+}
+
+.national-agency-modal-overlay.is-open {
+  display: flex;
 }
 
 .national-agency-modal {

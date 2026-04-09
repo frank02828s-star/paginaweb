@@ -62,19 +62,7 @@
     </div>
     <div class="cart-overlay" id="cartOverlay"></div>
 
-    <div class="modal" id="loginModal">
-        <div class="modal-content">
-            <button class="modal-close" id="closeLogin"><span class="material-icons">close</span></button>
-            <h2>Iniciá sesión</h2>
-            <form id="loginForm">
-                <div class="form-group"><label for="email">Email</label><input type="email" id="email" required></div>
-                <div class="form-group"><label for="password">Contraseña</label><input type="password" id="password" required></div>
-                <button type="submit" class="btn-primary">Ingresar</button>
-            </form>
-            <p class="register-link">¿No tenés cuenta? <a href="#">Registrate</a></p>
-        </div>
-    </div>
-    <div class="modal-overlay" id="modalOverlay"></div>
+<?php include __DIR__ . '/partials/login-modal.php'; ?>
 
     <script src="/js/data.js"></script>
     <script src="/js/main.js"></script>

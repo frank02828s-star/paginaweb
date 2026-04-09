@@ -2790,8 +2790,19 @@ function renderNationalSummary(sel){
       gbtn.rel = 'noopener';
       gbtn.textContent = 'Ver en Google Maps';
 
+      var useAgencyBtn = document.createElement('button');
+      useAgencyBtn.id = 'nationalAgencyModalUseBtn';
+      useAgencyBtn.type = 'button';
+      useAgencyBtn.className = 'national-agency-modal-usebtn';
+      useAgencyBtn.textContent = 'Quiero usar esta agencia';
+
       mapWrap.appendChild(iframe);
-      mapWrap.appendChild(gbtn);
+
+      var btnRow = document.createElement('div');
+      btnRow.className = 'national-agency-modal-btnrow';
+      btnRow.appendChild(gbtn);
+      btnRow.appendChild(useAgencyBtn);
+      mapWrap.appendChild(btnRow);
 
       body.appendChild(tableWrap);
       body.appendChild(mapWrap);
@@ -2916,6 +2927,29 @@ function renderNationalSummary(sel){
       iframe.src = buildEmbedUrl(gmapsUrl, agency);
       gbtn.href = gmapsUrl || '#';
       gbtn.style.display = gmapsUrl ? 'inline-flex' : 'none';
+
+      // Store agency/carrier reference for "use this agency" button
+      var useBtn = document.getElementById('nationalAgencyModalUseBtn');
+      if (useBtn) {
+        var newUseBtn = useBtn.cloneNode(true);
+        useBtn.parentNode.replaceChild(newUseBtn, useBtn);
+        newUseBtn.id = 'nationalAgencyModalUseBtn';
+        newUseBtn.addEventListener('click', function(ev){
+          ev.preventDefault();
+          ev.stopPropagation();
+          closeAgencyModal();
+          // Find and click the inline "use agency" button for this agency
+          var agencyCard = document.querySelector('.national-agency-card[data-agency-id="' + (agency.id || '') + '"]');
+          if (agencyCard) {
+            agencyCard.click();
+            var inlineBtn = agencyCard.querySelector('.btn-use-agency-inline');
+            if (inlineBtn) {
+              inlineBtn.style.display = '';
+              inlineBtn.click();
+            }
+          }
+        });
+      }
 
       document.body.classList.add('no-scroll');
       requestAnimationFrame(function(){ overlay.classList.add('is-open'); });
