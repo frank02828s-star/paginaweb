@@ -119,7 +119,7 @@ function loadLatestProducts() {
     if (!grid) return;
 
     grid.innerHTML = latestProducts.map(product => `
-        <a href="productos.html?id=${product.id}" class="product-card">
+        <a href="/productos/?id=${product.id}" class="product-card">
             <div class="product-image">
                 <img src="${product.image}" alt="${product.title}" onerror="this.src='${PLACEHOLDER_IMG}'">
             </div>
@@ -181,7 +181,7 @@ function createProductCard(product) {
             </div>
             <div class="product-info">
                 <h3 class="product-title">
-                    <a href="productos.html?id=${product.id}">${product.title}</a>
+                    <a href="/productos/?id=${product.id}">${product.title}</a>
                 </h3>
                 <div class="product-prices">
                     ${product.oldPrice ? `<span class="price-old">${formatPrice(product.oldPrice)}</span>` : ''}
@@ -398,7 +398,7 @@ function initSearch() {
     function performSearch() {
         const query = searchInput.value.trim();
         if (query) {
-            window.location.href = `productos.html?search=${encodeURIComponent(query)}`;
+            window.location.href = `/productos/?search=${encodeURIComponent(query)}`;
         }
     }
 
@@ -496,12 +496,12 @@ function debounce(func, wait) {
 window.removeFromCart = removeFromCart;
 window.updateQuantity = updateQuantity;
 
-// Redirect checkout buttons to carrito.html
+// Redirect checkout buttons to carrito
 document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.checkout-btn').forEach(function(btn) {
         btn.addEventListener('click', function(e) {
             e.preventDefault();
-            window.location.href = 'carrito.html';
+            window.location.href = '/carrito/';
         });
     });
 });

@@ -354,7 +354,7 @@ a.btn, a.btn:hover, a.btn:focus {
 .checkout-methods {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
+  gap: 18px;
 }
 
 .checkout-method-card {
@@ -364,7 +364,7 @@ a.btn, a.btn:hover, a.btn:focus {
   align-items: center;
   justify-content: center;
   gap: 18px;
-  padding: 40px 24px;
+  padding: 48px 28px;
   text-align: center;
   border: 2px solid var(--border-color);
   border-radius: var(--radius-lg);
@@ -374,7 +374,7 @@ a.btn, a.btn:hover, a.btn:focus {
   font-family: var(--font-family);
   font-size: 14px;
   box-shadow: var(--shadow);
-  min-height: 240px;
+  min-height: 280px;
 }
 
 .checkout-method-card:hover {
@@ -790,7 +790,7 @@ a.btn, a.btn:hover, a.btn:focus {
   grid-template-columns: 1fr 1fr;
   gap: 16px;
   align-items: end;
-  margin: 14px 0;
+  margin: 6px 0;
 }
 
 .dn-row.dn-row-single { grid-template-columns: 1fr; }

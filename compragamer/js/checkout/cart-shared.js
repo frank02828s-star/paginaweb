@@ -85,7 +85,8 @@ function removeFromCart(productId, category) {
     
     // Filtrar el producto a eliminar
     const pid = (typeof productId === 'string') ? parseInt(productId, 10) : productId;
-    const updatedCart = cart.filter(item => !(String(item.id) === String(pid) && item.category === category));
+    const cat = category || '';
+    const updatedCart = cart.filter(item => !(String(item.id) === String(pid) && (item.category || '') === cat));
     
     // Si se eliminó algún elemento, guardar
     if (updatedCart.length < initialLength) {
@@ -105,7 +106,8 @@ function updateCartQuantity(productId, category, newQuantity) {
     
     const cart = loadCartFromStorage();
     const pid = (typeof productId === 'string') ? parseInt(productId, 10) : productId;
-    const itemIndex = cart.findIndex(item => String(item.id) === String(pid) && item.category === category);
+    const cat = category || '';
+    const itemIndex = cart.findIndex(item => String(item.id) === String(pid) && (item.category || '') === cat);
     
     if (itemIndex !== -1) {
         cart[itemIndex].quantity = Math.max(1, parseInt(newQuantity, 10) || 1);

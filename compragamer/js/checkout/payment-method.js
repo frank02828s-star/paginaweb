@@ -783,7 +783,7 @@ const montoDisplay = isBinanceBolivaresMethod(methodId) ? montoBs : monto;
 
     const templates = {
       efectivo_divisas: {
-        img: '../images/efectivo_divisas.png',
+        img: '/images/efectivo_divisas.png',
         note: '',
         rows: [
           ['Monto a pagar', monto],
@@ -791,7 +791,7 @@ const montoDisplay = isBinanceBolivaresMethod(methodId) ? montoBs : monto;
       },
 
       pago_movil: {
-        img: '../images/pago_movil_qr.png',
+        img: '/images/pago_movil_qr.png',
         note: 'Escanea el codigo QR para realizar el pago movil.',
         rows: [
           ['Banco', 'Banesco Banco Universal (0134)'],
@@ -802,7 +802,7 @@ const montoDisplay = isBinanceBolivaresMethod(methodId) ? montoBs : monto;
         ],
       },
       transferencia: {
-        img: '../images/transferencia_qr.png',
+        img: '/images/transferencia_qr.png',
         note: '',
         rows: [
           ['Banco', 'Banesco Banco Universal'],
@@ -813,7 +813,7 @@ const montoDisplay = isBinanceBolivaresMethod(methodId) ? montoBs : monto;
         ],
       },
       binance_pay: {
-        img: '../images/binance_pay_qr.png',
+        img: '/images/binance_pay_qr.png',
         note: 'Escanea el codigo QR para realizar el pago.',
         rows: [
           ['Correo electronico', 'goddezzeus@gmail.com'],
@@ -821,7 +821,7 @@ const montoDisplay = isBinanceBolivaresMethod(methodId) ? montoBs : monto;
         ],
       },
       zinli: {
-        img: '../images/zinli_qr.png',
+        img: '/images/zinli_qr.png',
         note: 'Escanea el codigo QR para realizar el pago.',
         rows: [
           ['Correo electronico primario', 'dakspaces@gmail.com'],
@@ -830,7 +830,7 @@ const montoDisplay = isBinanceBolivaresMethod(methodId) ? montoBs : monto;
         ],
       },
       airtm: {
-        img: '../images/airtm_qr.png',
+        img: '/images/airtm_qr.png',
         note: 'Escanea el codigo QR para realizar el pago.',
         rows: [
           ['Nombre de usuario', 'cpustorevzla'],
@@ -1668,9 +1668,9 @@ try { localStorage.setItem('pcbuilder_order_confirmed_at', String(Date.now())); 
 try {
   const t = (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : (Date.now() + '-' + Math.random().toString(16).slice(2));
   sessionStorage.setItem('pcbuilder_completion_token', t);
-  window.location.href = 'orden-completada.html?token=' + encodeURIComponent(t);
+  window.location.href = '/checkout/orden-completada/?token=' + encodeURIComponent(t);
 } catch (_) {
-  window.location.href = 'orden-completada.html';
+  window.location.href = '/checkout/orden-completada/';
 }
 
           return;

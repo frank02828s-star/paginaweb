@@ -184,7 +184,7 @@ function loadHomeOffers() {
     grid.querySelectorAll('.product-card').forEach(card => {
         card.addEventListener('click', function(e) {
             if (e.target.closest('.add-to-cart')) return;
-            window.location.href = `productos.html?id=${this.dataset.id}`;
+            window.location.href = `/productos/?id=${this.dataset.id}`;
         });
     });
 }
@@ -200,7 +200,7 @@ function loadHomeLaptops() {
     grid.querySelectorAll('.product-card').forEach(card => {
         card.addEventListener('click', function(e) {
             if (e.target.closest('.add-to-cart')) return;
-            window.location.href = `productos.html?id=${this.dataset.id}`;
+            window.location.href = `/productos/?id=${this.dataset.id}`;
         });
     });
 }

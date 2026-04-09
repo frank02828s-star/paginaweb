@@ -150,7 +150,7 @@
 
         itemsWrap.innerHTML = items.map((item) => {
           const name = item.name || item.title || 'Producto';
-          const cat = item.category || '—';
+          const cat = item.category || '';
           const price = Number(item.price || 0);
           const qty = Math.max(1, Number(item.quantity || 1));
           const subtotal = price * qty;
