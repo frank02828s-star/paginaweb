@@ -190,7 +190,7 @@
             </div>
             <div class="brands-static-grid">
                 <div class="brand-static-item">
-                    <img src="https://ext.same-assets.com/2607188538/3500028319.webp" alt="GIGABYTE">
+                    <img src="https://ext.same-assets.com/2607188538/3699102926.webp" alt="STEELSERIES">
                 </div>
                 <div class="brand-static-item">
                     <img src="https://ext.same-assets.com/2607188538/2413374335.webp" alt="ASUS">
@@ -202,28 +202,13 @@
                     <img src="https://ext.same-assets.com/2607188538/174554472.webp" alt="MSI">
                 </div>
                 <div class="brand-static-item">
-                    <img src="https://ext.same-assets.com/2607188538/3699102926.webp" alt="ASROCK">
+                    <img src="https://ext.same-assets.com/2607188538/328983973.webp" alt="LOGITECH">
                 </div>
                 <div class="brand-static-item">
-                    <img src="https://ext.same-assets.com/2607188538/2832023656.webp" alt="LIAN LI">
+                    <img src="https://ext.same-assets.com/2607188538/2832023656.webp" alt="LIANLI">
                 </div>
                 <div class="brand-static-item">
-                    <img src="https://ext.same-assets.com/2607188538/328983973.webp" alt="GAMEMAX">
-                </div>
-                <div class="brand-static-item">
-                    <img src="https://ext.same-assets.com/2607188538/3699102926.webp" alt="JEMIP">
-                </div>
-                <div class="brand-static-item">
-                    <img src="https://ext.same-assets.com/2607188538/1606536654.webp" alt="HIKSEMI">
-                </div>
-                <div class="brand-static-item">
-                    <img src="https://ext.same-assets.com/2607188538/3500028319.webp" alt="DEEPCOOL">
-                </div>
-                <div class="brand-static-item">
-                    <img src="https://ext.same-assets.com/2607188538/174554472.webp" alt="REDRAGON">
-                </div>
-                <div class="brand-static-item">
-                    <img src="https://ext.same-assets.com/2607188538/2413374335.webp" alt="XPG">
+                    <img src="https://ext.same-assets.com/2607188538/1606536654.webp" alt="HYTECH">
                 </div>
             </div>
         </div>

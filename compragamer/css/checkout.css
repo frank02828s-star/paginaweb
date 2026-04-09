@@ -790,7 +790,7 @@ a.btn, a.btn:hover, a.btn:focus {
   grid-template-columns: 1fr 1fr;
   gap: 12px;
   align-items: end;
-  margin: 4px 0;
+  margin-bottom: 12px;
 }
 
 .dn-row.dn-row-single { grid-template-columns: 1fr; }
@@ -811,6 +811,7 @@ a.btn, a.btn:hover, a.btn:focus {
   border-radius: var(--radius);
   font-size: 14px;
   transition: border-color 0.2s;
+  box-sizing: border-box;
 }
 
 .dn-field .cart-input:focus {
@@ -825,64 +826,15 @@ a.btn, a.btn:hover, a.btn:focus {
   padding: 10px 8px;
 }
 
+/* Tipo+Documento and Código+Teléfono rows: small select + flexible input */
+.dn-row:not(:first-child):not(.dn-row-single) {
+  grid-template-columns: auto 1fr;
+}
+
 @media (max-width: 680px) {
   .dn-row { grid-template-columns: 1fr; gap: 12px; }
+  .dn-row:not(:first-child):not(.dn-row-single) { grid-template-columns: 1fr; }
   .dn-field-select { max-width: 100%; }
-}
-
-/* Fine-tune: keep Tipo+Documento and Código+Teléfono paired tightly */
-#dn-idtype {
-  width: 90px !important;
-  max-width: 90px !important;
-}
-#dn-idnumber {
-  width: 200px !important;
-  max-width: 200px !important;
-}
-#dn-areacode {
-  width: 110px !important;
-  max-width: 110px !important;
-}
-#dn-phonenum {
-  width: 200px !important;
-  max-width: 200px !important;
-}
-
-/* Override: keep pairs (Tipo+Documento, Código+Teléfono) close together */
-.payment-details-inner .dn-form {
-  align-items: flex-start;
-}
-.payment-details-inner .dn-form .dn-row {
-  display: grid !important;
-  grid-template-columns: auto 1fr !important;
-  width: 100% !important;
-  justify-content: flex-start !important;
-  gap: 12px !important;
-}
-/* Nombre/Apellido row: equal columns */
-.payment-details-inner .dn-form .dn-row:first-child {
-  grid-template-columns: 1fr 1fr !important;
-}
-.payment-details-inner .dn-form .dn-field {
-  flex: 0 0 auto !important;
-}
-/* Email row: keep same grid as Nombre/Apellido so email ends at Apellido edge */
-.payment-details-inner .dn-form .dn-row.dn-row-single {
-  display: grid !important;
-  grid-template-columns: 1fr 1fr !important;
-  width: 100% !important;
-}
-.payment-details-inner .dn-form .dn-row.dn-row-single .dn-field {
-  grid-column: 1 / -1;
-}
-.payment-details-inner .dn-form .dn-row.dn-row-single .cart-input {
-  width: 100% !important;
-  max-width: 100% !important;
-}
-.payment-details-inner .dn-form #dn-email {
-  width: 100% !important;
-  max-width: 100% !important;
-  text-align: left !important;
 }
 
 /* Visual feedback on valid input */
@@ -892,22 +844,6 @@ a.btn, a.btn:hover, a.btn:focus {
   background-repeat: no-repeat;
   background-position: right 10px center;
   background-size: 16px 16px;
-}
-
-@media (max-width: 680px) {
-  .payment-details-inner .dn-form .dn-row {
-    display: flex !important;
-    width: 100% !important;
-    flex-wrap: wrap;
-  }
-  .payment-details-inner .dn-form #dn-email {
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-  #dn-idtype, #dn-idnumber, #dn-areacode, #dn-phonenum {
-    width: 100% !important;
-    max-width: 100% !important;
-  }
 }
 
 @media (max-width: 980px) {
