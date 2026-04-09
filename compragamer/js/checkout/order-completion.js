@@ -267,7 +267,7 @@ async function buildTicket(){
     // 1) Intentar obtener ticket desde el servidor (persistente aunque el navegador borre storage)
     //    Requiere que el sitio esté servido por HTTP/HTTPS y tenga PHP habilitado.
     try {
-      const endpoint = new URL('../api/ticket-seq.php', window.location.href).toString();
+      const endpoint = new URL('/api/ticket-seq.php', window.location.origin).toString();
       const res = await fetch(endpoint, { cache: 'no-store' });
       if (res && res.ok) {
         const data = await res.json().catch(() => null);
@@ -552,7 +552,7 @@ async function uploadToImgbb(blob) {
   const form = new FormData();
   form.append('image', blob);
 
-  const res = await fetch('../api/imgbb-upload.php', { method: 'POST', body: form });
+  const res = await fetch('/api/imgbb-upload.php', { method: 'POST', body: form });
   let data = null;
   try { data = await res.json(); } catch (_) {}
 

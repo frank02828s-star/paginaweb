@@ -184,8 +184,8 @@ const setBinanceRate = (rate) => {
 };
 
 const fetchBinanceRate = async () => {
-  // Endpoint PHP incluido en ../api/binance-p2p-rate.php
-  const res = await fetch('../api/binance-p2p-rate.php?fiat=VES&asset=USDT', { cache: 'no-store' });
+  // Endpoint PHP
+  const res = await fetch('/api/binance-p2p-rate.php?fiat=VES&asset=USDT', { cache: 'no-store' });
   if (!res.ok) throw new Error('rate_fetch_failed');
   const data = await res.json();
   const n = Number(data?.rate || 0);
@@ -728,7 +728,7 @@ async function uploadProofImage(file) {
   const form = new FormData();
   form.append('image', file);
 
-  const res = await fetch('../api/imgbb-upload.php', { method: 'POST', body: form });
+  const res = await fetch('/api/imgbb-upload.php', { method: 'POST', body: form });
   let data = null;
   try { data = await res.json(); } catch (_) {}
 
@@ -1353,7 +1353,7 @@ function computeTax(amount, paymentMethodId) {
     const rawItem = (item && (item.image || item.img)) || '';
     const rawInv = (inv && (inv.image || inv.img)) || '';
 
-    const fallback = '../assets/images/placeholder-product.png';
+    const fallback = '/assets/images/placeholder-product.png';
 
     const norm = (raw) => String(raw || '').trim();
 
@@ -2417,10 +2417,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function carrierLogoPath(key){
       var k = String(key||'').toLowerCase();
-      if (k === 'mrw') return '../assets/images/mrw.png';
-      if (k === 'zoom') return '../assets/images/zoom.png';
-      if (k === 'domesa') return '../assets/images/domesa.png';
-      if (k === 'tealca') return '../assets/images/tealca.png';
+      if (k === 'mrw') return '/assets/images/mrw.png';
+      if (k === 'zoom') return '/assets/images/zoom.png';
+      if (k === 'domesa') return '/assets/images/domesa.png';
+      if (k === 'tealca') return '/assets/images/tealca.png';
       return '';
     }
 
