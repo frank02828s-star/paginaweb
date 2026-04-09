@@ -165,11 +165,18 @@
         <div class="section-container">
             <div class="section-header">
                 <h2 class="section-title">OFERTAS EN PRODUCTOS</h2>
+                <div class="offers-slider-nav">
+                    <button class="offers-nav-btn" id="offersPrev"><span class="material-icons">chevron_left</span></button>
+                    <button class="offers-nav-btn" id="offersNext"><span class="material-icons">chevron_right</span></button>
+                </div>
             </div>
 
-            <div class="products-grid" id="offersGrid">
-                <!-- Products loaded dynamically -->
+            <div class="offers-slider-wrapper">
+                <div class="offers-slider-track" id="offersSliderTrack">
+                    <!-- Slides loaded dynamically -->
+                </div>
             </div>
+            <div class="offers-slider-dots" id="offersSliderDots"></div>
         </div>
     </section>
 

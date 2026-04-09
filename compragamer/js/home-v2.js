@@ -173,20 +173,80 @@ function initMainSlider() {
     slider.addEventListener('mouseleave', startAutoSlide);
 }
 
-// Load offer products
+// Load offer products as a slider
 function loadHomeOffers() {
-    const grid = document.getElementById('offersGrid');
-    if (!grid) return;
+    var track = document.getElementById('offersSliderTrack');
+    var dotsWrap = document.getElementById('offersSliderDots');
+    var prevBtn = document.getElementById('offersPrev');
+    var nextBtn = document.getElementById('offersNext');
+    if (!track) return;
 
-    grid.innerHTML = homeOfferProducts.map(product => createHomeProductCard(product)).join('');
+    var productsPerSlide = 6;
+    var totalSlides = Math.ceil(homeOfferProducts.length / productsPerSlide) || 1;
+    // Ensure at least 4 slides by cycling products
+    if (totalSlides < 4) totalSlides = 4;
+
+    track.innerHTML = '';
+    for (var s = 0; s < totalSlides; s++) {
+        var slide = document.createElement('div');
+        slide.className = 'offers-slide' + (s === 0 ? ' active' : '');
+        var grid = document.createElement('div');
+        grid.className = 'products-grid';
+        for (var p = 0; p < productsPerSlide; p++) {
+            var idx = (s * productsPerSlide + p) % homeOfferProducts.length;
+            grid.innerHTML += createHomeProductCard(homeOfferProducts[idx]);
+        }
+        slide.appendChild(grid);
+        track.appendChild(slide);
+    }
 
     // Add click handlers
-    grid.querySelectorAll('.product-card').forEach(card => {
+    track.querySelectorAll('.product-card').forEach(function(card) {
         card.addEventListener('click', function(e) {
             if (e.target.closest('.add-to-cart')) return;
-            window.location.href = `/productos/?id=${this.dataset.id}`;
+            window.location.href = '/productos/?id=' + this.dataset.id;
         });
     });
+
+    // Dots
+    if (dotsWrap) {
+        dotsWrap.innerHTML = '';
+        for (var d = 0; d < totalSlides; d++) {
+            var dot = document.createElement('span');
+            dot.className = 'offers-dot' + (d === 0 ? ' active' : '');
+            dot.setAttribute('data-slide', d);
+            dotsWrap.appendChild(dot);
+        }
+    }
+
+    var currentOfferSlide = 0;
+    function goToOfferSlide(idx) {
+        var slides = track.querySelectorAll('.offers-slide');
+        var dots = dotsWrap ? dotsWrap.querySelectorAll('.offers-dot') : [];
+        slides.forEach(function(sl) { sl.classList.remove('active'); });
+        dots.forEach(function(dt) { dt.classList.remove('active'); });
+        if (slides[idx]) slides[idx].classList.add('active');
+        if (dots[idx]) dots[idx].classList.add('active');
+        currentOfferSlide = idx;
+    }
+
+    if (prevBtn) prevBtn.addEventListener('click', function() {
+        var prev = (currentOfferSlide - 1 + totalSlides) % totalSlides;
+        goToOfferSlide(prev);
+    });
+    if (nextBtn) nextBtn.addEventListener('click', function() {
+        var next = (currentOfferSlide + 1) % totalSlides;
+        goToOfferSlide(next);
+    });
+    if (dotsWrap) dotsWrap.addEventListener('click', function(e) {
+        var dot = e.target.closest('.offers-dot');
+        if (dot) goToOfferSlide(parseInt(dot.getAttribute('data-slide'), 10));
+    });
+
+    // Auto advance every 5 seconds
+    setInterval(function() {
+        goToOfferSlide((currentOfferSlide + 1) % totalSlides);
+    }, 5000);
 }
 
 // Load laptop products

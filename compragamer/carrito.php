@@ -134,6 +134,7 @@
         const stats = (typeof getCartStats === 'function') ? getCartStats() : { totalItems: 0, totalPrice: 0, items: [] };
         const emptyEl = document.getElementById('cart-empty');
         const itemsWrap = document.getElementById('cart-items');
+        const cartItemsHeader = document.querySelector('.cart-items-header');
 
         if (!emptyEl || !itemsWrap) return;
 
@@ -142,12 +143,14 @@
         if (items.length === 0) {
           emptyEl.classList.remove('is-hidden');
           itemsWrap.innerHTML = '';
+          if (cartItemsHeader) cartItemsHeader.style.display = 'none';
           updateTotals(0, 0, 0, 0);
           setProceedEnabled(false);
           return;
         }
 
         emptyEl.classList.add('is-hidden');
+        if (cartItemsHeader) cartItemsHeader.style.display = '';
 
         itemsWrap.innerHTML = items.map((item) => {
           const name = item.name || item.title || 'Producto';
