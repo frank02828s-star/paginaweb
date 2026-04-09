@@ -830,6 +830,82 @@ a.btn, a.btn:hover, a.btn:focus {
   .dn-field-select { max-width: 100%; }
 }
 
+/* Fine-tune: keep Tipo+Documento and Código+Teléfono paired tightly */
+#dn-idtype {
+  width: 90px !important;
+  max-width: 90px !important;
+}
+#dn-idnumber {
+  width: 200px !important;
+  max-width: 200px !important;
+}
+#dn-areacode {
+  width: 110px !important;
+  max-width: 110px !important;
+}
+#dn-phonenum {
+  width: 200px !important;
+  max-width: 200px !important;
+}
+
+/* Override: keep pairs (Tipo+Documento, Código+Teléfono) close together */
+.payment-details-inner .dn-form {
+  align-items: flex-start;
+}
+.payment-details-inner .dn-form .dn-row {
+  display: inline-flex !important;
+  width: fit-content !important;
+  justify-content: flex-start !important;
+  gap: 8px !important;
+}
+.payment-details-inner .dn-form .dn-field {
+  flex: 0 0 auto !important;
+}
+.payment-details-inner .dn-form .dn-row.dn-row-single {
+  display: block !important;
+  width: 100% !important;
+}
+.payment-details-inner .dn-form .dn-row.dn-row-single .dn-field {
+  width: 100%;
+}
+.payment-details-inner .dn-form .dn-row.dn-row-single .cart-input {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+.payment-details-inner .dn-form .dn-row-single {
+  width: fit-content !important;
+}
+.payment-details-inner .dn-form #dn-email {
+  width: 380px !important;
+  max-width: 380px !important;
+  text-align: left !important;
+}
+
+/* Visual feedback on valid input */
+.cart-input.is-valid {
+  border-color: #16a34a !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%2316a34a'%3E%3Cpath fill-rule='evenodd' d='M16.707 5.293a1 1 0 010 1.414l-7.5 7.5a1 1 0 01-1.414 0l-3.5-3.5a1 1 0 011.414-1.414L8.5 12.086l6.793-6.793a1 1 0 011.414 0z' clip-rule='evenodd'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px 16px;
+}
+
+@media (max-width: 680px) {
+  .payment-details-inner .dn-form .dn-row {
+    display: flex !important;
+    width: 100% !important;
+    flex-wrap: wrap;
+  }
+  .payment-details-inner .dn-form #dn-email {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  #dn-idtype, #dn-idnumber, #dn-areacode, #dn-phonenum {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
 @media (max-width: 980px) {
   .checkout-payment-layout { grid-template-columns: 1fr; }
   .checkout-payment-actions { justify-content: flex-start; }
@@ -1435,6 +1511,98 @@ a.btn, a.btn:hover, a.btn:focus {
   margin-bottom: 16px;
 }
 
+/* Carrier cards (national-carrier-card used by JS) */
+.national-carrier-card {
+  position: relative;
+  width: 100%;
+  background-color: #fff;
+  -webkit-appearance: none;
+  appearance: none;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 18px;
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 110px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+}
+
+.national-carrier-card:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(15, 23, 42, 0.18);
+}
+
+.national-carrier-card:focus {
+  outline: none;
+}
+
+.national-carrier-card img.tealca-logo {
+  transform: scale(1.9);
+}
+
+.national-carrier-check {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-size: 18px;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.12s ease, transform 0.12s ease;
+  color: #16a34a;
+}
+
+.national-carrier-card.is-selected {
+  border-color: rgba(22, 163, 74, 0.85);
+  box-shadow: 0 10px 26px rgba(22, 163, 74, 0.12);
+}
+
+.national-carrier-card.is-selected .national-carrier-check {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Clean logo styling */
+.national-carrier-card img,
+.national-carrier-logo {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.national-carrier-card * {
+  background-color: transparent !important;
+}
+
+.national-carrier-logo {
+  max-width: 100%;
+  max-height: 60px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(100%);
+  transition: filter 0.15s ease, transform 0.15s ease, opacity 0.15s ease;
+}
+
+.national-carrier-card:hover .national-carrier-logo {
+  filter: grayscale(0%);
+}
+
+.national-carrier-card.is-selected .national-carrier-logo {
+  filter: grayscale(0%);
+}
+
+.national-carrier-card.is-locked {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Also keep old .carrier-card rules as fallback */
 .national-carriers-grid .carrier-card {
   display: flex;
   flex-direction: column;
@@ -1448,7 +1616,6 @@ a.btn, a.btn:hover, a.btn:focus {
   cursor: pointer;
   transition: var(--transition);
   text-align: center;
-  font-family: var(--font-family);
 }
 
 .national-carriers-grid .carrier-card:hover {
@@ -1477,6 +1644,12 @@ a.btn, a.btn:hover, a.btn:focus {
   font-size: 12px;
   font-weight: 700;
   color: var(--secondary-color);
+}
+
+/* State selector */
+.national-carriers-state-select {
+  width: 100%;
+  max-width: 100%;
 }
 
 .national-carriers-statewrap,
@@ -1532,41 +1705,183 @@ a.btn, a.btn:hover, a.btn:focus {
   line-height: 1.4;
 }
 
-.national-agency-card {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 12px 14px;
-  border: 2px solid var(--border-color);
-  border-radius: var(--radius);
+/* Agency head label */
+.national-carriers-agency-head {
+  font-weight: 700;
+  font-size: 13px;
+  margin: 10px 0 10px 0;
+  color: var(--secondary-color);
+}
+
+/* Agency empty state */
+.national-carriers-agency-empty {
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
   background: #fff;
+  box-shadow: var(--shadow);
+  font-size: 13px;
+  color: var(--text-light);
+}
+
+/* Agency cards grid */
+.national-carriers-agency-cards {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 12px;
+}
+
+@media (max-width: 1024px) {
+  .national-carriers-agency-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .national-carriers-agency-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Agency card (full style from V158) */
+.national-agency-card {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  padding: 14px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   cursor: pointer;
-  transition: var(--transition);
-  margin-bottom: 8px;
-  font-family: var(--font-family);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
 }
 
 .national-agency-card:hover {
-  border-color: var(--primary-color);
-  background: #fff5f5;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(15, 23, 42, 0.20);
 }
 
 .national-agency-card.is-selected {
-  border-color: var(--primary-color);
-  background: #fff5f5;
+  border-color: rgba(22, 163, 74, 0.85);
+  box-shadow: 0 10px 26px rgba(22, 163, 74, 0.12);
 }
 
 .national-agency-card.is-confirmed {
-  border-color: #38a169;
-  background: #f0fff4;
+  border-color: #16a34a;
+  background: rgba(22, 163, 74, 0.04);
+}
+
+.national-agency-card.is-confirmed .btn-use-agency {
+  background: #16a34a !important;
+  color: #fff !important;
+  border-color: #16a34a !important;
+}
+
+.national-agency-title {
+  font-weight: 800;
+  color: var(--secondary-color);
+  margin-bottom: 4px;
+}
+
+.national-agency-address {
+  font-size: 13px;
+  color: #334155;
+}
+
+/* Use agency button */
+.btn-use-agency {
+  margin-top: 12px;
+  width: 100%;
+  border: 1px solid var(--border-color);
+  background: #fff;
+  color: var(--secondary-color);
+  border-radius: var(--radius-lg);
+  padding: 12px 14px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+}
+
+.btn-use-agency:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(15, 23, 42, 0.26);
+}
+
+/* Agency details button */
+.btn-agency-details {
+  margin-top: 10px;
+  width: 100%;
+  border: 1px solid var(--border-color);
+  background: rgba(15, 23, 42, 0.02);
+  color: var(--secondary-color);
+  border-radius: var(--radius-lg);
+  padding: 10px 12px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.btn-agency-details:hover {
+  background: rgba(15, 23, 42, 0.04);
+  border-color: rgba(15, 23, 42, 0.20);
+}
+
+/* Remove shadow on hover for agency card buttons */
+.national-agency-card .btn-agency-details:hover,
+.national-agency-card .btn-use-agency:hover {
+  box-shadow: none !important;
+}
+
+/* Agency modal map */
+.national-agency-modal-map {
+  width: 100%;
+  height: 320px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+}
+
+.national-agency-modal-gmapsbtn {
+  margin-top: 10px;
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  border: 1px solid var(--border-color);
+  background: #fff;
+  color: var(--secondary-color);
+  border-radius: var(--radius-lg);
+  padding: 12px 14px;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+}
+
+.national-agency-modal-gmapsbtn:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-1px);
+}
+
+/* Lock carriers after confirming */
+.national-carriers-grid.is-locked .national-carrier-card {
+  pointer-events: none;
+  opacity: 0.55;
+}
+
+.national-carriers-statewrap.is-locked {
+  pointer-events: none;
+  opacity: 0.75;
 }
 
 .national-agency-card.is-locked {
-  opacity: 0.5;
   pointer-events: none;
+  opacity: 0.45;
 }
-
-/* National agency modal */
 .national-agency-modal-overlay {
   position: fixed;
   inset: 0;
@@ -1992,11 +2307,12 @@ a.btn, a.btn:hover, a.btn:focus {
 }
 
 /* ---- Ensure Montserrat everywhere in checkout ---- */
+/* Exclude Font Awesome / Material Icons so their icon fonts render correctly */
 .checkout-page,
-.checkout-page *,
+.checkout-page *:not(.fas):not(.far):not(.fab):not(.fa-solid):not(.fa-regular):not(.fa-brands):not(.fa):not(.material-icons),
 .order-completion-page,
-.order-completion-page *,
+.order-completion-page *:not(.fas):not(.far):not(.fab):not(.fa-solid):not(.fa-regular):not(.fa-brands):not(.fa):not(.material-icons),
 .cart-page,
-.cart-page * {
+.cart-page *:not(.fas):not(.far):not(.fab):not(.fa-solid):not(.fa-regular):not(.fa-brands):not(.fa):not(.material-icons) {
   font-family: var(--font-family);
 }
