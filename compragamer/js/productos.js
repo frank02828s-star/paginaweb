@@ -3,13 +3,14 @@
    ===================================================== */
 
 // Merge all product sources (dedup by id AND by title) so every product is visible on the products page
+const TITLE_DEDUP_LENGTH = 50;
 function _mergeAllProducts() {
     const map = new Map();
     const seenTitles = new Set();
 
     function addProduct(p) {
         if (map.has(p.id)) return;
-        var normTitle = p.title.toLowerCase().substring(0, 50);
+        var normTitle = p.title.toLowerCase().substring(0, TITLE_DEDUP_LENGTH);
         if (seenTitles.has(normTitle)) return;
         map.set(p.id, p);
         seenTitles.add(normTitle);
