@@ -24,29 +24,39 @@
             <div id="registerView" style="display:none;">
                 <h2>Crear cuenta</h2>
                 <form id="registerForm">
-                    <div class="form-group">
-                        <label for="reg-name">Nombre completo</label>
-                        <input type="text" id="reg-name" required>
+                    <div class="form-row-inline">
+                        <div class="form-group" style="flex:1">
+                            <label for="reg-firstname">Nombre</label>
+                            <input type="text" id="reg-firstname" required maxlength="20" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{1,20}" title="Solo letras (máx. 20 caracteres)" placeholder="Ej: Carlos">
+                        </div>
+                        <div class="form-group" style="flex:1">
+                            <label for="reg-lastname">Apellido</label>
+                            <input type="text" id="reg-lastname" required maxlength="20" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{1,20}" title="Solo letras (máx. 20 caracteres)" placeholder="Ej: Pérez">
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="reg-email">Email</label>
-                        <input type="email" id="reg-email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="reg-password">Contraseña</label>
-                        <input type="password" id="reg-password" required minlength="6">
-                    </div>
-                    <div class="form-group">
-                        <label for="reg-document">Documento</label>
-                        <div class="form-row-inline">
-                            <select id="reg-doctype" class="form-select-sm">
+                    <div class="form-row-inline">
+                        <div class="form-group" style="max-width:90px">
+                            <label for="reg-doctype">Tipo</label>
+                            <select id="reg-doctype" class="form-select-sm" required>
                                 <option value="V">V</option>
                                 <option value="E">E</option>
                                 <option value="J">J</option>
+                                <option value="G">G</option>
                                 <option value="P">P</option>
                             </select>
-                            <input type="text" id="reg-document" required placeholder="Número de documento" pattern="[0-9]{6,10}">
                         </div>
+                        <div class="form-group" style="flex:1">
+                            <label for="reg-document">Documento</label>
+                            <input type="text" id="reg-document" required inputmode="numeric" maxlength="8" minlength="8" pattern="\d{8}" title="Solo números (8 dígitos)" placeholder="Ej: 12345678">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-email">Email</label>
+                        <input type="email" id="reg-email" required maxlength="50" placeholder="correo@ejemplo.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-password">Contraseña</label>
+                        <input type="password" id="reg-password" required minlength="6" maxlength="30" placeholder="Mínimo 6 caracteres">
                     </div>
                     <button type="submit" class="btn-primary">Registrarse</button>
                 </form>

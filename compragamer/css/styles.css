@@ -929,6 +929,11 @@ ul, ol {
 .form-row-inline {
     display: flex;
     gap: 8px;
+    align-items: flex-end;
+}
+
+.form-row-inline .form-group {
+    margin-bottom: 16px;
 }
 
 .form-row-inline input {

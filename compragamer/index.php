@@ -81,7 +81,9 @@
     <!-- Categories Section -->
     <section class="categories-section">
         <div class="section-container">
-            <h2 class="section-title">CATEGORÍAS DESTACADAS</h2>
+            <div class="section-header">
+                <h2 class="section-title">CATEGORÍAS DESTACADAS</h2>
+            </div>
 
             <div class="categories-grid">
                 <a href="/productos/?cate=pc" class="category-item">
@@ -211,28 +213,6 @@
                 <img src="https://ext.same-assets.com/2607188538/2832023656.webp" alt="Lian Li" class="brand-logo">
                 <img src="https://ext.same-assets.com/2607188538/328983973.webp" alt="HYTE" class="brand-logo">
                 <img src="https://ext.same-assets.com/2607188538/3699102926.webp" alt="AOC" class="brand-logo">
-            </div>
-        </div>
-    </section>
-
-    <!-- PC Slider Banner -->
-    <section class="pc-banner-section">
-        <div class="section-container">
-            <div class="pc-banner">
-                <div class="pc-banner-content">
-                    <h2>SLIDER DE PC ENSAMBLADAS</h2>
-                    <p>Equipos listos para jugar, crear y streamear</p>
-                    <a href="/armatupc/" class="btn-primary">Ver configuraciones</a>
-                </div>
-                <div class="pc-banner-image">
-                    <img src="https://imagenes.compragamer.com/bannerPrincipal/DC_20260401111814_3wR0YRKX.jpg" alt="PC Gaming">
-                </div>
-            </div>
-            <div class="banner-dots">
-                <span class="dot active"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
             </div>
         </div>
     </section>
