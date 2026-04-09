@@ -100,7 +100,7 @@
                                                 maxlength="8"
                                                 minlength="8"
                                                 pattern="\d{8}"
-                                                placeholder="Nro. de documento"
+                                                placeholder="Ej: 12345678"
                                                 required
                                                 title="Solo números (8 dígitos)"
                                                 type="text"
@@ -160,7 +160,7 @@
                             </div>
                         </div>
                         <div class="checkout-payment-actions">
-                            <button aria-disabled="true" class="btn btn-success is-disabled" id="payment-continue-btn" type="button">Proceder y continuar</button>
+                            <button aria-disabled="true" class="btn btn-success is-disabled" id="payment-continue-btn" type="button">Completar tu pedido</button>
                             <button class="btn btn-secondary checkout-back-btn" id="back-to-shipping-btn" type="button">
                                 <i class="fas fa-arrow-left"></i> Volver
                             </button>

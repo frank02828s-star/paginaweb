@@ -2,10 +2,36 @@
    PRODUCTS PAGE JAVASCRIPT
    ===================================================== */
 
+// Merge all product sources (dedup by id) so every product is visible on the products page
+function _mergeAllProducts() {
+    const map = new Map();
+    // Start with allProducts as the base
+    allProducts.forEach(p => map.set(p.id, p));
+    // Merge featured products (each key is an array)
+    if (typeof featuredProducts !== 'undefined') {
+        Object.values(featuredProducts).flat().forEach(p => { if (!map.has(p.id)) map.set(p.id, p); });
+    }
+    // Merge latest products
+    if (typeof latestProducts !== 'undefined') {
+        latestProducts.forEach(p => { if (!map.has(p.id)) map.set(p.id, p); });
+    }
+    // Merge MP products
+    if (typeof mpProducts !== 'undefined') {
+        mpProducts.forEach(p => { if (!map.has(p.id)) map.set(p.id, p); });
+    }
+    // Merge brand products (each key is an array)
+    if (typeof brandProducts !== 'undefined') {
+        Object.values(brandProducts).flat().forEach(p => { if (!map.has(p.id)) map.set(p.id, p); });
+    }
+    return Array.from(map.values());
+}
+
+const _allSiteProducts = _mergeAllProducts();
+
 // State
 let currentPage = 1;
 const productsPerPage = 12;
-let filteredProducts = [...allProducts];
+let filteredProducts = [..._allSiteProducts];
 let currentView = 'grid';
 
 // DOM Ready
@@ -200,7 +226,7 @@ function initSort() {
                 filteredProducts.sort((a, b) => (b.discount || 0) - (a.discount || 0));
                 break;
             default:
-                filteredProducts = [...allProducts];
+                filteredProducts = [..._allSiteProducts];
         }
 
         currentPage = 1;
@@ -218,7 +244,7 @@ function initUrlParams() {
         const searchInput = document.getElementById('searchInput');
         if (searchInput) searchInput.value = search;
 
-        filteredProducts = allProducts.filter(p =>
+        filteredProducts = _allSiteProducts.filter(p =>
             p.title.toLowerCase().includes(search.toLowerCase())
         );
 
@@ -231,9 +257,12 @@ function initUrlParams() {
     if (cate) {
         const category = categories.find(c => c.id === cate);
         if (category) {
-            filteredProducts = allProducts.filter(p =>
-                p.category && p.category.toLowerCase().includes(category.name.toLowerCase())
-            );
+            filteredProducts = _allSiteProducts.filter(p => {
+                if (!p.category) return false;
+                const pCat = p.category.toLowerCase();
+                const cName = category.name.toLowerCase();
+                return pCat.includes(cName) || cName.includes(pCat);
+            });
 
             const pageHeader = document.querySelector('.page-header h1');
             if (pageHeader) pageHeader.textContent = category.name;
@@ -243,7 +272,7 @@ function initUrlParams() {
     // Subcategory filter
     const subcate = params.get('subcate');
     if (subcate) {
-        filteredProducts = allProducts.filter(p =>
+        filteredProducts = _allSiteProducts.filter(p =>
             p.subcategory === subcate
         );
 
