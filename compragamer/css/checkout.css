@@ -853,10 +853,15 @@ a.btn, a.btn:hover, a.btn:focus {
   align-items: flex-start;
 }
 .payment-details-inner .dn-form .dn-row {
-  display: inline-flex !important;
-  width: fit-content !important;
+  display: grid !important;
+  grid-template-columns: auto 1fr !important;
+  width: 100% !important;
   justify-content: flex-start !important;
   gap: 8px !important;
+}
+/* Nombre/Apellido row: equal columns */
+.payment-details-inner .dn-form .dn-row:first-child {
+  grid-template-columns: 1fr 1fr !important;
 }
 .payment-details-inner .dn-form .dn-field {
   flex: 0 0 auto !important;
@@ -873,11 +878,11 @@ a.btn, a.btn:hover, a.btn:focus {
   max-width: 100% !important;
 }
 .payment-details-inner .dn-form .dn-row-single {
-  width: fit-content !important;
+  width: 100% !important;
 }
 .payment-details-inner .dn-form #dn-email {
-  width: 380px !important;
-  max-width: 380px !important;
+  width: 100% !important;
+  max-width: 100% !important;
   text-align: left !important;
 }
 
