@@ -267,8 +267,7 @@ async function buildTicket(){
     // 1) Intentar obtener ticket desde el servidor (persistente aunque el navegador borre storage)
     //    Requiere que el sitio esté servido por HTTP/HTTPS y tenga PHP habilitado.
     try {
-      const endpoint = new URL('/api/ticket-seq.php', window.location.origin).toString();
-      const res = await fetch(endpoint, { cache: 'no-store' });
+      const res = await fetch('/api/ticket-seq.php', { cache: 'no-store' });
       if (res && res.ok) {
         const data = await res.json().catch(() => null);
         if (data && data.success && Number.isFinite(Number(data.ticket))) {
