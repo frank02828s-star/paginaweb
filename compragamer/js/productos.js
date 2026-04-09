@@ -2,26 +2,36 @@
    PRODUCTS PAGE JAVASCRIPT
    ===================================================== */
 
-// Merge all product sources (dedup by id) so every product is visible on the products page
+// Merge all product sources (dedup by id AND by title) so every product is visible on the products page
 function _mergeAllProducts() {
     const map = new Map();
+    const seenTitles = new Set();
+
+    function addProduct(p) {
+        if (map.has(p.id)) return;
+        var normTitle = p.title.toLowerCase().substring(0, 50);
+        if (seenTitles.has(normTitle)) return;
+        map.set(p.id, p);
+        seenTitles.add(normTitle);
+    }
+
     // Start with allProducts as the base
-    allProducts.forEach(p => map.set(p.id, p));
+    allProducts.forEach(addProduct);
     // Merge featured products (each key is an array)
     if (typeof featuredProducts !== 'undefined') {
-        Object.values(featuredProducts).flat().forEach(p => { if (!map.has(p.id)) map.set(p.id, p); });
+        Object.values(featuredProducts).flat().forEach(addProduct);
     }
     // Merge latest products
     if (typeof latestProducts !== 'undefined') {
-        latestProducts.forEach(p => { if (!map.has(p.id)) map.set(p.id, p); });
+        latestProducts.forEach(addProduct);
     }
     // Merge MP products
     if (typeof mpProducts !== 'undefined') {
-        mpProducts.forEach(p => { if (!map.has(p.id)) map.set(p.id, p); });
+        mpProducts.forEach(addProduct);
     }
     // Merge brand products (each key is an array)
     if (typeof brandProducts !== 'undefined') {
-        Object.values(brandProducts).flat().forEach(p => { if (!map.has(p.id)) map.set(p.id, p); });
+        Object.values(brandProducts).flat().forEach(addProduct);
     }
     return Array.from(map.values());
 }

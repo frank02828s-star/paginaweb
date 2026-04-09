@@ -804,7 +804,7 @@ a.btn, a.btn:hover, a.btn:focus {
   margin: 0 0 4px;
 }
 
-.dn-field .cart-input {
+.payment-details .dn-field .cart-input {
   width: 100%;
   max-width: 100%;
   height: auto;
@@ -817,7 +817,7 @@ a.btn, a.btn:hover, a.btn:focus {
   box-sizing: border-box;
 }
 
-.dn-field .cart-input:focus {
+.payment-details .dn-field .cart-input:focus {
   border-color: var(--primary-color);
   outline: none;
   box-shadow: 0 0 0 3px rgba(230, 51, 35, 0.10);
@@ -825,7 +825,7 @@ a.btn, a.btn:hover, a.btn:focus {
 
 .dn-field-select { max-width: 120px; }
 
-.dn-field-select .cart-input {
+.payment-details .dn-field-select .cart-input {
   padding: 10px 8px;
 }
 

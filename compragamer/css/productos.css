@@ -80,12 +80,16 @@
     padding: 20px;
     display: flex;
     gap: 24px;
+    align-items: flex-start;
 }
 
 /* Sidebar */
 .sidebar {
     width: 280px;
     flex-shrink: 0;
+    align-self: flex-start;
+    position: sticky;
+    top: 20px;
 }
 
 .sidebar-section {
