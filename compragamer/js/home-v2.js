@@ -182,9 +182,10 @@ function loadHomeOffers() {
     if (!track) return;
 
     var productsPerSlide = 6;
+    var MIN_SLIDES = 4; // User requested 4 slides in the offers carousel
     var totalSlides = Math.ceil(homeOfferProducts.length / productsPerSlide) || 1;
-    // Ensure at least 4 slides by cycling products
-    if (totalSlides < 4) totalSlides = 4;
+    // Ensure minimum slides by cycling products if needed
+    if (totalSlides < MIN_SLIDES) totalSlides = MIN_SLIDES;
 
     track.innerHTML = '';
     for (var s = 0; s < totalSlides; s++) {
