@@ -126,7 +126,9 @@ ul, ol {
     display: flex;
     background: #fff;
     border-radius: var(--radius);
-    overflow: hidden;
+    overflow: visible;
+    position: relative;
+    flex-wrap: wrap;
 }
 
 .search-box input {
@@ -135,6 +137,7 @@ ul, ol {
     border: none;
     outline: none;
     font-size: 14px;
+    border-radius: var(--radius) 0 0 var(--radius);
 }
 
 .search-btn {
@@ -149,6 +152,94 @@ ul, ol {
 
 .search-btn:hover {
     background: var(--primary-dark);
+}
+
+/* Search Results Dropdown */
+.search-results-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border-radius: 0 0 var(--radius) var(--radius);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    z-index: 1100;
+    max-height: 400px;
+    overflow-y: auto;
+    display: none;
+}
+
+.search-results-dropdown.open {
+    display: block;
+}
+
+.search-result-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--border-color);
+    cursor: pointer;
+    transition: background 0.15s;
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.search-result-item:hover {
+    background: #f8f8f8;
+}
+
+.search-result-item:last-child {
+    border-bottom: none;
+}
+
+.search-result-img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.search-result-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.search-result-title {
+    font-size: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.search-result-price {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.search-no-results {
+    padding: 16px;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 13px;
+}
+
+.search-view-all {
+    display: block;
+    text-align: center;
+    padding: 12px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--primary-color);
+    border-top: 1px solid var(--border-color);
+    text-decoration: none;
+    transition: background 0.15s;
+}
+
+.search-view-all:hover {
+    background: #f8f8f8;
 }
 
 .header-actions {

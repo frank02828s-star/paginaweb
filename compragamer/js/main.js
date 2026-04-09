@@ -357,24 +357,7 @@ function initModal() {
 // SEARCH
 // =====================================================
 function initSearch() {
-    const searchInput = document.getElementById('searchInput');
-    const searchBtn = document.getElementById('searchBtn');
-
-    if (!searchInput || !searchBtn) return;
-
-    function performSearch() {
-        const query = searchInput.value.trim();
-        if (query) {
-            window.location.href = `/productos/?search=${encodeURIComponent(query)}`;
-        }
-    }
-
-    searchBtn.addEventListener('click', performSearch);
-    searchInput.addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') {
-            performSearch();
-        }
-    });
+    // Live search is now handled by /js/live-search.js loaded from header
 }
 
 // =====================================================

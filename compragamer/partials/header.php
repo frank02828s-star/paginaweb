@@ -10,10 +10,11 @@ if (!isset($rootPath)) $rootPath = '';
                 <img src="https://ext.same-assets.com/4025281442/4260243455.svg" alt="Compra Gamer" class="logo-icon">
             </a>
             <div class="search-box">
-                <input type="text" placeholder="Buscar productos" id="searchInput">
+                <input type="text" placeholder="Buscar productos" id="searchInput" autocomplete="off">
                 <button class="search-btn" id="searchBtn">
                     <span class="material-icons">search</span>
                 </button>
+                <div class="search-results-dropdown" id="searchResultsDropdown"></div>
             </div>
             <div class="header-actions">
                 <a href="#" class="login-btn" id="loginBtn">
@@ -37,3 +38,4 @@ if (!isset($rootPath)) $rootPath = '';
             <a href="/ayuda/" class="nav-link">Ayuda</a>
         </div>
     </nav>
+    <script src="/js/live-search.js"></script>

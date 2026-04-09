@@ -332,21 +332,6 @@
     })();
     </script>
 
-    <!-- Search -->
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const searchInput = document.getElementById('searchInput');
-      const searchBtn = document.getElementById('searchBtn');
-      if (searchInput && searchBtn) {
-        const go = () => {
-          const q = searchInput.value.trim();
-          if (q) window.location.href = '/productos/?search=' + encodeURIComponent(q);
-        };
-        searchBtn.addEventListener('click', go);
-        searchInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') go(); });
-      }
-    });
-    </script>
 
 </body>
 </html>
