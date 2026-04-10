@@ -57,7 +57,7 @@
                                                 inputmode="text"
                                                 maxlength="20"
                                                 pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{1,20}"
-                                                placeholder="Tu nombre"
+                                                placeholder="Ej: Carlos"
                                                 required
                                                 title="Solo letras (máx. 20 caracteres)"
                                                 type="text"
@@ -72,7 +72,7 @@
                                                 inputmode="text"
                                                 maxlength="20"
                                                 pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{1,20}"
-                                                placeholder="Tu apellido"
+                                                placeholder="Ej: Pérez"
                                                 required
                                                 title="Solo letras (máx. 20 caracteres)"
                                                 type="text"
@@ -127,7 +127,7 @@
                                                 inputmode="numeric"
                                                 maxlength="7"
                                                 pattern="\d{7}"
-                                                placeholder="Nro. de teléfono"
+                                                placeholder="Ej: 1234567"
                                                 required
                                                 title="Solo números (7 dígitos)"
                                                 type="tel"
@@ -143,7 +143,7 @@
                                                 id="dn-email"
                                                 inputmode="email"
                                                 maxlength="50"
-                                                placeholder="tucorreo@ejemplo.com"
+                                                placeholder="Ej: correo@dominio.com"
                                                 required
                                                 title="Ingresa un correo válido (máx. 50 caracteres)"
                                                 type="email"

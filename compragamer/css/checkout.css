@@ -806,15 +806,17 @@ a.btn, a.btn:hover, a.btn:focus {
 
 .payment-details .dn-field .cart-input {
   width: 100%;
-  max-width: 100%;
-  height: auto;
-  padding: 10px 14px;
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius);
+  max-width: 220px;
+  height: 44px;
+  padding: 10px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  background: #ffffff;
   font-size: 14px;
-  text-align: left;
-  transition: border-color 0.2s;
-  box-sizing: border-box;
+  line-height: 1;
+  text-align: center;
+  outline: none;
+  transition: border-color .15s, box-shadow .15s;
 }
 
 .payment-details .dn-field .cart-input:focus {
@@ -829,14 +831,20 @@ a.btn, a.btn:hover, a.btn:focus {
   padding: 10px 8px;
 }
 
-/* Tipo+Documento and Código+Teléfono rows: small select + flexible input */
-.dn-row:not(:first-child):not(.dn-row-single) {
+/* All two-field rows: small first column + flexible second column */
+.dn-row:not(.dn-row-single) {
   grid-template-columns: auto 1fr;
+}
+
+/* Email row: wider input since it's full-width */
+.dn-row-single .dn-field .cart-input {
+  max-width: 440px;
+  text-align: left;
 }
 
 @media (max-width: 680px) {
   .dn-row { grid-template-columns: 1fr; gap: 12px; }
-  .dn-row:not(:first-child):not(.dn-row-single) { grid-template-columns: 1fr; }
+  .dn-row:not(.dn-row-single) { grid-template-columns: 1fr; }
   .dn-field-select { max-width: 100%; }
 }
 
