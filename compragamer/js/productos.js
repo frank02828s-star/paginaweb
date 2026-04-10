@@ -97,7 +97,10 @@ function loadProducts() {
     const pageProducts = filteredProducts.slice(startIndex, endIndex);
 
     if (pageProducts.length === 0) {
-        grid.innerHTML = '<p class="no-products">No se encontraron productos</p>';
+        grid.innerHTML = '<p class="no-products"><strong>No se encontraron productos</strong></p>';
+        // Hide pagination when there are no products
+        const pagination = document.getElementById('pagination');
+        if (pagination) pagination.innerHTML = '';
         return;
     }
 
