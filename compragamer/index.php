@@ -47,33 +47,6 @@
                     <span class="dot" data-slide="7"></span>
                 </div>
             </div>
-
-            <!-- Side Banners -->
-            <div class="side-banners">
-                <a href="/productos/" class="side-banner">
-                    <img src="https://imagenes.compragamer.com/espacioWeb/DC_20260406161521_svzvf1OB.jpg" alt="Lista de Precios">
-                    <div class="banner-content">
-                        <span class="banner-small">¿Tienes una idea de los componentes que quieres en tu nueva PC?</span>
-                        <h3>LISTA DE PRECIOS</h3>
-                        <p>AHORRA usando nuestros precios más bajos.</p>
-                    </div>
-                </a>
-                <a href="/productos/?cate=pc" class="side-banner">
-                    <img src="https://imagenes.compragamer.com/bannerPrincipal/DC_20260401111814_3wR0YRKX.jpg" alt="Edition Gamer Limited">
-                    <div class="banner-content">
-                        <h3>EDITION<br>GAMER LIMITED</h3>
-                    </div>
-                </a>
-                <a href="/productos/" class="side-banner addi-banner">
-                    <div class="banner-content">
-                        <span class="banner-small">Compra ahora,<br>y paga después con</span>
-                        <h3 class="addi-logo">Addi</h3>
-                        <p>Sin intereses,<br>sin costos adicionales*</p>
-                        <span class="banner-small">Fácil y en minutos solo necesitas tu cédula y Whatsapp</span>
-                        <button class="btn-comprar">Comprar</button>
-                    </div>
-                </a>
-            </div>
         </div>
     </section>
 
@@ -208,6 +181,12 @@
                 </div>
                 <div class="brand-static-item">
                     <img src="https://ext.same-assets.com/2607188538/1606536654.webp" alt="HYTECH">
+                </div>
+                <div class="brand-static-item">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Kingston_Technology_logo.svg" alt="KINGSTON">
+                </div>
+                <div class="brand-static-item">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/72/Gigabyte_Technology_logo_20080107.svg" alt="GIGABYTE">
                 </div>
             </div>
         </div>

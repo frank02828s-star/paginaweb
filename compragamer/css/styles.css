@@ -146,6 +146,7 @@ ul, ol {
     background: var(--primary-color);
     color: #fff;
     padding: 10px 16px;
+    border-radius: 0 var(--radius) var(--radius) 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -510,20 +511,16 @@ ul, ol {
 }
 
 .hero-container {
-    max-width: 1800px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 300px;
-    grid-template-rows: 1fr;
-    align-items: stretch;
-    gap: 10px;
-    padding: 10px 30px;
+    max-width: 100%;
+    margin: 0;
+    display: block;
+    padding: 0;
 }
 
 /* Main Slider */
 .main-slider {
     position: relative;
-    border-radius: var(--radius);
+    border-radius: 0;
     overflow: hidden;
 }
 
@@ -672,14 +669,15 @@ ul, ol {
    ===================================================== */
 .categories-section {
     background: var(--bg-white);
-    padding: 30px 0;
+    padding: 12px 0;
+    border-top: 1px solid var(--border-color);
     border-bottom: 1px solid var(--border-color);
 }
 
 .categories-grid {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    gap: 16px;
+    gap: 4px;
 }
 
 .category-item {
@@ -698,9 +696,9 @@ ul, ol {
 }
 
 .category-icon {
-    width: 80px;
-    height: 80px;
-    margin-bottom: 10px;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 6px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -718,7 +716,7 @@ ul, ol {
 }
 
 .category-item span {
-    font-size: 10px;
+    font-size: 11px;
     font-weight: 700;
     text-transform: uppercase;
     text-align: center;
@@ -917,7 +915,7 @@ ul, ol {
 .products-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 20px;
+    gap: 10px;
     padding: 0 30px;
 }
 
@@ -925,9 +923,9 @@ ul, ol {
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
 }
 
-/* Home page: fixed 5-column grid inside section-container */
+/* Home page: fixed 6-column grid inside section-container */
 .products-section .products-grid {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     padding: 0;
 }
 
@@ -948,28 +946,20 @@ ul, ol {
 }
 
 .offers-slider-track {
-    position: relative;
+    display: flex;
+    transition: transform 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 .offers-slide {
-    display: none;
+    flex: 0 0 100%;
+    min-width: 100%;
     padding: 4px;
-}
-
-.offers-slide.active {
-    display: block;
-    animation: offersFadeIn 0.4s ease;
 }
 
 .offers-slide .products-grid .product-card:hover {
     transform: none;
     box-shadow: var(--shadow-lg);
     border-color: var(--primary-color);
-}
-
-@keyframes offersFadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
 }
 
 .offers-slider-nav {
@@ -1112,7 +1102,7 @@ ul, ol {
     border-radius: var(--radius);
     display: flex;
     overflow: hidden;
-    min-height: 180px;
+    min-height: 260px;
 }
 
 .pc-banner-content {
@@ -1246,7 +1236,7 @@ ul, ol {
 .footer-top {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 40px;
+    gap: 16px;
 }
 
 .footer-col {
@@ -1661,10 +1651,6 @@ ul, ol {
    RESPONSIVE
    ===================================================== */
 @media (max-width: 1200px) {
-    .hero-container {
-        grid-template-columns: 1fr 240px;
-    }
-
     .categories-grid {
         grid-template-columns: repeat(6, 1fr);
     }
@@ -1687,20 +1673,8 @@ ul, ol {
         gap: 24px;
     }
 
-    .hero-container {
-        grid-template-columns: 1fr;
-    }
-
     .main-slider {
         height: 280px;
-    }
-
-    .side-banners {
-        flex-direction: row;
-    }
-
-    .side-banner {
-        min-height: 120px;
     }
 
     .categories-grid {
@@ -1769,10 +1743,6 @@ ul, ol {
 
     .main-slider {
         height: 220px;
-    }
-
-    .side-banners {
-        flex-direction: column;
     }
 
     .categories-grid {
@@ -1847,10 +1817,6 @@ ul, ol {
 }
 
 @media (max-width: 480px) {
-    .hero-container {
-        padding: 10px;
-    }
-
     .main-slider {
         height: 180px;
     }

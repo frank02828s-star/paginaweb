@@ -18,7 +18,7 @@ if (!isset($rootPath)) $rootPath = '';
             </div>
             <div class="header-actions">
                 <a href="/ayuda/" class="header-action-link">
-                    <span class="material-icons">settings</span>
+                    <span class="material-icons">help_outline</span>
                     <span>Ayuda</span>
                 </a>
                 <a href="#" class="header-action-link" id="loginBtn">

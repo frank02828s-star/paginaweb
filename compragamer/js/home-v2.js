@@ -173,7 +173,7 @@ function initMainSlider() {
     slider.addEventListener('mouseleave', startAutoSlide);
 }
 
-// Load offer products as a slider
+// Load offer products as a horizontal snap slider
 function loadHomeOffers() {
     var track = document.getElementById('offersSliderTrack');
     var dotsWrap = document.getElementById('offersSliderDots');
@@ -182,15 +182,14 @@ function loadHomeOffers() {
     if (!track) return;
 
     var productsPerSlide = 6;
-    var MIN_SLIDES = 4; // User requested 4 slides in the offers carousel
+    var MIN_SLIDES = 4;
     var totalSlides = Math.ceil(homeOfferProducts.length / productsPerSlide) || 1;
-    // Ensure minimum slides by cycling products if needed
     if (totalSlides < MIN_SLIDES) totalSlides = MIN_SLIDES;
 
     track.innerHTML = '';
     for (var s = 0; s < totalSlides; s++) {
         var slide = document.createElement('div');
-        slide.className = 'offers-slide' + (s === 0 ? ' active' : '');
+        slide.className = 'offers-slide';
         var grid = document.createElement('div');
         grid.className = 'products-grid';
         for (var p = 0; p < productsPerSlide; p++) {
@@ -222,12 +221,10 @@ function loadHomeOffers() {
 
     var currentOfferSlide = 0;
     function goToOfferSlide(idx) {
-        var slides = track.querySelectorAll('.offers-slide');
         var dots = dotsWrap ? dotsWrap.querySelectorAll('.offers-dot') : [];
-        slides.forEach(function(sl) { sl.classList.remove('active'); });
         dots.forEach(function(dt) { dt.classList.remove('active'); });
-        if (slides[idx]) slides[idx].classList.add('active');
         if (dots[idx]) dots[idx].classList.add('active');
+        track.style.transform = 'translateX(-' + (idx * 100) + '%)';
         currentOfferSlide = idx;
     }
 
