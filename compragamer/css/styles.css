@@ -4,8 +4,8 @@
 
 /* CSS Variables */
 :root {
-    --primary-color: #E5A100;
-    --primary-dark: #C88D00;
+    --primary-color: #e63323;
+    --primary-dark: #c62a1c;
     --secondary-color: #282226;
     --text-color: #333;
     --text-light: #666;
@@ -94,9 +94,9 @@ ul, ol {
 }
 
 .header-container {
-    max-width: 1400px;
+    max-width: 1800px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 30px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -124,7 +124,7 @@ ul, ol {
 
 .search-box {
     flex: 1;
-    max-width: 500px;
+    max-width: 650px;
     display: flex;
     background: #fff;
     border-radius: var(--radius);
@@ -247,7 +247,27 @@ ul, ol {
 .header-actions {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 8px;
+}
+
+.header-action-link {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #fff;
+    font-size: 13px;
+    padding: 8px 12px;
+    border-radius: var(--radius);
+    transition: var(--transition);
+    white-space: nowrap;
+}
+
+.header-action-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.header-action-link .material-icons {
+    font-size: 20px;
 }
 
 .login-btn {
@@ -302,9 +322,9 @@ ul, ol {
 }
 
 .nav-container {
-    max-width: 1400px;
+    max-width: 1800px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 30px;
     display: flex;
     justify-content: center;
     gap: 40px;
@@ -399,7 +419,7 @@ ul, ol {
     align-items: center;
     justify-content: space-between;
     margin-bottom: 24px;
-    padding: 0 20px;
+    padding: 0 30px;
 }
 
 .section-header h2 {
@@ -553,9 +573,9 @@ ul, ol {
    ===================================================== */
 .products-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 16px;
-    padding: 0 20px;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 0 30px;
 }
 
 .products-grid.compact {
@@ -573,9 +593,9 @@ ul, ol {
 }
 
 .footer-container {
-    max-width: 1400px;
+    max-width: 1800px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 30px;
 }
 
 .footer-top {
@@ -675,9 +695,9 @@ ul, ol {
 }
 
 .footer-bottom {
-    max-width: 1400px;
+    max-width: 1800px;
     margin: 30px auto 0;
-    padding: 20px 20px;
+    padding: 20px 30px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     text-align: center;
 }

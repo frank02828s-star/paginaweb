@@ -17,9 +17,13 @@ if (!isset($rootPath)) $rootPath = '';
                 <div class="search-results-dropdown" id="searchResultsDropdown"></div>
             </div>
             <div class="header-actions">
-                <a href="#" class="login-btn" id="loginBtn">
+                <a href="/ayuda/" class="header-action-link">
+                    <span class="material-icons">settings</span>
+                    <span>Ayuda</span>
+                </a>
+                <a href="#" class="header-action-link" id="loginBtn">
                     <span class="material-icons">person_outline</span>
-                    <span class="login-text">Ingresá</span>
+                    <span>Iniciar sesión</span>
                 </a>
                 <button class="cart-btn" id="cartBtn" onclick="window.location.href='/carrito/'">
                     <span class="material-icons">shopping_cart</span>
@@ -32,10 +36,9 @@ if (!isset($rootPath)) $rootPath = '';
     <!-- Navigation -->
     <nav class="main-nav">
         <div class="nav-container">
-            <a href="/productos/" class="nav-link">Productos</a>
-            <a href="/productos/?cate=notebooks" class="nav-link">Notebooks</a>
             <a href="/armatupc/" class="nav-link">Armá tu PC</a>
-            <a href="/ayuda/" class="nav-link">Ayuda</a>
+            <a href="/productos/" class="nav-link">Ofertas Especiales</a>
+            <a href="/productos/?cate=notebooks" class="nav-link">Licencias Digitales</a>
         </div>
     </nav>
     <script src="/js/live-search.js"></script>

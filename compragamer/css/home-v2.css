@@ -11,14 +11,14 @@
 }
 
 .hero-container {
-    max-width: 1400px;
+    max-width: 1800px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 220px;
+    grid-template-columns: 1fr 300px;
     grid-template-rows: 1fr;
     align-items: stretch;
     gap: 10px;
-    padding: 10px 20px;
+    padding: 10px 30px;
 }
 
 /* Main Slider */
@@ -191,9 +191,9 @@
 }
 
 .section-container {
-    max-width: 1400px;
+    max-width: 1800px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 30px;
 }
 
 .section-title {
@@ -353,7 +353,7 @@
 .products-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 16px;
+    gap: 20px;
 }
 
 /* Product Card - HOVER sobre toda la card */
@@ -651,7 +651,7 @@
    ===================================================== */
 @media (max-width: 1200px) {
     .hero-container {
-        grid-template-columns: 1fr 200px;
+        grid-template-columns: 1fr 240px;
     }
 
     .categories-grid {

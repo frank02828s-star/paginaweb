@@ -10,7 +10,7 @@
 }
 
 .page-header-container {
-    max-width: 1400px;
+    max-width: 1800px;
     margin: 0 auto;
     padding: 0 20px;
     display: flex;
@@ -46,7 +46,7 @@
 }
 
 .info-container {
-    max-width: 1400px;
+    max-width: 1800px;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -59,7 +59,7 @@
 
 /* Builder Page Layout */
 .builder-page {
-    max-width: 1400px;
+    max-width: 1800px;
     margin: 0 auto;
     padding: 20px;
     display: flex;
