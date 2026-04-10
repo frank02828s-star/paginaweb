@@ -1,5 +1,5 @@
 /* =====================================================
-   COMPRA GAMER - LIVE SEARCH (Shared across all pages)
+   CPU STORE VZLA - LIVE SEARCH (Shared across all pages)
    ===================================================== */
 (function() {
     document.addEventListener('DOMContentLoaded', function() {

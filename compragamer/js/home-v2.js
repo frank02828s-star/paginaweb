@@ -1,5 +1,5 @@
 /* =====================================================
-   COMPRA GAMER - HOME V2 JAVASCRIPT
+   CPU STORE VZLA - HOME V2 JAVASCRIPT
    ===================================================== */
 
 // Products data

@@ -1,5 +1,5 @@
 /* =====================================================
-   COMPRA GAMER CLONE - DATA
+   CPU STORE VZLA CLONE - DATA
    ===================================================== */
 
 // Product placeholder image
@@ -655,8 +655,8 @@ const faqData = [
         content: 'En todas las compras efectuadas en la web, brindamos sin excepción alguna, la factura de compra. Una vez que realiza y abona el pedido, enviamos a tu dirección de correo electrónico la factura correspondiente.'
     },
     {
-        title: 'Utilizar el saldo en mi cuenta de Compra Gamer',
-        content: 'Sí. Podés utilizar el saldo a favor en tu cuenta de Compra Gamer para realizar un nuevo pedido. En ese caso, simplemente elegí el mismo método de pago al finalizar la compra o contactanos desde la sección Ayuda.'
+        title: 'Utilizar el saldo en mi cuenta de CPU Store VZLA',
+        content: 'Sí. Podés utilizar el saldo a favor en tu cuenta de CPU Store VZLA para realizar un nuevo pedido. En ese caso, simplemente elegí el mismo método de pago al finalizar la compra o contactanos desde la sección Ayuda.'
     },
     {
         title: 'Solicitar el reintegro de un pago',
@@ -664,6 +664,6 @@ const faqData = [
     },
     {
         title: 'Garantías',
-        content: 'Para realizar consultas/reclamos relacionadas con la garantía o devolución de alguna de tus compras, contamos con el apartado "Compra Gamer te ayuda. ¿Cuál es tu consulta?" donde debés exponer tu caso.'
+        content: 'Para realizar consultas/reclamos relacionadas con la garantía o devolución de alguna de tus compras, contamos con el apartado "CPU Store VZLA te ayuda. ¿Cuál es tu consulta?" donde debés exponer tu caso.'
     }
 ];
