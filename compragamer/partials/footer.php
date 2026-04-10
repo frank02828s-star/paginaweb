@@ -4,7 +4,7 @@
             <div class="footer-top">
                 <div class="footer-col footer-contact">
                     <h4>Contacto</h4>
-                    <p><span class="material-icons">email</span> soporte@compragamer.com</p>
+                    <p><span class="material-icons">email</span> soporte@cpustorevzla.com</p>
                     <p><span class="material-icons">phone</span> +58 212-000-0000</p>
                     <p><span class="material-icons">location_on</span> Caracas, Venezuela</p>
                 </div>
@@ -52,6 +52,6 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2017 - <?php echo date('Y'); ?> CompraGamer. Todos los derechos reservados. Newton Station SRL.</p>
+            <p>© 2017 - <?php echo date('Y'); ?> CPU Store VZLA. Todos los derechos reservados.</p>
         </div>
     </footer>

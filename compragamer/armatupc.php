@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Armá tu PC - COMPRA GAMER</title>
+    <title>Armá tu PC - CPU STORE VZLA</title>
     <meta name="description" content="Configurá tu nueva PC sin errores de compatibilidad, seleccionando todos los componentes que deseás.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/armatupc.css">
-    <link rel="icon" href="https://ext.same-assets.com/4025281442/4260243455.svg" type="image/svg+xml">
+    <link rel="icon" href="https://github.com/user-attachments/assets/06c387e3-ef71-4004-aade-acbb0d8327c1" type="image/png">
 </head>
 <body>
 <?php include __DIR__ . '/partials/header.php'; ?>

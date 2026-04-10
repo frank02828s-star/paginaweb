@@ -6,8 +6,8 @@ if (!isset($rootPath)) $rootPath = '';
     <header class="header">
         <div class="header-container">
             <a href="/" class="logo">
-                <img src="https://ext.same-assets.com/4025281442/1301851404.svg" alt="Compra Gamer" class="logo-full">
-                <img src="https://ext.same-assets.com/4025281442/4260243455.svg" alt="Compra Gamer" class="logo-icon">
+                <img src="https://github.com/user-attachments/assets/06c387e3-ef71-4004-aade-acbb0d8327c1" alt="CPU Store VZLA" class="logo-full">
+                <img src="https://github.com/user-attachments/assets/06c387e3-ef71-4004-aade-acbb0d8327c1" alt="CPU Store VZLA" class="logo-icon">
             </a>
             <div class="search-box">
                 <input type="text" placeholder="Buscar productos" id="searchInput" autocomplete="off">
