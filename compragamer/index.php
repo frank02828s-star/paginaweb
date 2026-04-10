@@ -183,10 +183,10 @@
                     <img src="https://ext.same-assets.com/2607188538/1606536654.webp" alt="HYTECH">
                 </div>
                 <div class="brand-static-item">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Kingston_Technology_logo.svg" alt="KINGSTON">
+                    <img src="https://storage-asset.msi.com/event/2017/global-Kingston-logo.png" alt="KINGSTON">
                 </div>
                 <div class="brand-static-item">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/72/Gigabyte_Technology_logo_20080107.svg" alt="GIGABYTE">
+                    <img src="https://c1.neweggimages.com/Brandimage/Brand1444.gif" alt="GIGABYTE">
                 </div>
             </div>
         </div>
