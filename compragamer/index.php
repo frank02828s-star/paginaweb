@@ -41,10 +41,6 @@
                     <span class="dot" data-slide="1"></span>
                     <span class="dot" data-slide="2"></span>
                     <span class="dot" data-slide="3"></span>
-                    <span class="dot" data-slide="4"></span>
-                    <span class="dot" data-slide="5"></span>
-                    <span class="dot" data-slide="6"></span>
-                    <span class="dot" data-slide="7"></span>
                 </div>
             </div>
         </div>
@@ -183,7 +179,7 @@
                     <img src="https://ext.same-assets.com/2607188538/1606536654.webp" alt="HYTECH">
                 </div>
                 <div class="brand-static-item">
-                    <img src="https://storage-asset.msi.com/event/2017/global-Kingston-logo.png" alt="KINGSTON">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Kingston_Technology_logo_%282023%29.svg/320px-Kingston_Technology_logo_%282023%29.svg.png" alt="KINGSTON">
                 </div>
                 <div class="brand-static-item">
                     <img src="https://c1.neweggimages.com/Brandimage/Brand1444.gif" alt="GIGABYTE">

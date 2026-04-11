@@ -504,6 +504,7 @@ ul, ol {
     position: relative;
     border-radius: 0;
     overflow: hidden;
+    height: 420px;
 }
 
 .slider-wrapper {
