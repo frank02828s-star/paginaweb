@@ -119,7 +119,7 @@ function loadLatestProducts() {
     if (!grid) return;
 
     grid.innerHTML = latestProducts.map(product => `
-        <a href="productos.html?id=${product.id}" class="product-card">
+        <a href="/productos/?id=${product.id}" class="product-card">
             <div class="product-image">
                 <img src="${product.image}" alt="${product.title}" onerror="this.src='${PLACEHOLDER_IMG}'">
             </div>
@@ -181,7 +181,7 @@ function createProductCard(product) {
             </div>
             <div class="product-info">
                 <h3 class="product-title">
-                    <a href="productos.html?id=${product.id}">${product.title}</a>
+                    <a href="/productos/?id=${product.id}">${product.title}</a>
                 </h3>
                 <div class="product-prices">
                     ${product.oldPrice ? `<span class="price-old">${formatPrice(product.oldPrice)}</span>` : ''}
@@ -349,65 +349,15 @@ function updateCartCount() {
 // MODAL
 // =====================================================
 function initModal() {
-    const loginBtn = document.getElementById('loginBtn');
-    const loginModal = document.getElementById('loginModal');
-    const modalOverlay = document.getElementById('modalOverlay');
-    const closeLogin = document.getElementById('closeLogin');
-    const loginForm = document.getElementById('loginForm');
-
-    if (!loginBtn || !loginModal) return;
-
-    function openModal() {
-        loginModal.classList.add('open');
-        modalOverlay.classList.add('open');
-        document.body.style.overflow = 'hidden';
-    }
-
-    function closeModal() {
-        loginModal.classList.remove('open');
-        modalOverlay.classList.remove('open');
-        document.body.style.overflow = '';
-    }
-
-    loginBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        openModal();
-    });
-
-    closeLogin.addEventListener('click', closeModal);
-    modalOverlay.addEventListener('click', closeModal);
-
-    if (loginForm) {
-        loginForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            showNotification('Funcionalidad de login simulada');
-            closeModal();
-        });
-    }
+    // Login modal is now handled by partials/login-modal.php
+    // This function is kept as a no-op for backward compatibility
 }
 
 // =====================================================
 // SEARCH
 // =====================================================
 function initSearch() {
-    const searchInput = document.getElementById('searchInput');
-    const searchBtn = document.getElementById('searchBtn');
-
-    if (!searchInput || !searchBtn) return;
-
-    function performSearch() {
-        const query = searchInput.value.trim();
-        if (query) {
-            window.location.href = `productos.html?search=${encodeURIComponent(query)}`;
-        }
-    }
-
-    searchBtn.addEventListener('click', performSearch);
-    searchInput.addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') {
-            performSearch();
-        }
-    });
+    // Live search is now handled by /js/live-search.js loaded from header
 }
 
 // =====================================================
@@ -496,12 +446,12 @@ function debounce(func, wait) {
 window.removeFromCart = removeFromCart;
 window.updateQuantity = updateQuantity;
 
-// Redirect checkout buttons to carrito.html
+// Redirect checkout buttons to carrito
 document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.checkout-btn').forEach(function(btn) {
         btn.addEventListener('click', function(e) {
             e.preventDefault();
-            window.location.href = 'carrito.html';
+            window.location.href = '/carrito/';
         });
     });
 });

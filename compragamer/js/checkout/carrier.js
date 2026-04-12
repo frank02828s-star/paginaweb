@@ -9,7 +9,7 @@
  */
 
 (function () {
-  // Logos (rutas relativas desde checkout/order-verification.html)
+  // Logos (absolute paths from htdocs root)
   var LOGOS = {
     mrw:    '/assets/images/mrw.png',
     zoom:   '/assets/images/zoom.png',

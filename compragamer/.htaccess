@@ -1,0 +1,20 @@
+Options -Indexes
+RewriteEngine On
+
+# Serve existing files and directories as-is
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Clean URL rewrites for root-level pages
+RewriteRule ^$                              index.php [L]
+RewriteRule ^index/?$                       index.php [L]
+RewriteRule ^productos/?$                   productos.php [L]
+RewriteRule ^carrito/?$                     carrito.php [L]
+RewriteRule ^armatupc/?$                    armatupc.php [L]
+RewriteRule ^ayuda/?$                       ayuda.php [L]
+
+# Clean URL rewrites for checkout pages
+RewriteRule ^checkout/metodo-envio/?$       checkout/metodo-envio.php [L]
+RewriteRule ^checkout/verificacion-orden/?$ checkout/verificacion-orden.php [L]
+RewriteRule ^checkout/orden-completada/?$   checkout/orden-completada.php [L]

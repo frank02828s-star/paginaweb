@@ -1,5 +1,5 @@
 /* =====================================================
-   COMPRA GAMER CLONE - DATA
+   CPU STORE VZLA CLONE - DATA
    ===================================================== */
 
 // Product placeholder image
@@ -15,7 +15,8 @@ const featuredProducts = {
             price: 654580,
             oldPrice: 684550,
             discount: 29970,
-            category: 'Periféricos'
+            category: 'Periféricos',
+            subcategory: 'Auriculares'
         },
         {
             id: 2,
@@ -24,7 +25,8 @@ const featuredProducts = {
             price: 231600,
             oldPrice: null,
             discount: null,
-            category: 'Periféricos'
+            category: 'Periféricos',
+            subcategory: 'Teclados'
         },
         {
             id: 3,
@@ -33,7 +35,8 @@ const featuredProducts = {
             price: 156350,
             oldPrice: null,
             discount: null,
-            category: 'Periféricos'
+            category: 'Periféricos',
+            subcategory: 'Teclados'
         },
         {
             id: 4,
@@ -42,7 +45,8 @@ const featuredProducts = {
             price: 193776,
             oldPrice: 214250,
             discount: 20474,
-            category: 'Periféricos'
+            category: 'Periféricos',
+            subcategory: 'Teclados'
         },
         {
             id: 5,
@@ -51,7 +55,8 @@ const featuredProducts = {
             price: 238681,
             oldPrice: 254000,
             discount: 15319,
-            category: 'Periféricos'
+            category: 'Periféricos',
+            subcategory: 'Auriculares'
         },
         {
             id: 6,
@@ -60,7 +65,8 @@ const featuredProducts = {
             price: 342410,
             oldPrice: 353750,
             discount: 11340,
-            category: 'Periféricos'
+            category: 'Periféricos',
+            subcategory: 'Auriculares'
         }
     ],
     monitores: [
@@ -71,7 +77,8 @@ const featuredProducts = {
             price: 1771150,
             oldPrice: null,
             discount: null,
-            category: 'Monitores'
+            category: 'Monitores',
+            subcategory: 'Monitores y pantallas'
         },
         {
             id: 8,
@@ -80,7 +87,8 @@ const featuredProducts = {
             price: 1450000,
             oldPrice: 1550000,
             discount: 100000,
-            category: 'Monitores'
+            category: 'Monitores',
+            subcategory: 'Monitores y pantallas'
         },
         {
             id: 9,
@@ -89,7 +97,8 @@ const featuredProducts = {
             price: 890000,
             oldPrice: null,
             discount: null,
-            category: 'Monitores'
+            category: 'Monitores',
+            subcategory: 'Monitores y pantallas'
         }
     ],
     procesadores: [
@@ -100,7 +109,8 @@ const featuredProducts = {
             price: 950450,
             oldPrice: null,
             discount: null,
-            category: 'Procesadores'
+            category: 'Procesadores',
+            subcategory: 'Procesadores AMD'
         },
         {
             id: 11,
@@ -109,7 +119,8 @@ const featuredProducts = {
             price: 849500,
             oldPrice: null,
             discount: null,
-            category: 'Procesadores'
+            category: 'Procesadores',
+            subcategory: 'Procesadores Intel'
         },
         {
             id: 12,
@@ -118,7 +129,8 @@ const featuredProducts = {
             price: 669750,
             oldPrice: null,
             discount: null,
-            category: 'Procesadores'
+            category: 'Procesadores',
+            subcategory: 'Procesadores AMD'
         }
     ],
     placas: [
@@ -129,7 +141,8 @@ const featuredProducts = {
             price: 1195750,
             oldPrice: null,
             discount: null,
-            category: 'Placas de Video'
+            category: 'Placas de Video',
+            subcategory: 'Placas de Video Radeon AMD'
         },
         {
             id: 14,
@@ -138,7 +151,8 @@ const featuredProducts = {
             price: 3500000,
             oldPrice: null,
             discount: null,
-            category: 'Placas de Video'
+            category: 'Placas de Video',
+            subcategory: 'Placas de Video GeForce'
         },
         {
             id: 15,
@@ -147,7 +161,8 @@ const featuredProducts = {
             price: 2100000,
             oldPrice: 2250000,
             discount: 150000,
-            category: 'Placas de Video'
+            category: 'Placas de Video',
+            subcategory: 'Placas de Video GeForce'
         }
     ],
     conectividad: [
@@ -158,7 +173,8 @@ const featuredProducts = {
             price: 450000,
             oldPrice: null,
             discount: null,
-            category: 'Conectividad'
+            category: 'Conectividad',
+            subcategory: 'Routers WiFi'
         },
         {
             id: 17,
@@ -167,7 +183,8 @@ const featuredProducts = {
             price: 45000,
             oldPrice: null,
             discount: null,
-            category: 'Conectividad'
+            category: 'Conectividad',
+            subcategory: 'Placas de red inalámbricas'
         }
     ],
     gabinetes: [
@@ -178,7 +195,8 @@ const featuredProducts = {
             price: 617500,
             oldPrice: null,
             discount: null,
-            category: 'Gabinetes'
+            category: 'Gabinetes',
+            subcategory: 'Gabinetes'
         },
         {
             id: 19,
@@ -187,7 +205,8 @@ const featuredProducts = {
             price: 617500,
             oldPrice: null,
             discount: null,
-            category: 'Gabinetes'
+            category: 'Gabinetes',
+            subcategory: 'Gabinetes'
         },
         {
             id: 20,
@@ -196,7 +215,8 @@ const featuredProducts = {
             price: 320000,
             oldPrice: null,
             discount: null,
-            category: 'Gabinetes'
+            category: 'Gabinetes',
+            subcategory: 'Gabinetes'
         }
     ],
     sillas: [
@@ -207,7 +227,8 @@ const featuredProducts = {
             price: 542850,
             oldPrice: null,
             discount: null,
-            category: 'Sillas Gamer'
+            category: 'Sillas Gamers',
+            subcategory: 'Sillas Gamers'
         },
         {
             id: 22,
@@ -216,7 +237,8 @@ const featuredProducts = {
             price: 542850,
             oldPrice: null,
             discount: null,
-            category: 'Sillas Gamer'
+            category: 'Sillas Gamers',
+            subcategory: 'Sillas Gamers'
         },
         {
             id: 23,
@@ -225,7 +247,8 @@ const featuredProducts = {
             price: 780000,
             oldPrice: 850000,
             discount: 70000,
-            category: 'Sillas Gamer'
+            category: 'Sillas Gamers',
+            subcategory: 'Sillas Gamers'
         }
     ]
 };
@@ -237,42 +260,48 @@ const latestProducts = [
         title: 'Odyssey G9 G91F 49" Dual QHD',
         image: PLACEHOLDER_IMG,
         price: 1771150,
-        category: 'MONITORES Y PANTALLAS'
+        category: 'Monitores',
+        subcategory: 'Monitores y pantallas'
     },
     {
         id: 25,
         title: 'Juga donde quieras - ROG Ally',
         image: PLACEHOLDER_IMG,
         price: 1104990,
-        category: 'CONSOLAS'
+        category: 'Consolas',
+        subcategory: 'Consolas'
     },
     {
         id: 26,
         title: 'Mother ASUS Z590 GUNDAM EDITION WIFI',
         image: PLACEHOLDER_IMG,
         price: 357650,
-        category: 'MOTHERS INTEL'
+        category: 'Mothers',
+        subcategory: 'Mothers Intel'
     },
     {
         id: 27,
         title: 'Seasonic 1200W 80+ Platinum',
         image: PLACEHOLDER_IMG,
         price: 549650,
-        category: 'FUENTES DE ALIMENTACIÓN'
+        category: 'Fuentes',
+        subcategory: 'Fuentes de alimentación'
     },
     {
         id: 28,
         title: 'Seasonic CORE GX850W 80+ Gold',
         image: PLACEHOLDER_IMG,
         price: 238150,
-        category: 'FUENTES DE ALIMENTACIÓN'
+        category: 'Fuentes',
+        subcategory: 'Fuentes de alimentación'
     },
     {
         id: 29,
         title: 'TUF GAMING B850-E WIFI',
         image: PLACEHOLDER_IMG,
         price: 348750,
-        category: 'MOTHERS AMD'
+        category: 'Mothers',
+        subcategory: 'Mothers AMD'
     }
 ];
 
@@ -284,7 +313,9 @@ const mpProducts = [
         image: PLACEHOLDER_IMG,
         price: 1141200,
         oldPrice: 1521600,
-        discount: 380400
+        discount: 380400,
+        category: 'Notebooks',
+        subcategory: 'Notebooks'
     },
     {
         id: 31,
@@ -292,7 +323,9 @@ const mpProducts = [
         image: PLACEHOLDER_IMG,
         price: 1325760,
         oldPrice: 1657200,
-        discount: 331440
+        discount: 331440,
+        category: 'Notebooks',
+        subcategory: 'Notebooks'
     },
     {
         id: 32,
@@ -300,7 +333,9 @@ const mpProducts = [
         image: PLACEHOLDER_IMG,
         price: 1690330,
         oldPrice: 1965500,
-        discount: 275170
+        discount: 275170,
+        category: 'Notebooks',
+        subcategory: 'Notebooks Gaming'
     }
 ];
 
@@ -311,19 +346,25 @@ const brandProducts = {
             id: 33,
             title: 'Consola ROG Xbox Ally AMD Ryzen AI Z2A 16GB SSD 512GB',
             image: PLACEHOLDER_IMG,
-            price: 1104990
+            price: 1104990,
+            category: 'Consolas',
+            subcategory: 'Consolas'
         },
         {
             id: 34,
             title: 'Microfono Asus ROG STRIX Carnyx RGB AuraSync USB-C White',
             image: PLACEHOLDER_IMG,
-            price: 280050
+            price: 280050,
+            category: 'Periféricos',
+            subcategory: 'Micrófonos'
         },
         {
             id: 35,
             title: 'Mother ASUS TUF GAMING X870-PLUS WIFI DDR5 AM5',
             image: PLACEHOLDER_IMG,
-            price: 518150
+            price: 518150,
+            category: 'Mothers',
+            subcategory: 'Mothers AMD'
         },
         {
             id: 36,
@@ -331,7 +372,9 @@ const brandProducts = {
             image: PLACEHOLDER_IMG,
             price: 776520,
             oldPrice: 862800,
-            discount: 86280
+            discount: 86280,
+            category: 'Notebooks',
+            subcategory: 'Notebooks'
         }
     ]
 };
@@ -612,8 +655,8 @@ const faqData = [
         content: 'En todas las compras efectuadas en la web, brindamos sin excepción alguna, la factura de compra. Una vez que realiza y abona el pedido, enviamos a tu dirección de correo electrónico la factura correspondiente.'
     },
     {
-        title: 'Utilizar el saldo en mi cuenta de Compra Gamer',
-        content: 'Sí. Podés utilizar el saldo a favor en tu cuenta de Compra Gamer para realizar un nuevo pedido. En ese caso, simplemente elegí el mismo método de pago al finalizar la compra o contactanos desde la sección Ayuda.'
+        title: 'Utilizar el saldo en mi cuenta de CPU Store VZLA',
+        content: 'Sí. Podés utilizar el saldo a favor en tu cuenta de CPU Store VZLA para realizar un nuevo pedido. En ese caso, simplemente elegí el mismo método de pago al finalizar la compra o contactanos desde la sección Ayuda.'
     },
     {
         title: 'Solicitar el reintegro de un pago',
@@ -621,6 +664,6 @@ const faqData = [
     },
     {
         title: 'Garantías',
-        content: 'Para realizar consultas/reclamos relacionadas con la garantía o devolución de alguna de tus compras, contamos con el apartado "Compra Gamer te ayuda. ¿Cuál es tu consulta?" donde debés exponer tu caso.'
+        content: 'Para realizar consultas/reclamos relacionadas con la garantía o devolución de alguna de tus compras, contamos con el apartado "CPU Store VZLA te ayuda. ¿Cuál es tu consulta?" donde debés exponer tu caso.'
     }
 ];

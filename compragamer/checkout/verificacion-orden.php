@@ -3,54 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COMPRA GAMER - Confirmar tu pedido</title>
+    <title>CPU STORE VZLA - Confirmar tu pedido</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/checkout.css">
-    <link rel="icon" href="https://ext.same-assets.com/4025281442/4260243455.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/checkout.css">
+    <link rel="icon" href="https://github.com/user-attachments/assets/06c387e3-ef71-4004-aade-acbb0d8327c1" type="image/png">
 </head>
 <body>
-
-    <!-- Header -->
-    <header class="header">
-        <div class="header-container">
-            <a href="../index.html" class="logo">
-                <img src="https://ext.same-assets.com/4025281442/1301851404.svg" alt="Compra Gamer" class="logo-full">
-                <img src="https://ext.same-assets.com/4025281442/4260243455.svg" alt="Compra Gamer" class="logo-icon">
-            </a>
-            <div class="search-box">
-                <input type="text" placeholder="Buscar productos" id="searchInput">
-                <button class="search-btn" id="searchBtn">
-                    <span class="material-icons">search</span>
-                </button>
-            </div>
-            <div class="header-actions">
-                <a href="#" class="login-btn" id="loginBtn">
-                    <span class="material-icons">person_outline</span>
-                    <span class="login-text">Ingresá</span>
-                </a>
-                <button class="cart-btn" id="cartBtn" onclick="window.location.href='../carrito.html'">
-                    <span class="material-icons">shopping_cart</span>
-                    <span class="cart-count" id="cartCount">0</span>
-                </button>
-            </div>
-        </div>
-    </header>
-
-    <!-- Navigation -->
-    <nav class="main-nav">
-        <div class="nav-container">
-            <a href="../productos.html" class="nav-link">Productos</a>
-            <a href="../productos.html?cate=notebooks" class="nav-link">Notebooks</a>
-            <a href="../armatupc.html" class="nav-link">Armá tu PC</a>
-            <a href="../ayuda.html" class="nav-link">Ayuda</a>
-        </div>
-    </nav>
-
+<?php include __DIR__ . '/../partials/header.php'; ?>
     <main>
         <div class="container checkout-page">
             <div class="page-title">
@@ -188,7 +152,7 @@
                                         <!-- Botón elegir ubicación (solo DELIVERY) -->
                                         <div id="deliveryLocationWrapper" style="display:none;">
                                             <button class="btn btn-secondary cart-purchase-btn" id="btnDeliveryLocation" type="button">
-                                                <i class="fas fa-map-marker-alt"></i> Elegir la ubicacion del delivery
+                                                <i class="fas fa-map-marker-alt"></i> Elegir la ubicación del delivery
                                             </button>
                                         </div>
                                     </div>
@@ -244,53 +208,17 @@
             </div>
         </div>
     </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-col">
-                <a href="#" target="_blank">
-                    <img src="https://ext.same-assets.com/4025281442/235471053.jpeg" alt="Data Fiscal" class="data-fiscal">
-                </a>
-            </div>
-            <div class="footer-col">
-                <a href="../ayuda.html" class="footer-link btn-outline-dark">Ayuda</a>
-                <a href="#" class="footer-link btn-outline-dark">Botón de arrepentimiento</a>
-                <a href="#" class="footer-link">Términos y condiciones</a>
-            </div>
-            <div class="footer-col social-col">
-                <h4>Seguinos en</h4>
-                <div class="social-links">
-                    <a href="#"><img src="https://ext.same-assets.com/4025281442/3256107104.svg" alt="X"></a>
-                    <a href="#"><img src="https://ext.same-assets.com/4025281442/1763622162.svg" alt="Instagram"></a>
-                    <a href="#"><img src="https://ext.same-assets.com/4025281442/2743748307.svg" alt="Facebook"></a>
-                    <a href="#"><img src="https://ext.same-assets.com/4025281442/632895441.svg" alt="YouTube"></a>
-                </div>
-                <div class="social-links">
-                    <a href="#"><img src="https://ext.same-assets.com/4025281442/3506379393.svg" alt="LinkedIn"></a>
-                    <a href="#"><img src="https://ext.same-assets.com/4025281442/2688196856.svg" alt="TikTok"></a>
-                    <a href="#"><img src="https://ext.same-assets.com/4025281442/1826512588.svg" alt="Twitch"></a>
-                </div>
-            </div>
-            <div class="footer-col">
-                <img src="https://ext.same-assets.com/4025281442/2548098512.svg" alt="Great Place to Work" class="gptw-logo">
-                <a href="#" class="footer-link">¡Trabajá con nosotros!</a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>Las marcas y logos de compragamer.com son Propiedad de Newton Station SRL. Todos los derechos reservados 2017.</p>
-        </div>
-    </footer>
-
+<?php include __DIR__ . '/../partials/footer.php'; ?>
+<?php include __DIR__ . '/../partials/login-modal.php'; ?>
     <!-- Shared checkout scripts -->
-    <script src="../js/checkout/storageKeys.js"></script>
-    <script src="../js/checkout/storage.js"></script>
-    <script src="../js/checkout/cart-shared.js"></script>
-    <script src="../js/checkout/checkoutGuard.js"></script>
-    <script src="../js/checkout/carrier.js"></script>
-    <script src="../js/checkout/order-verification-modals-lazy.js"></script>
-    <script src="../js/checkout/payment-method.js"></script>
-    <script src="../js/checkout/delivery-location.js"></script>
+    <script src="/js/checkout/storageKeys.js"></script>
+    <script src="/js/checkout/storage.js"></script>
+    <script src="/js/checkout/cart-shared.js"></script>
+    <script src="/js/checkout/checkoutGuard.js"></script>
+    <script src="/js/checkout/carrier.js"></script>
+    <script src="/js/checkout/order-verification-modals-lazy.js"></script>
+    <script src="/js/checkout/payment-method.js"></script>
+    <script src="/js/checkout/delivery-location.js"></script>
 
     <!-- Show/hide delivery location button -->
     <script>
@@ -310,7 +238,7 @@
     })();
     </script>
 
-    <script src="../js/checkout/checkout-modal-effects.js"></script>
+    <script src="/js/checkout/checkout-modal-effects.js"></script>
 
     <!-- Cart count + search -->
     <script>
@@ -325,7 +253,7 @@
       if (searchInput && searchBtn) {
         const go = () => {
           const q = searchInput.value.trim();
-          if (q) window.location.href = '../productos.html?search=' + encodeURIComponent(q);
+          if (q) window.location.href = '/productos/?search=' + encodeURIComponent(q);
         };
         searchBtn.addEventListener('click', go);
         searchInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') go(); });

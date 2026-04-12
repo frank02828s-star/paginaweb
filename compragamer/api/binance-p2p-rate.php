@@ -1,6 +1,7 @@
 <?php
 header('Content-Type: application/json; charset=utf-8');
 header('Cache-Control: no-store');
+header('Access-Control-Allow-Origin: *');
 
 $fiat  = 'VES';
 $asset = 'USDT';
@@ -14,14 +15,15 @@ $payload = [
   'rows' => 20,
   'payTypes' => [],          // sin filtrar por método (general)
   'countries' => [],
-'asset' => $asset,
+  'publisherType' => null,   // requerido por versiones recientes de la API
+  'asset' => $asset,
   'fiat' => $fiat,
   'tradeType' => 'BUY',
 ];
 
 // Cache simple para evitar rate-limit (60s)
 $cacheFile = __DIR__ . '/.binance_p2p_cache.json';
-$cacheTtl  = 5;
+$cacheTtl  = 60;
 
 if (file_exists($cacheFile)) {
   $raw = file_get_contents($cacheFile);
@@ -40,8 +42,13 @@ curl_setopt_array($ch, [
   CURLOPT_CONNECTTIMEOUT => 10,
   CURLOPT_TIMEOUT => 20,
 
-  // IMPORTANTÍSIMO: soportar gzip/deflate
+  // Soportar gzip/deflate
   CURLOPT_ENCODING => '',
+
+  // SSL: en XAMPP local a veces falla la verificación de certificados
+  CURLOPT_SSL_VERIFYPEER => true,
+  CURLOPT_SSL_VERIFYHOST => 2,
+  CURLOPT_FOLLOWLOCATION => true,
 
   // Headers que suelen evitar respuestas raras/bloqueos
   CURLOPT_HTTPHEADER => [
@@ -49,7 +56,7 @@ curl_setopt_array($ch, [
     'Accept: application/json',
     'Origin: https://p2p.binance.com',
     'Referer: https://p2p.binance.com/',
-    'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Safari/537.36',
+    'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130 Safari/537.36',
   ],
 ]);
 
@@ -57,6 +64,33 @@ $resp = curl_exec($ch);
 $http = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 $err  = curl_error($ch);
 curl_close($ch);
+
+// Retry without SSL verification if SSL failed (common on XAMPP without cacert.pem)
+if ($resp === false && strpos($err, 'SSL') !== false) {
+  $ch = curl_init($url);
+  curl_setopt_array($ch, [
+    CURLOPT_POST => true,
+    CURLOPT_POSTFIELDS => json_encode($payload),
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_CONNECTTIMEOUT => 10,
+    CURLOPT_TIMEOUT => 20,
+    CURLOPT_ENCODING => '',
+    CURLOPT_SSL_VERIFYPEER => false,
+    CURLOPT_SSL_VERIFYHOST => 0,
+    CURLOPT_FOLLOWLOCATION => true,
+    CURLOPT_HTTPHEADER => [
+      'Content-Type: application/json',
+      'Accept: application/json',
+      'Origin: https://p2p.binance.com',
+      'Referer: https://p2p.binance.com/',
+      'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130 Safari/537.36',
+    ],
+  ]);
+  $resp = curl_exec($ch);
+  $http = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+  $err  = curl_error($ch);
+  curl_close($ch);
+}
 
 if ($resp === false) {
   http_response_code(502);

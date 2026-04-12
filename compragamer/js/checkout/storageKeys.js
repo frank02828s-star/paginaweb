@@ -1,4 +1,4 @@
-// storageKeys.js - Constantes compartidas para localStorage (CompraGamer)
+// storageKeys.js - Constantes compartidas para localStorage (CPU Store VZLA)
 const STORAGE_KEYS = Object.freeze({
   CART: 'compragamer_cart',
   COUPON: 'compragamer_coupon',

@@ -3,54 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COMPRA GAMER - La mayor variedad de productos gaming</title>
-    <meta name="description" content="La mayor variedad de productos, al mejor precio y la mejor financiación. Envíos a todo el país">
+    <title>CPU STORE VZLA - La mayor variedad de productos gaming</title>
+    <meta name="description" content="La mayor variedad de productos gaming, al mejor precio. Envíos a todo Venezuela">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" href="https://ext.same-assets.com/4025281442/4260243455.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="icon" href="https://github.com/user-attachments/assets/06c387e3-ef71-4004-aade-acbb0d8327c1" type="image/png">
 </head>
 <body>
-    <!-- Header Original -->
-    <header class="header">
-        <div class="header-container">
-            <a href="index.html" class="logo">
-                <img src="https://ext.same-assets.com/4025281442/1301851404.svg" alt="Compra Gamer" class="logo-full">
-                <img src="https://ext.same-assets.com/4025281442/4260243455.svg" alt="Compra Gamer" class="logo-icon">
-            </a>
-
-            <div class="search-box">
-                <input type="text" placeholder="Buscar productos" id="searchInput">
-                <button class="search-btn" id="searchBtn">
-                    <span class="material-icons">search</span>
-                </button>
-            </div>
-
-            <div class="header-actions">
-                <a href="#" class="login-btn" id="loginBtn">
-                    <span class="material-icons">person_outline</span>
-                    <span class="login-text">Ingresá</span>
-                </a>
-                <button class="cart-btn" id="cartBtn">
-                    <span class="material-icons">shopping_cart</span>
-                    <span class="cart-count" id="cartCount">0</span>
-                </button>
-            </div>
-        </div>
-    </header>
-
-    <!-- Navigation Original -->
-    <nav class="main-nav">
-        <div class="nav-container">
-            <a href="productos.html" class="nav-link">Productos</a>
-            <a href="productos.html?cate=notebooks" class="nav-link">Notebooks</a>
-            <a href="armatupc.html" class="nav-link">Armá tu PC</a>
-            <a href="ayuda.html" class="nav-link">Ayuda</a>
-        </div>
-    </nav>
-
+<?php include __DIR__ . '/partials/header.php'; ?>
     <!-- Hero Banner Section -->
     <section class="hero-section">
         <div class="hero-container">
@@ -78,10 +41,6 @@
                     <span class="dot" data-slide="1"></span>
                     <span class="dot" data-slide="2"></span>
                     <span class="dot" data-slide="3"></span>
-                    <span class="dot" data-slide="4"></span>
-                    <span class="dot" data-slide="5"></span>
-                    <span class="dot" data-slide="6"></span>
-                    <span class="dot" data-slide="7"></span>
                 </div>
             </div>
         </div>
@@ -90,76 +49,78 @@
     <!-- Categories Section -->
     <section class="categories-section">
         <div class="section-container">
-            <h2 class="section-title">CATEGORÍAS DESTACADAS</h2>
+            <div class="section-header">
+                <h2 class="section-title">CATEGORÍAS DESTACADAS</h2>
+            </div>
 
             <div class="categories-grid">
-                <a href="productos.html?cate=pc" class="category-item">
+                <a href="/productos/?cate=pc" class="category-item">
                     <div class="category-icon">
                         <img src="https://ext.same-assets.com/2607188538/1125559298.webp" alt="PC">
                     </div>
                     <span>PC</span>
                 </a>
-                <a href="productos.html?cate=notebooks" class="category-item">
+                <a href="/productos/?cate=notebooks" class="category-item">
                     <div class="category-icon">
                         <img src="https://ext.same-assets.com/2607188538/1531796865.webp" alt="Portátiles">
                     </div>
                     <span>PORTATILES</span>
                 </a>
-                <a href="productos.html?cate=placas" class="category-item">
+                <a href="/productos/?cate=placas" class="category-item">
                     <div class="category-icon">
                         <img src="https://ext.same-assets.com/2607188538/3438154732.webp" alt="GPU">
                     </div>
                     <span>GPU</span>
                 </a>
-                <a href="productos.html?cate=monitores" class="category-item">
+                <a href="/productos/?cate=monitores" class="category-item">
                     <div class="category-icon">
                         <img src="https://ext.same-assets.com/2607188538/2258092406.webp" alt="Monitores">
                     </div>
                     <span>MONITORES</span>
                 </a>
-                <a href="productos.html?cate=gabinetes" class="category-item">
+                <a href="/productos/?cate=gabinetes" class="category-item">
                     <div class="category-icon">
                         <img src="https://ext.same-assets.com/2607188538/4013758804.webp" alt="Chasis">
                     </div>
                     <span>CHASIS</span>
                 </a>
-                <a href="productos.html?cate=sillas" class="category-item">
+                <a href="/productos/?cate=sillas" class="category-item">
                     <div class="category-icon">
                         <img src="https://ext.same-assets.com/2607188538/4257531422.webp" alt="Sillas">
                     </div>
                     <span>SILLAS</span>
                 </a>
-                <a href="productos.html?cate=refrigeracion" class="category-item">
+                <a href="/productos/?cate=refrigeracion" class="category-item">
                     <div class="category-icon">
                         <img src="https://ext.same-assets.com/2607188538/2388835604.webp" alt="Cooling">
                     </div>
                     <span>COOLING</span>
                 </a>
-                <a href="productos.html?cate=procesadores" class="category-item">
+                <a href="/productos/?cate=procesadores" class="category-item">
                     <div class="category-icon">
                         <img src="https://ext.same-assets.com/2607188538/1535875518.webp" alt="CPU">
                     </div>
                     <span>CPU</span>
                 </a>
-                <a href="productos.html" class="category-item">
+                <a href="/productos/" class="category-item">
                     <div class="category-icon">
                         <img src="https://ext.same-assets.com/2607188538/1761895700.webp" alt="SimRacing">
                     </div>
                     <span>SIMRACING</span>
                 </a>
-                <a href="productos.html?cate=mothers" class="category-item">
+                <a href="/productos/?cate=mothers" class="category-item">
                     <div class="category-icon">
                         <img src="https://ext.same-assets.com/2607188538/562476740.webp" alt="Board">
                     </div>
                     <span>BOARD</span>
                 </a>
-                <a href="productos.html?cate=ram" class="category-item">
+                <a href="/productos/?cate=ram" class="category-item">
                     <div class="category-icon">
                         <img src="https://ext.same-assets.com/2607188538/896279546.webp" alt="RAM">
                     </div>
                     <span>RAM</span>
                 </a>
-                <a href="productos.html?cate=fuentes" class="category-item">
+                <a href="/productos/?cate=fuentes" class="category-item">
                     <div class="category-icon">
                         <img src="https://ext.same-assets.com/2607188538/1524861650.webp" alt="Fuente">
                     </div>
@@ -174,45 +135,55 @@
         <div class="section-container">
             <div class="section-header">
                 <h2 class="section-title">OFERTAS EN PRODUCTOS</h2>
-                <a href="productos.html" class="btn-ver-mas">Ver más</a>
+                <div class="offers-slider-nav">
+                    <button class="offers-nav-btn" id="offersPrev"><span class="material-icons">chevron_left</span></button>
+                    <button class="offers-nav-btn" id="offersNext"><span class="material-icons">chevron_right</span></button>
+                </div>
             </div>
 
-            <div class="products-grid" id="offersGrid">
-                <!-- Products loaded dynamically -->
+            <div class="offers-slider-wrapper">
+                <div class="offers-slider-track" id="offersSliderTrack">
+                    <!-- Slides loaded dynamically -->
+                </div>
             </div>
+            <div class="offers-slider-dots" id="offersSliderDots"></div>
         </div>
     </section>
 
-    <!-- Brands Section Header -->
-    <section class="brands-header-section">
+    <!-- Brands Section - Static logos -->
+    <section class="brands-static-section">
         <div class="section-container">
             <div class="section-header">
                 <h2 class="section-title">MARCAS DESTACADAS</h2>
-                <a href="productos.html" class="btn-ver-mas">Ver más</a>
             </div>
-        </div>
-    </section>
-
-    <!-- Brands Slider -->
-    <section class="brands-slider-section">
-        <div class="brands-slider-container">
-            <div class="brands-slider brands-slider-animated" id="brandsSlider">
-                <!-- First set of logos -->
-                <img src="https://ext.same-assets.com/2607188538/3699102926.webp" alt="SteelSeries" class="brand-logo">
-                <img src="https://ext.same-assets.com/2607188538/2413374335.webp" alt="ASUS" class="brand-logo">
-                <img src="https://ext.same-assets.com/2607188538/2949603871.webp" alt="Corsair" class="brand-logo">
-                <img src="https://ext.same-assets.com/2607188538/174554472.webp" alt="MSI" class="brand-logo">
-                <img src="https://ext.same-assets.com/2607188538/1606536654.webp" alt="Logitech" class="brand-logo">
-                <img src="https://ext.same-assets.com/2607188538/2832023656.webp" alt="Lian Li" class="brand-logo">
-                <img src="https://ext.same-assets.com/2607188538/328983973.webp" alt="HYTE" class="brand-logo">
-                <!-- Duplicate for infinite scroll effect -->
-                <img src="https://ext.same-assets.com/2607188538/3699102926.webp" alt="SteelSeries" class="brand-logo">
-                <img src="https://ext.same-assets.com/2607188538/2413374335.webp" alt="ASUS" class="brand-logo">
-                <img src="https://ext.same-assets.com/2607188538/2949603871.webp" alt="Corsair" class="brand-logo">
-                <img src="https://ext.same-assets.com/2607188538/174554472.webp" alt="MSI" class="brand-logo">
-                <img src="https://ext.same-assets.com/2607188538/1606536654.webp" alt="Logitech" class="brand-logo">
-                <img src="https://ext.same-assets.com/2607188538/2832023656.webp" alt="Lian Li" class="brand-logo">
-                <img src="https://ext.same-assets.com/2607188538/328983973.webp" alt="HYTE" class="brand-logo">
+            <div class="brands-static-grid">
+                <div class="brand-static-item">
+                    <img src="https://ext.same-assets.com/2607188538/3699102926.webp" alt="STEELSERIES">
+                </div>
+                <div class="brand-static-item">
+                    <img src="https://ext.same-assets.com/2607188538/2413374335.webp" alt="ASUS">
+                </div>
+                <div class="brand-static-item">
+                    <img src="https://ext.same-assets.com/2607188538/2949603871.webp" alt="CORSAIR">
+                </div>
+                <div class="brand-static-item">
+                    <img src="https://ext.same-assets.com/2607188538/174554472.webp" alt="MSI">
+                </div>
+                <div class="brand-static-item">
+                    <img src="https://ext.same-assets.com/2607188538/328983973.webp" alt="LOGITECH">
+                </div>
+                <div class="brand-static-item">
+                    <img src="https://ext.same-assets.com/2607188538/2832023656.webp" alt="LIANLI">
+                </div>
+                <div class="brand-static-item">
+                    <img src="https://ext.same-assets.com/2607188538/1606536654.webp" alt="HYTECH">
+                </div>
+                <div class="brand-static-item">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Kingston_Technology_logo_%282023%29.svg/320px-Kingston_Technology_logo_%282023%29.svg.png" alt="KINGSTON">
+                </div>
+                <div class="brand-static-item">
+                    <img src="https://c1.neweggimages.com/Brandimage/Brand1444.gif" alt="GIGABYTE">
+                </div>
             </div>
         </div>
     </section>
@@ -224,7 +195,7 @@
                 <div class="pc-banner-content">
                     <h2>SLIDER DE PC ENSAMBLADAS</h2>
                     <p>Equipos listos para jugar, crear y streamear</p>
-                    <a href="armatupc.html" class="btn-primary">Ver configuraciones</a>
+                    <a href="/armatupc/" class="btn-primary">Ver configuraciones</a>
                 </div>
                 <div class="pc-banner-image">
                     <img src="https://imagenes.compragamer.com/bannerPrincipal/DC_20260401111814_3wR0YRKX.jpg" alt="PC Gaming">
@@ -244,7 +215,6 @@
         <div class="section-container">
             <div class="section-header">
                 <h2 class="section-title">LAPTOPS GAMER</h2>
-                <a href="productos.html?cate=notebooks" class="btn-ver-mas">Ver más</a>
             </div>
 
             <div class="products-grid" id="laptopsGrid">
@@ -258,32 +228,31 @@
         <div class="section-container">
             <div class="section-header">
                 <h2 class="section-title">ARMA TU SETUP</h2>
-                <a href="productos.html" class="btn-ver-mas">Ver más</a>
             </div>
 
             <div class="setup-grid">
-                <a href="armatupc.html" class="setup-card">
+                <a href="/armatupc/" class="setup-card">
                     <img src="https://imagenes.compragamer.com/bannerPrincipal/DC_20260401111814_3wR0YRKX.jpg" alt="Arma tu Setup">
                     <div class="setup-overlay">
                         <h3>ARMA TU SETUP</h3>
                         <p>Configura Rápido Desde $15M / Build Gamer</p>
                     </div>
                 </a>
-                <a href="productos.html?cate=refrigeracion" class="setup-card">
+                <a href="/productos/?cate=refrigeracion" class="setup-card">
                     <img src="https://imagenes.compragamer.com/bannerPrincipal/DC_20260331180627_MDGyNnty.jpg" alt="Refrigeración Líquida">
                     <div class="setup-overlay">
                         <h3>REFRIGERACIÓN LIQUIDA</h3>
                         <p>Corsair | NZXT | De Gabinete Gamer</p>
                     </div>
                 </a>
-                <a href="productos.html?cate=gabinetes" class="setup-card">
+                <a href="/productos/?cate=gabinetes" class="setup-card">
                     <img src="https://imagenes.compragamer.com/bannerPrincipal/DC_20260406173831_fnCVhoKY.jpg" alt="RGB & Modding">
                     <div class="setup-overlay">
                         <h3>RGB & MODDING</h3>
                         <p>Controladores | RGB | Teclados | USB</p>
                     </div>
                 </a>
-                <a href="productos.html" class="setup-card">
+                <a href="/productos/" class="setup-card">
                     <img src="https://imagenes.compragamer.com/bannerPrincipal/DC_20260406091339_TtGSabc9.jpg" alt="Streaming Pro">
                     <div class="setup-overlay">
                         <h3>STREAMING PRO</h3>
@@ -293,48 +262,7 @@
             </div>
         </div>
     </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-col">
-                <a href="#" target="_blank">
-                    <img src="https://ext.same-assets.com/4025281442/235471053.jpeg" alt="Data Fiscal" class="data-fiscal">
-                </a>
-            </div>
-
-            <div class="footer-col">
-                <a href="ayuda.html" class="footer-link btn-outline-dark">Ayuda</a>
-                <a href="#" class="footer-link btn-outline-dark">Botón de arrepentimiento</a>
-                <a href="#" class="footer-link">Términos y condiciones</a>
-            </div>
-
-            <div class="footer-col social-col">
-                <h4>Seguinos en</h4>
-                <div class="social-links">
-                    <a href="#"><img src="https://ext.same-assets.com/4025281442/3256107104.svg" alt="X"></a>
-                    <a href="#"><img src="https://ext.same-assets.com/4025281442/1763622162.svg" alt="Instagram"></a>
-                    <a href="#"><img src="https://ext.same-assets.com/4025281442/2743748307.svg" alt="Facebook"></a>
-                    <a href="#"><img src="https://ext.same-assets.com/4025281442/632895441.svg" alt="YouTube"></a>
-                </div>
-                <div class="social-links">
-                    <a href="#"><img src="https://ext.same-assets.com/4025281442/3506379393.svg" alt="LinkedIn"></a>
-                    <a href="#"><img src="https://ext.same-assets.com/4025281442/2688196856.svg" alt="TikTok"></a>
-                    <a href="#"><img src="https://ext.same-assets.com/4025281442/1826512588.svg" alt="Twitch"></a>
-                </div>
-            </div>
-
-            <div class="footer-col">
-                <img src="https://ext.same-assets.com/4025281442/2548098512.svg" alt="Great Place to Work" class="gptw-logo">
-                <a href="#" class="footer-link">¡Trabajá con nosotros!</a>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <p>Las marcas y logos de compragamer.com son Propiedad de Newton Station SRL. Todos los derechos reservados 2017.</p>
-        </div>
-    </footer>
-
+<?php include __DIR__ . '/partials/footer.php'; ?>
     <!-- Cart Sidebar -->
     <div class="cart-sidebar" id="cartSidebar">
         <div class="cart-header">
@@ -351,36 +279,15 @@
                 <span>Total:</span>
                 <span id="cartTotal">$0</span>
             </div>
-            <button class="btn-primary checkout-btn" onclick="window.location.href='carrito.html'">Finalizar compra</button>
+            <button class="btn-primary checkout-btn" onclick="window.location.href='/carrito/'">Finalizar compra</button>
         </div>
     </div>
     <div class="cart-overlay" id="cartOverlay"></div>
 
-    <!-- Login Modal -->
-    <div class="modal" id="loginModal">
-        <div class="modal-content">
-            <button class="modal-close" id="closeLogin">
-                <span class="material-icons">close</span>
-            </button>
-            <h2>Iniciá sesión</h2>
-            <form id="loginForm">
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="password">Contraseña</label>
-                    <input type="password" id="password" required>
-                </div>
-                <button type="submit" class="btn-primary">Ingresar</button>
-            </form>
-            <p class="register-link">¿No tenés cuenta? <a href="#">Registrate</a></p>
-        </div>
-    </div>
-    <div class="modal-overlay" id="modalOverlay"></div>
+<?php include __DIR__ . '/partials/login-modal.php'; ?>
 
-    <script src="js/data.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/home-v2.js"></script>
+    <script src="/js/data.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/home-v2.js"></script>
 </body>
 </html>

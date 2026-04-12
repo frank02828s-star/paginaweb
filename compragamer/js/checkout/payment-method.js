@@ -144,7 +144,7 @@
   // Usamos esto para limpiar comprobantes al cambiar de método y evitar que se mezclen.
   let __lastPaymentDetailsMethod = null;
   // Protege el acceso (carrito + paso correcto)
-  if (window.guardCheckoutStep && !window.guardCheckoutStep('payment', '../carrito.html')) return;
+  if (window.guardCheckoutStep && !window.guardCheckoutStep('payment', '/carrito/')) return;
 
   const money = (value) => {
     try {
@@ -184,8 +184,8 @@ const setBinanceRate = (rate) => {
 };
 
 const fetchBinanceRate = async () => {
-  // Endpoint PHP incluido en ../api/binance-p2p-rate.php
-  const res = await fetch('../api/binance-p2p-rate.php?fiat=VES&asset=USDT', { cache: 'no-store' });
+  // Endpoint PHP
+  const res = await fetch('/api/binance-p2p-rate.php?fiat=VES&asset=USDT', { cache: 'no-store' });
   if (!res.ok) throw new Error('rate_fetch_failed');
   const data = await res.json();
   const n = Number(data?.rate || 0);
@@ -728,7 +728,7 @@ async function uploadProofImage(file) {
   const form = new FormData();
   form.append('image', file);
 
-  const res = await fetch('../api/imgbb-upload.php', { method: 'POST', body: form });
+  const res = await fetch('/api/imgbb-upload.php', { method: 'POST', body: form });
   let data = null;
   try { data = await res.json(); } catch (_) {}
 
@@ -783,7 +783,7 @@ const montoDisplay = isBinanceBolivaresMethod(methodId) ? montoBs : monto;
 
     const templates = {
       efectivo_divisas: {
-        img: '../images/efectivo_divisas.png',
+        img: '/images/efectivo_divisas.png',
         note: '',
         rows: [
           ['Monto a pagar', monto],
@@ -791,7 +791,7 @@ const montoDisplay = isBinanceBolivaresMethod(methodId) ? montoBs : monto;
       },
 
       pago_movil: {
-        img: '../images/pago_movil_qr.png',
+        img: '/images/pago_movil_qr.png',
         note: 'Escanea el codigo QR para realizar el pago movil.',
         rows: [
           ['Banco', 'Banesco Banco Universal (0134)'],
@@ -802,7 +802,7 @@ const montoDisplay = isBinanceBolivaresMethod(methodId) ? montoBs : monto;
         ],
       },
       transferencia: {
-        img: '../images/transferencia_qr.png',
+        img: '/images/transferencia_qr.png',
         note: '',
         rows: [
           ['Banco', 'Banesco Banco Universal'],
@@ -813,7 +813,7 @@ const montoDisplay = isBinanceBolivaresMethod(methodId) ? montoBs : monto;
         ],
       },
       binance_pay: {
-        img: '../images/binance_pay_qr.png',
+        img: '/images/binance_pay_qr.png',
         note: 'Escanea el codigo QR para realizar el pago.',
         rows: [
           ['Correo electronico', 'goddezzeus@gmail.com'],
@@ -821,7 +821,7 @@ const montoDisplay = isBinanceBolivaresMethod(methodId) ? montoBs : monto;
         ],
       },
       zinli: {
-        img: '../images/zinli_qr.png',
+        img: '/images/zinli_qr.png',
         note: 'Escanea el codigo QR para realizar el pago.',
         rows: [
           ['Correo electronico primario', 'dakspaces@gmail.com'],
@@ -830,7 +830,7 @@ const montoDisplay = isBinanceBolivaresMethod(methodId) ? montoBs : monto;
         ],
       },
       airtm: {
-        img: '../images/airtm_qr.png',
+        img: '/images/airtm_qr.png',
         note: 'Escanea el codigo QR para realizar el pago.',
         rows: [
           ['Nombre de usuario', 'cpustorevzla'],
@@ -1353,7 +1353,7 @@ function computeTax(amount, paymentMethodId) {
     const rawItem = (item && (item.image || item.img)) || '';
     const rawInv = (inv && (inv.image || inv.img)) || '';
 
-    const fallback = '../assets/images/placeholder-product.png';
+    const fallback = '/assets/images/placeholder-product.png';
 
     const norm = (raw) => String(raw || '').trim();
 
@@ -1578,7 +1578,7 @@ const deliveryUseVES = isBinanceBolivaresMethod(deliveryPaymentMethodId);
         // permitir volver y mantener el step en shipping
         try { sessionStorage.setItem('pcbuilder_checkout_step', 'shipping'); } catch (_) {}
         try { localStorage.setItem('pcbuilder_checkout_step', 'shipping'); } catch (_) {}
-        window.location.href = 'metodo-envio.html';
+        window.location.href = '/checkout/metodo-envio/';
       });
     }
 
@@ -1668,9 +1668,9 @@ try { localStorage.setItem('pcbuilder_order_confirmed_at', String(Date.now())); 
 try {
   const t = (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : (Date.now() + '-' + Math.random().toString(16).slice(2));
   sessionStorage.setItem('pcbuilder_completion_token', t);
-  window.location.href = 'orden-completada.html?token=' + encodeURIComponent(t);
+  window.location.href = '/checkout/orden-completada/?token=' + encodeURIComponent(t);
 } catch (_) {
-  window.location.href = 'orden-completada.html';
+  window.location.href = '/checkout/orden-completada/';
 }
 
           return;
@@ -2417,10 +2417,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function carrierLogoPath(key){
       var k = String(key||'').toLowerCase();
-      if (k === 'mrw') return '../assets/images/mrw.png';
-      if (k === 'zoom') return '../assets/images/zoom.png';
-      if (k === 'domesa') return '../assets/images/domesa.png';
-      if (k === 'tealca') return '../assets/images/tealca.png';
+      if (k === 'mrw') return '/assets/images/mrw.png';
+      if (k === 'zoom') return '/assets/images/zoom.png';
+      if (k === 'domesa') return '/assets/images/domesa.png';
+      if (k === 'tealca') return '/assets/images/tealca.png';
       return '';
     }
 
@@ -2790,8 +2790,19 @@ function renderNationalSummary(sel){
       gbtn.rel = 'noopener';
       gbtn.textContent = 'Ver en Google Maps';
 
+      var useAgencyBtn = document.createElement('button');
+      useAgencyBtn.id = 'nationalAgencyModalUseBtn';
+      useAgencyBtn.type = 'button';
+      useAgencyBtn.className = 'national-agency-modal-usebtn';
+      useAgencyBtn.textContent = 'Quiero usar esta agencia';
+
       mapWrap.appendChild(iframe);
-      mapWrap.appendChild(gbtn);
+
+      var btnRow = document.createElement('div');
+      btnRow.className = 'national-agency-modal-btnrow';
+      btnRow.appendChild(gbtn);
+      btnRow.appendChild(useAgencyBtn);
+      mapWrap.appendChild(btnRow);
 
       body.appendChild(tableWrap);
       body.appendChild(mapWrap);
@@ -2916,6 +2927,29 @@ function renderNationalSummary(sel){
       iframe.src = buildEmbedUrl(gmapsUrl, agency);
       gbtn.href = gmapsUrl || '#';
       gbtn.style.display = gmapsUrl ? 'inline-flex' : 'none';
+
+      // Store agency/carrier reference for "use this agency" button
+      var useBtn = document.getElementById('nationalAgencyModalUseBtn');
+      if (useBtn) {
+        var newUseBtn = useBtn.cloneNode(true);
+        useBtn.parentNode.replaceChild(newUseBtn, useBtn);
+        newUseBtn.id = 'nationalAgencyModalUseBtn';
+        newUseBtn.addEventListener('click', function(ev){
+          ev.preventDefault();
+          ev.stopPropagation();
+          closeAgencyModal();
+          // Find and click the inline "use agency" button for this agency
+          var agencyCard = document.querySelector('.national-agency-card[data-agency-id="' + (agency.id || '') + '"]');
+          if (agencyCard) {
+            agencyCard.click();
+            var inlineBtn = agencyCard.querySelector('.btn-use-agency-inline');
+            if (inlineBtn) {
+              inlineBtn.style.display = '';
+              inlineBtn.click();
+            }
+          }
+        });
+      }
 
       document.body.classList.add('no-scroll');
       requestAnimationFrame(function(){ overlay.classList.add('is-open'); });

@@ -2,10 +2,47 @@
    PRODUCTS PAGE JAVASCRIPT
    ===================================================== */
 
+// Merge all product sources (dedup by id AND by title) so every product is visible on the products page
+const TITLE_DEDUP_LENGTH = 50;
+function _mergeAllProducts() {
+    const map = new Map();
+    const seenTitles = new Set();
+
+    function addProduct(p) {
+        if (map.has(p.id)) return;
+        var normTitle = p.title.toLowerCase().substring(0, TITLE_DEDUP_LENGTH);
+        if (seenTitles.has(normTitle)) return;
+        map.set(p.id, p);
+        seenTitles.add(normTitle);
+    }
+
+    // Start with allProducts as the base
+    allProducts.forEach(addProduct);
+    // Merge featured products (each key is an array)
+    if (typeof featuredProducts !== 'undefined') {
+        Object.values(featuredProducts).flat().forEach(addProduct);
+    }
+    // Merge latest products
+    if (typeof latestProducts !== 'undefined') {
+        latestProducts.forEach(addProduct);
+    }
+    // Merge MP products
+    if (typeof mpProducts !== 'undefined') {
+        mpProducts.forEach(addProduct);
+    }
+    // Merge brand products (each key is an array)
+    if (typeof brandProducts !== 'undefined') {
+        Object.values(brandProducts).flat().forEach(addProduct);
+    }
+    return Array.from(map.values());
+}
+
+const _allSiteProducts = _mergeAllProducts();
+
 // State
 let currentPage = 1;
 const productsPerPage = 12;
-let filteredProducts = [...allProducts];
+let filteredProducts = [..._allSiteProducts];
 let currentView = 'grid';
 
 // DOM Ready
@@ -60,7 +97,10 @@ function loadProducts() {
     const pageProducts = filteredProducts.slice(startIndex, endIndex);
 
     if (pageProducts.length === 0) {
-        grid.innerHTML = '<p class="no-products">No se encontraron productos</p>';
+        grid.innerHTML = '<p class="no-products"><strong>No se encontraron productos</strong></p>';
+        // Hide pagination when there are no products
+        const pagination = document.getElementById('pagination');
+        if (pagination) pagination.innerHTML = '';
         return;
     }
 
@@ -200,7 +240,7 @@ function initSort() {
                 filteredProducts.sort((a, b) => (b.discount || 0) - (a.discount || 0));
                 break;
             default:
-                filteredProducts = [...allProducts];
+                filteredProducts = [..._allSiteProducts];
         }
 
         currentPage = 1;
@@ -218,7 +258,7 @@ function initUrlParams() {
         const searchInput = document.getElementById('searchInput');
         if (searchInput) searchInput.value = search;
 
-        filteredProducts = allProducts.filter(p =>
+        filteredProducts = _allSiteProducts.filter(p =>
             p.title.toLowerCase().includes(search.toLowerCase())
         );
 
@@ -231,9 +271,12 @@ function initUrlParams() {
     if (cate) {
         const category = categories.find(c => c.id === cate);
         if (category) {
-            filteredProducts = allProducts.filter(p =>
-                p.category && p.category.toLowerCase().includes(category.name.toLowerCase())
-            );
+            filteredProducts = _allSiteProducts.filter(p => {
+                if (!p.category) return false;
+                const pCat = p.category.toLowerCase();
+                const cName = category.name.toLowerCase();
+                return pCat.includes(cName) || cName.includes(pCat);
+            });
 
             const pageHeader = document.querySelector('.page-header h1');
             if (pageHeader) pageHeader.textContent = category.name;
@@ -243,7 +286,7 @@ function initUrlParams() {
     // Subcategory filter
     const subcate = params.get('subcate');
     if (subcate) {
-        filteredProducts = allProducts.filter(p =>
+        filteredProducts = _allSiteProducts.filter(p =>
             p.subcategory === subcate
         );
 

@@ -126,7 +126,7 @@
         try { sessionStorage.setItem('pcbuilder_checkout_step', 'payment'); } catch (_) {}
         try { localStorage.setItem('pcbuilder_checkout_step', 'payment'); } catch (_) {}
       }
-      window.location.href = 'verificacion-orden.html';
+      window.location.href = '/checkout/verificacion-orden/';
     }
   }
 

@@ -354,16 +354,18 @@ a.btn, a.btn:hover, a.btn:focus {
 .checkout-methods {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
+  gap: 18px;
 }
 
 .checkout-method-card {
   width: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 14px;
-  padding: 20px 18px;
-  text-align: left;
+  justify-content: center;
+  gap: 18px;
+  padding: 48px 28px;
+  text-align: center;
   border: 2px solid var(--border-color);
   border-radius: var(--radius-lg);
   background: #fff;
@@ -372,6 +374,7 @@ a.btn, a.btn:hover, a.btn:focus {
   font-family: var(--font-family);
   font-size: 14px;
   box-shadow: var(--shadow);
+  min-height: 280px;
 }
 
 .checkout-method-card:hover {
@@ -381,14 +384,14 @@ a.btn, a.btn:hover, a.btn:focus {
 }
 
 .checkout-method-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: var(--radius);
+  width: 90px;
+  height: 90px;
+  border-radius: var(--radius-lg);
   border: 1px solid var(--border-color);
   background: var(--bg-color);
   color: var(--secondary-color);
   flex: 0 0 auto;
-  font-size: 22px;
+  font-size: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -403,12 +406,12 @@ a.btn, a.btn:hover, a.btn:focus {
 .checkout-method-title {
   font-weight: 800;
   color: var(--secondary-color);
-  font-size: 15px;
+  font-size: 18px;
 }
 
 .checkout-method-subtitle {
   margin-top: 4px;
-  font-size: 12px;
+  font-size: 13px;
   color: var(--text-light);
 }
 
@@ -787,7 +790,7 @@ a.btn, a.btn:hover, a.btn:focus {
   grid-template-columns: 1fr 1fr;
   gap: 12px;
   align-items: end;
-  margin: 10px 0;
+  margin-bottom: 12px;
 }
 
 .dn-row.dn-row-single { grid-template-columns: 1fr; }
@@ -798,13 +801,60 @@ a.btn, a.btn:hover, a.btn:focus {
   color: var(--secondary-color);
   font-size: 13px;
   line-height: 1.2;
-  margin: 0 0 6px;
+  margin: 0 0 4px;
 }
 
-.dn-field .cart-input { width: 100%; }
+.payment-details .dn-field .cart-input {
+  width: 100%;
+  max-width: 220px;
+  height: 44px;
+  padding: 10px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  background: #ffffff;
+  font-size: 14px;
+  line-height: 1;
+  text-align: center;
+  outline: none;
+  transition: border-color .15s, box-shadow .15s;
+}
+
+.payment-details .dn-field .cart-input:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(230, 51, 35, 0.10);
+}
+
+.dn-field-select { max-width: 120px; }
+
+.payment-details .dn-field-select .cart-input {
+  padding: 10px 8px;
+}
+
+/* All two-field rows: small first column + flexible second column */
+.dn-row:not(.dn-row-single) {
+  grid-template-columns: auto 1fr;
+}
+
+/* Email row: wider input since it's full-width */
+.dn-row-single .dn-field .cart-input {
+  max-width: 440px;
+  text-align: left;
+}
 
 @media (max-width: 680px) {
-  .dn-row { grid-template-columns: 1fr; gap: 10px; }
+  .dn-row { grid-template-columns: 1fr; gap: 12px; }
+  .dn-row:not(.dn-row-single) { grid-template-columns: 1fr; }
+  .dn-field-select { max-width: 100%; }
+}
+
+/* Visual feedback on valid input */
+.cart-input.is-valid {
+  border-color: #16a34a !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%2316a34a'%3E%3Cpath fill-rule='evenodd' d='M16.707 5.293a1 1 0 010 1.414l-7.5 7.5a1 1 0 01-1.414 0l-3.5-3.5a1 1 0 011.414-1.414L8.5 12.086l6.793-6.793a1 1 0 011.414 0z' clip-rule='evenodd'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px 16px;
 }
 
 @media (max-width: 980px) {
@@ -1388,3 +1438,864 @@ a.btn, a.btn:hover, a.btn:focus {
   transition: opacity 0.24s ease;
 }
 .modal-backdrop.show { opacity: 1; }
+
+/* ---- National Shipping Carriers ---- */
+.national-carriers-section {
+  margin-top: 20px;
+  padding: 16px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  background: #fafafa;
+}
+
+.national-carriers-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--secondary-color);
+  margin-bottom: 14px;
+}
+
+.national-carriers-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+/* Carrier cards (national-carrier-card used by JS) */
+.national-carrier-card {
+  position: relative;
+  width: 100%;
+  background-color: #fff;
+  -webkit-appearance: none;
+  appearance: none;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 18px;
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 110px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+}
+
+.national-carrier-card:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(15, 23, 42, 0.18);
+}
+
+.national-carrier-card:focus {
+  outline: none;
+}
+
+.national-carrier-card img.tealca-logo {
+  transform: scale(1.9);
+}
+
+.national-carrier-check {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-size: 18px;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.12s ease, transform 0.12s ease;
+  color: #16a34a;
+}
+
+.national-carrier-card.is-selected {
+  border-color: rgba(22, 163, 74, 0.85);
+  box-shadow: 0 10px 26px rgba(22, 163, 74, 0.12);
+}
+
+.national-carrier-card.is-selected .national-carrier-check {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Clean logo styling */
+.national-carrier-card img,
+.national-carrier-logo {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.national-carrier-card * {
+  background-color: transparent !important;
+}
+
+.national-carrier-logo {
+  max-width: 100%;
+  max-height: 60px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(100%);
+  transition: filter 0.15s ease, transform 0.15s ease, opacity 0.15s ease;
+}
+
+.national-carrier-card:hover .national-carrier-logo {
+  filter: grayscale(0%);
+}
+
+.national-carrier-card.is-selected .national-carrier-logo {
+  filter: grayscale(0%);
+}
+
+.national-carrier-card.is-locked {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Also keep old .carrier-card rules as fallback */
+.national-carriers-grid .carrier-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px 10px;
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  background: #fff;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+}
+
+.national-carriers-grid .carrier-card:hover {
+  border-color: var(--primary-color);
+  background: #fff5f5;
+}
+
+.national-carriers-grid .carrier-card.is-selected {
+  border-color: var(--primary-color);
+  background: #fff5f5;
+  box-shadow: 0 0 0 2px var(--primary-color);
+}
+
+.national-carriers-grid .carrier-card.is-locked {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.national-carriers-grid .carrier-card img {
+  max-width: 80px;
+  max-height: 40px;
+  object-fit: contain;
+}
+
+.national-carriers-grid .carrier-card span {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--secondary-color);
+}
+
+/* State selector */
+.national-carriers-state-select {
+  width: 100%;
+  max-width: 100%;
+}
+
+.national-carriers-statewrap,
+.national-carriers-agencywrap {
+  margin-top: 12px;
+}
+
+.national-carriers-statewrap.is-locked,
+.national-carriers-agencywrap.is-locked {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.national-carriers-state-label {
+  display: block;
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--secondary-color);
+  margin-bottom: 6px;
+}
+
+.national-carriers-statewrap select {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  font-size: 14px;
+  font-family: var(--font-family);
+  background: #fff;
+}
+
+.national-agency-alert {
+  padding: 12px 14px;
+  border-radius: var(--radius);
+  background: #fffaf0;
+  border-left: 4px solid #dd6b20;
+  color: #7b341e;
+  font-size: 14px;
+  line-height: 1.4;
+  margin-top: 10px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.national-agency-summary {
+  margin-top: 12px;
+  padding: 12px 14px;
+  border-radius: var(--radius);
+  background: #f0fff4;
+  border-left: 4px solid #38a169;
+  color: #22543d;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* Agency head label */
+.national-carriers-agency-head {
+  font-weight: 700;
+  font-size: 13px;
+  margin: 10px 0 10px 0;
+  color: var(--secondary-color);
+}
+
+/* Agency empty state */
+.national-carriers-agency-empty {
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  background: #fff;
+  box-shadow: var(--shadow);
+  font-size: 13px;
+  color: var(--text-light);
+}
+
+/* Agency cards grid */
+.national-carriers-agency-cards {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 12px;
+}
+
+@media (max-width: 1024px) {
+  .national-carriers-agency-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .national-carriers-agency-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Agency card (full style from V158) */
+.national-agency-card {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  padding: 14px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+}
+
+.national-agency-card:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(15, 23, 42, 0.20);
+}
+
+.national-agency-card.is-selected {
+  border-color: rgba(22, 163, 74, 0.85);
+  box-shadow: 0 10px 26px rgba(22, 163, 74, 0.12);
+}
+
+.national-agency-card.is-confirmed {
+  border-color: #16a34a;
+  background: rgba(22, 163, 74, 0.04);
+}
+
+.national-agency-card.is-confirmed .btn-use-agency {
+  background: #16a34a !important;
+  color: #fff !important;
+  border-color: #16a34a !important;
+}
+
+.national-agency-title {
+  font-weight: 800;
+  color: var(--secondary-color);
+  margin-bottom: 4px;
+}
+
+.national-agency-address {
+  font-size: 13px;
+  color: #334155;
+}
+
+/* Use agency button */
+.btn-use-agency {
+  margin-top: 12px;
+  width: 100%;
+  border: 1px solid var(--border-color);
+  background: #fff;
+  color: var(--secondary-color);
+  border-radius: var(--radius-lg);
+  padding: 12px 14px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+}
+
+.btn-use-agency:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(15, 23, 42, 0.26);
+}
+
+/* Agency details button */
+.btn-agency-details {
+  margin-top: 10px;
+  width: 100%;
+  border: 1px solid var(--border-color);
+  background: rgba(15, 23, 42, 0.02);
+  color: var(--secondary-color);
+  border-radius: var(--radius-lg);
+  padding: 10px 12px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.btn-agency-details:hover {
+  background: rgba(15, 23, 42, 0.04);
+  border-color: rgba(15, 23, 42, 0.20);
+}
+
+/* Remove shadow on hover for agency card buttons */
+.national-agency-card .btn-agency-details:hover,
+.national-agency-card .btn-use-agency:hover {
+  box-shadow: none !important;
+}
+
+/* Agency modal map */
+.national-agency-modal-map {
+  width: 100%;
+  height: 320px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+}
+
+.national-agency-modal-gmapsbtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  border: 1px solid var(--border-color);
+  background: #fff;
+  color: var(--secondary-color);
+  border-radius: var(--radius-lg);
+  padding: 12px 14px;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  flex: 1;
+}
+
+.national-agency-modal-gmapsbtn:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-1px);
+}
+
+.national-agency-modal-btnrow {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.national-agency-modal-usebtn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 0;
+  background: #16a34a;
+  color: #fff;
+  border-radius: var(--radius-lg);
+  padding: 12px 14px;
+  font-weight: 900;
+  cursor: pointer;
+  font-family: var(--font-family);
+  box-shadow: var(--shadow);
+}
+
+.national-agency-modal-usebtn:hover {
+  background: #15803d;
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-1px);
+}
+
+/* Lock carriers after confirming */
+.national-carriers-grid.is-locked .national-carrier-card {
+  pointer-events: none;
+  opacity: 0.55;
+}
+
+.national-carriers-statewrap.is-locked {
+  pointer-events: none;
+  opacity: 0.75;
+}
+
+.national-agency-card.is-locked {
+  pointer-events: none;
+  opacity: 0.45;
+}
+.national-agency-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(40, 34, 38, 0.55);
+  z-index: 9995;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.national-agency-modal-overlay.is-open {
+  display: flex;
+}
+
+.national-agency-modal {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  width: min(720px, calc(100vw - 32px));
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+  overflow: visible;
+}
+
+.national-agency-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.national-agency-modal-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--secondary-color);
+}
+
+.national-agency-modal-close {
+  background: none;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 18px;
+  color: var(--text-light);
+}
+
+.national-agency-modal-close:hover {
+  color: var(--secondary-color);
+  border-color: #cbd5e1;
+}
+
+.national-agency-modal-body {
+  padding: 16px 18px;
+  overflow-y: auto;
+  max-height: calc(85vh - 60px);
+}
+
+.national-agency-modal-tablewrap {
+  overflow-x: auto;
+}
+
+.national-agency-modal-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-family);
+  font-size: 13px;
+}
+
+.national-agency-modal-table th,
+.national-agency-modal-table td {
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.national-agency-modal-table th {
+  font-weight: 700;
+  color: var(--secondary-color);
+  background: #fafafa;
+  position: sticky;
+  top: 0;
+}
+
+.national-agency-modal-table tr {
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.national-agency-modal-table tr:hover {
+  background: #fff5f5;
+}
+
+.national-agency-modal-table tr.is-selected {
+  background: #fff5f5;
+  font-weight: 700;
+}
+
+.national-form-incomplete .national-carriers-grid,
+.national-form-incomplete .national-carriers-statewrap,
+.national-form-incomplete .national-carriers-agencywrap {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+@media (max-width: 680px) {
+  .national-carriers-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ---- Fix alert clipping inside modals ---- */
+.alert,
+.checkout-alert,
+.national-agency-alert,
+.national-agency-summary {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  overflow: visible;
+}
+
+.pc-modal-dialog .alert,
+.pc-modal-dialog .checkout-alert,
+.national-agency-modal .alert,
+.national-agency-modal .checkout-alert {
+  overflow: visible;
+  text-overflow: unset;
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+/* ---- National shipping: custom state selector ---- */
+.national-cselect {
+  margin-top: 8px;
+  position: relative;
+}
+
+.national-cselect-btn {
+  width: 100%;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  background: #fff;
+  box-shadow: var(--shadow);
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  cursor: pointer;
+  font-family: var(--font-family);
+}
+
+.national-cselect-btntext {
+  font-weight: 600;
+  color: var(--secondary-color);
+}
+
+.national-cselect-caret {
+  color: var(--text-light);
+  font-size: 14px;
+}
+
+.national-cselect-panel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: calc(100% + 8px);
+  background: #fff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.14);
+  overflow: hidden;
+  max-height: 360px;
+  overflow-y: auto;
+  display: none;
+  z-index: 50;
+}
+
+.national-cselect.is-open .national-cselect-panel {
+  display: block;
+}
+
+.national-cselect-opt {
+  width: 100%;
+  border: none;
+  background: #fff;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  font-family: var(--font-family);
+}
+
+.national-cselect-opt:last-child {
+  border-bottom: none;
+}
+
+.national-cselect-opt:hover {
+  background: rgba(15, 23, 42, 0.02);
+}
+
+.national-cselect-opt.is-selected {
+  background: rgba(37, 99, 235, 0.06);
+}
+
+.national-cselect-name {
+  font-weight: 600;
+  color: var(--secondary-color);
+}
+
+.national-cselect-badge {
+  font-size: 12px;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #0b5cff;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.national-cselect-badge.is-zero {
+  background: #6b7280;
+}
+
+/* ---- National shipping: summary card ---- */
+.national-summary-card {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 12px 14px;
+  background: #fff;
+  box-shadow: var(--shadow);
+}
+
+.national-summary-title {
+  font-weight: 900;
+  color: var(--secondary-color);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.national-summary-title > span {
+  display: inline-flex;
+  align-items: center;
+  line-height: 1.2;
+}
+
+.national-summary-row {
+  font-size: 13px;
+  color: #334155;
+  margin: 4px 0;
+}
+
+.national-summary-row .k {
+  font-weight: 800;
+  color: var(--secondary-color);
+  margin-right: 6px;
+}
+
+.national-summary-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.national-summary-details,
+.national-summary-change {
+  border: 1px solid var(--border-color);
+  background: #fff;
+  color: var(--secondary-color);
+  border-radius: var(--radius-lg);
+  padding: 10px 12px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+  font-family: var(--font-family);
+}
+
+.national-summary-details:hover,
+.national-summary-change:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-lg);
+  border-color: #cbd5e1;
+}
+
+/* Logo in confirmed agency summary */
+.national-summary-logo-80 {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-left: 10px;
+  vertical-align: middle;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.selected-agency-logo {
+  width: 20px !important;
+  height: 20px !important;
+  transform: scale(2.8);
+  margin-left: 8px;
+  margin-top: 2px;
+  vertical-align: middle;
+  object-fit: contain;
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Allow changing agency (don't block agency cards) */
+.national-carriers-agencywrap.is-locked .national-agency-card {
+  pointer-events: auto !important;
+  opacity: 1 !important;
+}
+
+/* ---- National shipping: confirm/preview modal ---- */
+.national-confirm-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+}
+
+.national-confirm-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.55);
+}
+
+.national-confirm-dialog {
+  position: relative;
+  background: #fff;
+  max-width: 560px;
+  margin: 16vh auto 0 auto;
+  padding: 22px 22px 18px 22px;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+  transform: translateY(22px) scale(0.98);
+  opacity: 0;
+  transition: transform 0.24s ease, opacity 0.24s ease;
+  will-change: transform, opacity;
+}
+
+.national-confirm-modal.is-open .national-confirm-dialog {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+.national-confirm-title {
+  font-weight: 900;
+  font-size: 18px;
+  color: var(--secondary-color);
+}
+
+.national-confirm-sub {
+  margin-top: 6px;
+  font-weight: 700;
+  color: var(--text-light);
+}
+
+.national-confirm-body {
+  margin-top: 14px;
+}
+
+.national-confirm-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.national-confirm-cancel {
+  padding: 10px 16px;
+  border-radius: var(--radius-lg);
+  border: 1px solid #cbd5e1;
+  background: #fff;
+  font-weight: 800;
+  cursor: pointer;
+  font-family: var(--font-family);
+}
+
+.national-confirm-ok {
+  padding: 10px 16px;
+  border-radius: var(--radius-lg);
+  border: 0;
+  background: #16a34a;
+  color: #fff;
+  font-weight: 900;
+  cursor: pointer;
+  font-family: var(--font-family);
+}
+
+.national-confirm-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.national-confirm-table th {
+  width: 140px;
+  text-align: left;
+  color: var(--secondary-color);
+  padding: 8px 10px;
+  border-top: 1px solid var(--border-color);
+  vertical-align: top;
+}
+
+.national-confirm-table td {
+  padding: 8px 10px;
+  border-top: 1px solid var(--border-color);
+  color: #334155;
+  vertical-align: top;
+  word-break: break-word;
+}
+
+/* ---- Ensure Montserrat everywhere in checkout ---- */
+/* Exclude Font Awesome / Material Icons so their icon fonts render correctly */
+.checkout-page,
+.checkout-page *:not(.fas):not(.far):not(.fab):not(.fa-solid):not(.fa-regular):not(.fa-brands):not(.fa):not(.material-icons),
+.order-completion-page,
+.order-completion-page *:not(.fas):not(.far):not(.fab):not(.fa-solid):not(.fa-regular):not(.fa-brands):not(.fa):not(.material-icons),
+.cart-page,
+.cart-page *:not(.fas):not(.far):not(.fab):not(.fa-solid):not(.fa-regular):not(.fa-brands):not(.fa):not(.material-icons) {
+  font-family: var(--font-family);
+}
