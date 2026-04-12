@@ -109,17 +109,16 @@ ul, ol {
     flex-shrink: 0;
 }
 
-.logo-full {
-    height: 48px;
-    width: auto;
-    border-radius: 6px;
+.logo-text {
+    font-size: 22px;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: 2px;
+    white-space: nowrap;
 }
 
-.logo-icon {
-    display: none;
-    height: 40px;
-    width: 40px;
-    border-radius: 6px;
+.logo-store {
+    color: #ff9000;
 }
 
 .search-box {
@@ -1629,12 +1628,9 @@ ul, ol {
         margin-top: 12px;
     }
 
-    .logo-full {
-        display: none;
-    }
-
-    .logo-icon {
-        display: block;
+    .logo-text {
+        font-size: 16px;
+        letter-spacing: 1px;
     }
 
     .login-text {
